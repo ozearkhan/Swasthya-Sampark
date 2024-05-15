@@ -1,0 +1,95 @@
+.container{
+    margin: 0 200px ;
+}
+/*.heroSection{*/
+/*    .container {*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*        justify-content: space-between;*/
+/*        gap: 1rem; !* Adjust as needed *!*/
+/*    }*/
+
+/*    @media (min-width: 1024px) { !* Adjust as needed *!*/
+/*        .container {*/
+/*            flex-direction: row;*/
+/*            align-items: flex-end;*/
+/*        }*/
+/*    }*/
+
+/*}*/
+
+.heroSectionTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10%;
+}
+
+.leftSectionTitle {
+    position: relative;
+    display: inline-flex;
+    max-width: 90%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    row-gap: 0.5rem;
+    overflow: hidden;
+    color: #302C2C; /* Replace with the actual color code for 'heading-black' */
+}
+.leftSectionFirstLine{
+    color: #302C2C;
+    font-size: 72px;
+    font-weight: 500;
+}
+.leftSectionSecondLine{
+    position: relative;
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.h1{
+    color: #302C2C;
+    font-family: Inter, serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 118%; /* 118% */
+    letter-spacing: -2.16px;
+}
+
+.h3{
+    color:rgba(48, 44, 44, 0.65);
+    font-family: Inter, serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 150% */
+    letter-spacing: -0.2px;
+    flex-wrap: wrap;
+}
+.heroSectionRightPart{
+    max-width: 30%;
+
+}
+
+@media screen and (max-width: 600px) {
+    .leftSectionTitle {
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .leftSectionTitle {
+        max-width: none;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .leftSectionTitle {
+        display: inline;
+    }
+}
+
