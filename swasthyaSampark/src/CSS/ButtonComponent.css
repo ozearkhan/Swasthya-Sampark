@@ -1,40 +1,40 @@
-.buttonComponent {
+.buttonComponent, .buttonComponentTransparent {
     display: flex;
-    width: 150px;
-    height: 42px;
-    padding: 8px 18px 9px 18px;
+    padding: 8px 18px;
     justify-content: center;
     align-items: center;
-    gap: 11px;
-    border-radius: 8px;
-    border: 1px solid  #302C2C;
-    background: #302C2C;
-    color: white; /* You can change this to any color you want for the text */
-    font-family: Inter, serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px; /* 150% */
-    letter-spacing: -0.2px;
-}
-
-
-.buttonComponentTransparent {
-    display: flex;
-    width: auto;
-    height: 42px;
-    padding: 8px 18px 9px 18px;
-    justify-content: center;
-    align-items: center;
-    gap: 11px;
     border-radius: 8px;
     border: 1px solid #302C2C;
-    background: transparent;
-    color: #302C2C; /* You can change this to any color you want for the text */
     font-family: Inter, serif;
-    font-size: 20px;
-    font-style: normal;
+    font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
     font-weight: 400;
-    line-height: 30px; /* 150% */
+    line-height: 30px;
     letter-spacing: -0.2px;
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+    overflow: hidden; /* Ensure the text is not hidden */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+}
+
+.buttonComponent {
+    background: #302C2C;
+    color: white;
+}
+
+.buttonComponentTransparent {
+    background: transparent;
+    color: #302C2C;
+}
+
+@media screen and (max-width: 1024px) {
+    .buttonComponent, .buttonComponentTransparent {
+        font-size: clamp(12px, 2.5vw, 18px);
+        padding: 6px 12px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .buttonComponent, .buttonComponentTransparent {
+        font-size: clamp(10px, 3vw, 16px);
+        padding: 4px 10px; /* Further adjust padding */
+    }
 }

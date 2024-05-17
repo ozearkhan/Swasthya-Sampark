@@ -1,7 +1,6 @@
 .container {
     margin: 0 200px;
     max-width: 1280px;
-    /*padding: 0 50px;*/
 }
 
 .heroSectionContent {
@@ -33,7 +32,7 @@
 
 .leftSectionFirstLine {
     color: #302C2C;
-    font-size: 72px;
+    font-size: clamp(24px, 5vw, 72px); /* Responsive font size */
     font-weight: 500;
 }
 
@@ -48,20 +47,20 @@
 .h1 {
     color: #302C2C;
     font-family: Inter, serif;
-    font-size: 72px;
+    font-size: clamp(24px, 5vw, 72px); /* Responsive font size */
     font-style: normal;
     font-weight: 500;
-    line-height: 118%; /* 118% */
+    line-height: 118%;
     letter-spacing: -2.16px;
 }
 
 .h3 {
     color: rgba(48, 44, 44, 0.65);
     font-family: Inter, serif;
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px); /* Responsive font size */
     font-style: normal;
     font-weight: 400;
-    line-height: 30px; /* 150% */
+    line-height: 30px;
     letter-spacing: -0.2px;
     flex-wrap: wrap;
 }
@@ -99,8 +98,8 @@
         gap: 0.5rem;
     }
 
-    .leftSectionFirstLine, .rotatingText {
-        font-size: 36px;
+    .leftSectionFirstLine, .rotatingText p {
+        font-size: clamp(18px, 4vw, 36px);
     }
 
     .leftSectionSecondLine {
@@ -124,15 +123,15 @@
         margin: 0 20px;
     }
 
-    .leftSectionFirstLine, .rotatingText {
-        font-size: 24px;
+    .leftSectionFirstLine, .rotatingText p {
+        font-size: clamp(14px, 6vw, 24px);
     }
 
     .h1 {
-        font-size: 24px;
+        font-size: clamp(14px, 6vw, 24px);
     }
 
     .h3 {
-        font-size: 16px;
+        font-size: clamp(12px, 4vw, 16px);
     }
 }

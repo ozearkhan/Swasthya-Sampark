@@ -1,34 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/RotatingText.css'; // Import the CSS file
+import '../CSS/RotatingText.css';
 
-const words = ['Symptom Analysis', 'Health Guidance', ' Emergency Detection', 'Medical Prioritization', ' Urgency Assessment'];
-const colors = ['#122431', '#25884C', '#922F10', '#141518', '#B66E28']; // Add as many colors as you like
+const words = ['Symptom Analysis', 'Health Guidance', 'Emergency Detection', 'Medical Prioritization', 'Urgency Assessment'];
+const colors = ['#122431', '#25884C', '#922F10', '#141518', '#B66E28'];
 
 const RotatingText = () => {
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [colorIndex, setColorIndex] = useState(0);
-    const [currentWord, setCurrentWord] = useState(words[0]);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setColorIndex((colorIndex + 1) % colors.length); // Change color index after each rotation
-            setCurrentWord(words[colorIndex]); // Change word after each rotation
-        }, 2000); // Change every 2 seconds
+            setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+            setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+        }, 2000);
         return () => clearInterval(interval);
-    }, [colorIndex]);
-
-    const cardStyle = {
-        padding: '20px',
-        borderRadius: '15px',
-        color: 'white',
-        backgroundColor: colors[colorIndex],
-        display: 'inline-block',
-        margin: 'auto',
-        marginTop: '0px'
-    };
+    }, []);
 
     return (
-        <div style={cardStyle}>
-            <p>{currentWord}</p>
+        <div className="rotatingText" style={{ backgroundColor: colors[colorIndex] }}>
+            <p>{words[currentWordIndex]}</p>
         </div>
     );
 };

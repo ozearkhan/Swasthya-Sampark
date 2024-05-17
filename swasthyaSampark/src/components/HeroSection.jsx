@@ -13,7 +13,7 @@ export function HeroSection() {
                                 Explore Swasthya
                             </span>
                             <span className="leftSectionFirstLine">
-                                Samparks's trusted,
+                                Sampark's trusted,
                             </span>
                             <div className="leftSectionSecondLine">
                                 <span className="leftSectionFirstLine">
