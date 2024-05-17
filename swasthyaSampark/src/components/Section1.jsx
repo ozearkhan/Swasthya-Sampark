@@ -17,7 +17,7 @@ const Section1 = ({children}) => {
 
     return (
         <div style={sectionStyle}>
-            {children}m
+            {children}
         </div>
     );
 };
