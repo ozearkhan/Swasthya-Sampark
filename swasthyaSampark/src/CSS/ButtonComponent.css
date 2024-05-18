@@ -5,7 +5,7 @@
     align-items: center;
     border-radius: 8px;
     border: 1px solid #302C2C;
-    font-family: Inter, serif;
+    font-family: "Poppins", sans-serif;
     font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
     font-weight: 400;
     line-height: 30px;
