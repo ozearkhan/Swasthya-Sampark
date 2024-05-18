@@ -30,10 +30,9 @@ export function HeroSection() {
                     <div>
                         <h3>
                             <p className="h3">
-                                Swasthya Sampark uses advanced AI technology to provide you with
-                                comprehensive health assessment based on your symptoms. Get
-                                personalized health reports, lab test recommendations, and treatment
-                                suggestions.
+                                Swasthya Sampark uses AI to provide health assessments,
+                                personalized reports, lab test recommendations,
+                                and treatment suggestions.
                             </p>
                         </h3>
                     </div>

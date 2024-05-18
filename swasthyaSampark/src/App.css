@@ -4,3 +4,31 @@
 /*    box-sizing: border-box;*/
 /*    color: #F6F4F2;*/
 /*}*/
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Default font weight */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* Bold headings */
+}
+
+p, a, span, div, button {
+    font-weight: 400; /* Regular text */
+}
+
+.light-text {
+    font-weight: 300; /* Light text */
+}
+
+.medium-text {
+    font-weight: 500; /* Medium text */
+}
+
+.semi-bold-text {
+    font-weight: 600; /* Semi-bold text */
+}
+
+.bold-text {
+    font-weight: 700; /* Bold text */
+}
