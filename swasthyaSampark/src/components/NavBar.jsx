@@ -34,7 +34,7 @@ export function NavBar() {
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <button
                         type="button"
-                        className="text-white bg-green hover:bg-[#0f3a24] focus:ring-4 focus:outline-none focus:ring-[#143c2d] font-medium rounded-lg text-lg px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+                        className="text-white bg-[#175134] hover:bg-[#0f3a24] focus:ring-4 focus:outline-none focus:ring-[#143c2d] font-medium rounded-lg text-lg px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
                     >
                         Get Started
                     </button>
