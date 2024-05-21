@@ -23,11 +23,11 @@ export function NavBar() {
     return (
         <nav
             className={`fixed w-full z-20 top-0 start-0 transition-colors duration-200 ${
-                scrolled ? 'scrolled' : ''
+                scrolled ? 'bg-white dark:bg-gray-900' : 'bg-transparent'
             }`}
             id="navbar-sticky"
         >
-            <div className="max-w-custom flex flex-wrap items-center justify-between mx-auto p-4">
+            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
                 <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Logo />
                 </a>
