@@ -23,11 +23,11 @@ export function NavBar() {
     return (
         <nav
             className={`fixed w-full z-20 top-0 start-0 transition-colors duration-200 ${
-                scrolled ? 'scrolled bg-white dark:bg-gray-900' : 'bg-transparent'
+                scrolled ? 'scrolled' : ''
             }`}
             id="navbar-sticky"
         >
-            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
+            <div className="max-w-custom flex flex-wrap items-center justify-between mx-auto p-4">
                 <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Logo />
                 </a>
@@ -72,34 +72,31 @@ export function NavBar() {
                         <li>
                             <a
                                 href="#"
-                                className={`nav-link block py-2 px-3 rounded font-semibold relative ${
-                                    scrolled ? 'text-gray-500 hover:text-gray-700' : 'text-gray-500 hover:text-gray-300'
+                                className={`nav-link block py-2 px-3 rounded ${
+                                    scrolled ? 'text-black hover:text-black' : 'text-gray-500 hover:text-black'
                                 }`}
                             >
                                 About
-                                <span className="underline"></span>
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
-                                className={`nav-link block py-2 px-3 rounded font-semibold relative ${
-                                    scrolled ? 'text-gray-500 hover:text-gray-700' : 'text-gray-500 hover:text-gray-300'
+                                className={`nav-link block py-2 px-3 rounded ${
+                                    scrolled ? 'text-black hover:text-black' : 'text-gray-500 hover:text-black'
                                 }`}
                             >
                                 Services
-                                <span className="underline"></span>
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
-                                className={`nav-link block py-2 px-3 rounded font-semibold relative ${
-                                    scrolled ? 'text-gray-500 hover:text-gray-700' : 'text-gray-500 hover:text-gray-300'
+                                className={`nav-link block py-2 px-3 rounded ${
+                                    scrolled ? 'text-black hover:text-black' : 'text-gray-500 hover:text-black'
                                 }`}
                             >
                                 Contact
-                                <span className="underline"></span>
                             </a>
                         </li>
                     </ul>
