@@ -12,7 +12,9 @@ const Section1 = ({children}) => {
         left: '50%', // Move the left edge to the center
         right: '50%', // Move the right edge to the center
         transform: 'translate(-50%, 0)', // Shift it back to the left by 50% of its width
-        justifyContent: 'center',
+        flexDirection: 'column',
+        gap: '5%',
+
     };
 
     return (

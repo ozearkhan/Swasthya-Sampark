@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-top: 10%;
+    padding-top: 5%;
     max-width: 70%; /* Adjust this to give more space for the text */
 }
 

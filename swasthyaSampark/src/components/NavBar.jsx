@@ -23,7 +23,7 @@ export function NavBar() {
     return (
         <nav
             className={`fixed w-full z-20 top-0 start-0 transition-colors duration-200 ${
-                scrolled ? 'bg-white dark:bg-gray-900' : 'bg-transparent'
+                scrolled ? 'scrolled' : ''
             }`}
             id="navbar-sticky"
         >
@@ -73,18 +73,18 @@ export function NavBar() {
                             <a
                                 href="#"
                                 className={`nav-link block py-2 px-3 rounded ${
-                                    scrolled ? 'text-black hover:text-black' : 'text-gray-500 hover:text-black'
-                                }`}
+                                    scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-500 hover:text-black'
+                                } font-poppins`}
                             >
-                                About
+                                About us
                             </a>
                         </li>
                         <li>
                             <a
                                 href="#"
                                 className={`nav-link block py-2 px-3 rounded ${
-                                    scrolled ? 'text-black hover:text-black' : 'text-gray-500 hover:text-black'
-                                }`}
+                                    scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-500 hover:text-black'
+                                } font-poppins`}
                             >
                                 Services
                             </a>
@@ -93,10 +93,10 @@ export function NavBar() {
                             <a
                                 href="#"
                                 className={`nav-link block py-2 px-3 rounded ${
-                                    scrolled ? 'text-black hover:text-black' : 'text-gray-500 hover:text-black'
-                                }`}
+                                    scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-500 hover:text-black'
+                                } font-poppins`}
                             >
-                                Contact
+                                For business
                             </a>
                         </li>
                     </ul>

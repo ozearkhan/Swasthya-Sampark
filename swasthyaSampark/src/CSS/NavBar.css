@@ -13,7 +13,7 @@
 
 /* Additional styles for the links */
 .nav-link {
-    font-weight: 600; /* Equivalent to font-semibold in Tailwind */
+    font-weight: 400; /* Equivalent to font-semibold in Tailwind */
     color: #444; /* Darker gray for default */
     transition: color 200ms linear;
 }
@@ -36,4 +36,10 @@
 
 .nav-link:hover::after {
     transform: scaleX(1);
+}
+.scrolled {
+    background-color: white;
+}
+#navbar-sticky.scrolled {
+    background-color: white;
 }
