@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    border: 1px solid #302C2C;
+    border: 1px solid #175134;
     font-family: "Poppins", sans-serif;
     font-size: clamp(14px, 2vw, 20px); /* Responsive font size */
     font-weight: 400;
@@ -16,13 +16,13 @@
 }
 
 .buttonComponent {
-    background: #302C2C;
+    background: #175134;
     color: white;
 }
 
 .buttonComponentTransparent {
     background: transparent;
-    color: #302C2C;
+    color: #175134;
 }
 
 @media screen and (max-width: 1024px) {
