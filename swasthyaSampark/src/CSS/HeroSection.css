@@ -1,5 +1,5 @@
 .container {
-    margin: 0 200px;
+    margin: 20px 200px;
     max-width: 1280px;
     transition: margin 0.3s ease, gap 0.3s ease;
 }
@@ -32,6 +32,7 @@
     overflow: hidden;
     color: #302C2C;
 }
+
 
 .leftSectionFirstLine {
     color: #302C2C;
@@ -81,7 +82,7 @@
 
 @media screen and (max-width: 2560px) and (min-width: 1441px) {
     .container {
-        margin: 0 150px;
+        margin: 40px 150px;
     }
 
     .heroSectionContent {
@@ -107,7 +108,7 @@
 
 @media screen and (max-width: 1440px) and (min-width: 1081px) {
     .container {
-        margin: 0 100px;
+        margin: 40px 100px;
     }
 
     .heroSectionContent {
@@ -133,7 +134,7 @@
 
 @media screen and (max-width: 1080px) {
     .container {
-        margin: 0 50px;
+        margin: 40px 50px;
     }
 
     .heroSectionContent {
@@ -159,7 +160,7 @@
 
 @media screen and (max-width: 1024px) {
     .container {
-        margin: 0 50px;
+        margin: 40px 50px;
     }
 
     .heroSectionContent {
@@ -201,7 +202,7 @@
 
 @media screen and (max-width: 600px) {
     .container {
-        margin: 0 20px;
+        margin: 40px 20px;
     }
 
     .leftSectionFirstLine, .rotatingText {

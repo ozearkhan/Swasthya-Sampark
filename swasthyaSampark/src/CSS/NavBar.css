@@ -1,0 +1,39 @@
+/* NavBar.css */
+
+/* Style for navbar when scrolled */
+.navbar-sticky.scrolled {
+    background-color: #fff !important;
+    transition: background-color 200ms linear;
+}
+
+/* Style for nav links when scrolled */
+.navbar-sticky.scrolled .nav-link {
+    color: #444; /* Darker gray for default */
+}
+
+/* Additional styles for the links */
+.nav-link {
+    font-weight: 600; /* Equivalent to font-semibold in Tailwind */
+    color: #444; /* Darker gray for default */
+    transition: color 200ms linear;
+}
+
+/* Underline effect */
+.nav-link::after {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    height: 2px;
+    width: 50%; /* Width less than half of the text width */
+    background-color: currentColor;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #000; /* More black on hover */
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+}
