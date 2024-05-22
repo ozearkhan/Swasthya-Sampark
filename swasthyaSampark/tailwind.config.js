@@ -12,6 +12,8 @@ export default {
       },
       screens: {
         '2xl': '1740px', // This sets the max-w-screen-2xl to 1440px
+        'custom':'1440px',
+        'custom-xl': '2440px',
       },
       maxWidth: {
         'screen-2xl': '1740px', // This sets the max-width to 1440px
