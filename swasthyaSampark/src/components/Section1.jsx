@@ -1,4 +1,6 @@
 import React from 'react';
+import {HeroSection} from "./HeroSection.jsx";
+import {HeroSectionBottomDiv} from "./HeroSectionBottomDiv.jsx";
 
 const Section1 = ({children}) => {
     const sectionStyle = {
@@ -19,7 +21,15 @@ const Section1 = ({children}) => {
 
     return (
         <div style={sectionStyle}>
-            {children}
+            <HeroSection/>
+            <HeroSectionBottomDiv/>
+            <div className="flex justify-center items-center ">
+                <h3 className="text-gray-700 font-poppins text-xl text-center font-normal leading-7 tracking-tighter flex-wrap max-w-screen-sm">
+                    Swasthya Sampark is your personal health navigator. We transform the way you understand and manage your symptoms,
+                    making healthcare more accessible and personalized. With us, every symptom is a step towards better health
+
+                </h3>
+            </div>
         </div>
     );
 };

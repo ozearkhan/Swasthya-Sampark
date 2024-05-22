@@ -13,11 +13,9 @@ function App() {
 
   return (
     <>
-        <NavBar></NavBar>
-        <Section1>
-            <HeroSection/>
-            <HeroSectionBottomDiv></HeroSectionBottomDiv>
-        </Section1>
+        <NavBar/>
+        <Section1/>
+
     </>
   )
 }
