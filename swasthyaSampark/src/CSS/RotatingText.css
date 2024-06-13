@@ -23,7 +23,7 @@ body {
     font-size: clamp(14px, 3vw, 50px); /* Responsive font size */
     font-weight: 500;
     text-align: center; /* Center text */
-    transition: background-color 2s, width 0.5s ease; /* Smooth transition for resizing and background color */
+    transition: background-color 1s, width 0.5s ease; /* Smooth transition for resizing and background color */
 }
 
 .rotatingTextContent {
@@ -40,14 +40,14 @@ body {
 @media screen and (max-width: 1024px) {
     .rotatingTextContent {
         padding: 15px;
-        font-size: clamp(12px, 2.5vw, 20px);
+        font-size: clamp(30px, 2.5vw, 30px);
     }
 }
 
 @media screen and (max-width: 768px) {
     .rotatingTextContent {
         padding: 10px;
-        font-size: clamp(10px, 2vw, 18px);
+        font-size: clamp(30px, 2vw, 18px);
     }
 }
 
