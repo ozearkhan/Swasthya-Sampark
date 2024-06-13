@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import '../CSS/RotatingText.css';
 
 const words = ['Symptom Analysis', 'Health Guidance', 'Emergency Detection', 'Medical Prioritization', 'Urgency Assessment'];
@@ -14,7 +15,7 @@ const RotatingText = () => {
         const interval = setInterval(() => {
             setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
             setColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
-        }, 2000);
+        }, 2500); // Reduced interval duration for faster rotation
         return () => clearInterval(interval);
     }, []);
 
@@ -35,7 +36,18 @@ const RotatingText = () => {
             style={{ backgroundColor: colors[colorIndex] }}
         >
             <div className="rotatingTextContent">
-                <p ref={textRef}>{words[currentWordIndex]}</p>
+                <AnimatePresence mode="wait">
+                    <motion.p
+                        key={words[currentWordIndex]}
+                        initial={{ opacity: 0, y: -30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 30 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }} // Reduced transition duration for faster animation
+                        ref={textRef}
+                    >
+                        {words[currentWordIndex]}
+                    </motion.p>
+                </AnimatePresence>
             </div>
         </div>
     );
