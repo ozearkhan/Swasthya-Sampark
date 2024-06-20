@@ -1,6 +1,6 @@
-import RotatingText from "./RotatingText.jsx";
+import RotatingText from "./RotatingText.tsx";
 import '../CSS/HeroSection.css';
-import ButtonComponent from "./ButtonComponent.jsx";
+import ButtonComponent from "./ButtonComponent.tsx";
 
 export function HeroSection() {
     return (

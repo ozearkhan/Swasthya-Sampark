@@ -1,5 +1,7 @@
+// @ts-ignore
 import * as React from "react"
 
+// @ts-ignore
 function Logo(props) {
     return (
         <svg

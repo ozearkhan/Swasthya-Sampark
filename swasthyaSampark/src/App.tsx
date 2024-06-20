@@ -1,8 +1,8 @@
 
 
 import './App.css'
-import Section1 from "./components/Section1.jsx";
-import {NavBar} from "./components/NavBar.jsx";
+import Section1 from "./components/Section1.tsx";
+import {NavBar} from "./components/NavBar.tsx";
 
 
 
@@ -11,11 +11,11 @@ import {NavBar} from "./components/NavBar.jsx";
 function App() {
 
   return (
-    <>
+      <>
         <NavBar/>
         <Section1/>
 
-    </>
+      </>
   )
 }
 

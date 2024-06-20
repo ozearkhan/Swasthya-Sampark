@@ -1,5 +1,6 @@
+// @ts-ignore
 import React, { useState, useEffect } from 'react';
-import Logo from "./Logo.jsx";
+import Logo from "./Logo.tsx";
 import '../CSS/NavBar.css'; // Import the CSS file
 
 export function NavBar() {

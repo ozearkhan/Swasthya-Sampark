@@ -1,7 +1,8 @@
+// @ts-ignore
 import React from 'react';
 import styled from 'styled-components';
-import { HeroSection } from "./HeroSection.jsx";
-import { HeroSectionBottomDiv } from "./HeroSectionBottomDiv.jsx";
+import { HeroSection } from "./HeroSection.tsx";
+import { HeroSectionBottomDiv } from "./HeroSectionBottomDiv.tsx";
 import '../CSS/HeroSection.css';
 
 const Section = styled.div`

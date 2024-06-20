@@ -1,4 +1,4 @@
-import VectorDesign from "./VectorDesign.jsx";
+import VectorDesign from "./VectorDesign.tsx";
 
 export function HeroSectionBottomDiv() {
     return (
