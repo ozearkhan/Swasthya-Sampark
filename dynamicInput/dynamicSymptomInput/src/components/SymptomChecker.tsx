@@ -1,5 +1,7 @@
+// components/SymptomChecker.jsx
 import React, { useState, useEffect } from 'react';
 import { useSocket } from '../hooks/useSocket';
+import { Button, TextInput, Radio } from 'flowbite-react';
 
 function SymptomChecker({ onComplete }) {
     const [symptom, setSymptom] = useState('');
@@ -89,12 +91,11 @@ function SymptomChecker({ onComplete }) {
     };
 
     return (
-        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-            <h2 className="text-2xl font-bold mb-4">Symptom Checker</h2>
+        <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">Symptom Checker</h2>
             {!question && (
-                <div className="mb-4">
-                    <input
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                <div className="space-y-4">
+                    <TextInput
                         id="symptomInput"
                         type="text"
                         placeholder="Enter a symptom"
@@ -102,50 +103,40 @@ function SymptomChecker({ onComplete }) {
                         onChange={(e) => setSymptom(e.target.value)}
                         disabled={isProcessing}
                     />
-                    <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-                        onClick={handleSubmitSymptom}
-                        disabled={isProcessing}
-                    >
+                    <Button color="blue" onClick={handleSubmitSymptom} disabled={isProcessing}>
                         Submit
-                    </button>
+                    </Button>
                 </div>
             )}
             {question && (
-                <div className="mb-4">
-                    <h3 className="text-xl font-semibold mb-2">{question}</h3>
+                <div className="space-y-4">
+                    <h3 className="text-xl font-semibold text-gray-900">{question}</h3>
                     {currentOptions.map((option, index) => (
-                        <div key={index} className="mb-2">
-                            <input
-                                type={currentOptions.length > 2 ? "checkbox" : "radio"}
+                        <div key={index} className="flex items-center">
+                            <Radio
                                 id={`option-${index}`}
                                 name="symptom"
                                 value={option}
-                                className="mr-2"
                             />
-                            <label htmlFor={`option-${index}`}>{option}</label>
+                            <label htmlFor={`option-${index}`} className="ml-2 text-sm text-gray-700">
+                                {option}
+                            </label>
                         </div>
                     ))}
-                    <button
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2"
-                        onClick={handleSubmitAnswers}
-                    >
+                    <Button color="blue" onClick={handleSubmitAnswers}>
                         Next
-                    </button>
+                    </Button>
                 </div>
             )}
-            <div className="mt-4">
+            <div className="mt-4 space-y-2">
                 {output.map((line, index) => (
-                    <p key={index} className="text-gray-700">{line}</p>
+                    <p key={index} className="text-sm text-gray-700">{line}</p>
                 ))}
             </div>
             {showReset && (
-                <button
-                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-4"
-                    onClick={handleResetProcess}
-                >
+                <Button color="red" onClick={handleResetProcess}>
                     Start Over
-                </button>
+                </Button>
             )}
         </div>
     );

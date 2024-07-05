@@ -1,7 +1,8 @@
-// src/components/MedicalHistory.jsx
+// components/MedicalHistory.jsx
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { medicalHistoryState } from '../atoms/symptomAtoms';
+import { Button, Checkbox } from 'flowbite-react';
 
 function MedicalHistory({ onNext, onPrev }) {
     const [medicalHistory, setMedicalHistory] = useRecoilState(medicalHistoryState);
@@ -19,25 +20,30 @@ function MedicalHistory({ onNext, onPrev }) {
     };
 
     return (
-        <div className="space-y-4">
-            <h2 className="text-xl font-bold">Medical History</h2>
-            <p>Please select any pre-existing conditions:</p>
-            <div className="space-y-2">
+        <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">Medical History</h2>
+            <p className="text-gray-700">Please select any pre-existing conditions:</p>
+            <div className="space-y-4">
                 {conditions.map(condition => (
-                    <label key={condition} className="flex items-center space-x-2">
-                        <input
-                            type="checkbox"
+                    <div key={condition} className="flex items-center">
+                        <Checkbox
+                            id={condition}
                             checked={medicalHistory.includes(condition)}
                             onChange={() => handleToggle(condition)}
-                            className="form-checkbox"
                         />
-                        <span>{condition}</span>
-                    </label>
+                        <label htmlFor={condition} className="ml-2 text-sm text-gray-700">
+                            {condition}
+                        </label>
+                    </div>
                 ))}
             </div>
             <div className="flex justify-between">
-                <button onClick={onPrev} className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back</button>
-                <button onClick={onNext} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Next</button>
+                <Button color="light" onClick={onPrev}>
+                    Back
+                </Button>
+                <Button color="blue" onClick={onNext}>
+                    Next
+                </Button>
             </div>
         </div>
     );

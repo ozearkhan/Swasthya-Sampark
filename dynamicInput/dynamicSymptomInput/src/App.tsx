@@ -35,9 +35,9 @@ function App() {
     return (
         <RecoilRoot>
             <ErrorBoundary>
-                <div className="container mx-auto px-4 py-8">
-                    <StatusBar currentStep={currentStep} totalSteps={steps.length} />
-                    <div className="mt-8">
+                <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-2xl">
+                        <StatusBar currentStep={currentStep} totalSteps={steps.length} />
                         <CurrentComponent
                             onNext={nextStep}
                             onPrev={prevStep}

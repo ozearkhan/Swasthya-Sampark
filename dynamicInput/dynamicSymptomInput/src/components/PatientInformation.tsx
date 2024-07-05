@@ -1,8 +1,8 @@
-// src/components/PatientInformation.jsx
-// @ts-ignore
+// components/PatientInformation.jsx
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { patientInfoState } from '../atoms/symptomAtoms';
+import { Button, Label, TextInput, Select } from 'flowbite-react';
 
 function PatientInformation({ onNext, onPrev }) {
     const [patientInfo, setPatientInfo] = useRecoilState(patientInfoState);
@@ -12,37 +12,35 @@ function PatientInformation({ onNext, onPrev }) {
     };
 
     return (
-        <div className="space-y-4">
-            <h2 className="text-xl font-bold">Patient Information</h2>
+        <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">Patient Information</h2>
             <div>
-                <label htmlFor="age" className="block text-sm font-medium text-gray-700">Age</label>
-                <input
-                    type="number"
+                <Label htmlFor="age" value="Age" />
+                <TextInput
                     id="age"
                     name="age"
+                    type="number"
                     value={patientInfo.age}
                     onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                    required
                 />
             </div>
             <div>
-                <label htmlFor="gender" className="block text-sm font-medium text-gray-700">Gender</label>
-                <select
-                    id="gender"
-                    name="gender"
-                    value={patientInfo.gender}
-                    onChange={handleChange}
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                >
+                <Label htmlFor="gender" value="Gender" />
+                <Select id="gender" name="gender" value={patientInfo.gender} onChange={handleChange} required>
                     <option value="">Select gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                     <option value="other">Other</option>
-                </select>
+                </Select>
             </div>
             <div className="flex justify-between">
-                <button onClick={onPrev} className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Back</button>
-                <button onClick={onNext} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Next</button>
+                <Button color="light" onClick={onPrev}>
+                    Back
+                </Button>
+                <Button color="blue" onClick={onNext}>
+                    Next
+                </Button>
             </div>
         </div>
     );

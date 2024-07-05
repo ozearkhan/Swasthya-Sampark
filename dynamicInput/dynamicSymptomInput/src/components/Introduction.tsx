@@ -1,18 +1,17 @@
-// src/components/Introduction.jsx
+// components/Introduction.jsx
 import React from 'react';
+import { Button } from 'flowbite-react';
 
 function Introduction({ onNext }) {
     return (
-        <div className="space-y-4">
-            <h1 className="text-2xl font-bold">Welcome to the Symptom Checker</h1>
-            <p>This tool will help you identify potential health issues based on your symptoms.</p>
-            <button
-                onClick={onNext}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                aria-label="Start symptom check"
-            >
-                Start
-            </button>
+        <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900">Welcome to the Symptom Checker</h1>
+            <p className="text-lg text-gray-900">
+                This tool will help you identify potential health issues based on your symptoms.
+            </p>
+            <Button onClick={onNext} color="blue">
+                Start Symptom Check
+            </Button>
         </div>
     );
 }
