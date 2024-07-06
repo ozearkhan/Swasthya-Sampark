@@ -1,8 +1,15 @@
 import RotatingText from "./RotatingText.tsx";
 import '../CSS/HeroSection.css';
 import ButtonComponent from "./ButtonComponent.tsx";
+import {useNavigate} from "react-router-dom";
 
 export function HeroSection() {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/survey');
+    }
+
+
     return (
         <div className="container">
             <div className="heroSectionContent">
@@ -37,10 +44,10 @@ export function HeroSection() {
                         </h3>
                     </div>
                     <div className="buttonContainer">
-                        <ButtonComponent>
+                        <ButtonComponent onClick={handleClick} >
                             Get Started
                         </ButtonComponent>
-                        <ButtonComponent transparent={true}>
+                        <ButtonComponent transparent={true} onClick={handleClick}>
                             Learn More
                         </ButtonComponent>
                     </div>

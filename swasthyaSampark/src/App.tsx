@@ -1,8 +1,15 @@
 
-
+import {
+    BrowserRouter,
+    Route,
+    Routes,
+} from "react-router-dom"
 import './App.css'
 import Section1 from "./components/Section1.tsx";
 import {NavBar} from "./components/NavBar.tsx";
+
+import LandingPage from "./pages/LandingPage.tsx";
+import SurveyPage from "./pages/SurveyPage.tsx";
 
 
 
@@ -12,9 +19,12 @@ function App() {
 
   return (
       <>
-        <NavBar/>
-        <Section1/>
-
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<LandingPage/>}/>
+                <Route path="/survey" element={<SurveyPage/>}/>
+            </Routes>
+        </BrowserRouter>
       </>
   )
 }
