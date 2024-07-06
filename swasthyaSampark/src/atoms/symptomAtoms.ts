@@ -15,8 +15,8 @@ export const medicalHistoryState = atom({
     default: [],
 });
 
-export const selectedSymptomsState = atom({
-    key: 'selectedSymptomsState',
+export const collectedSymptomsState = atom({
+    key: 'collectedSymptomsState',
     default: [],
 });
 
@@ -29,4 +29,5 @@ export const resultsState = atom({
     key: 'resultsState',
     default: null,
 });
+
 

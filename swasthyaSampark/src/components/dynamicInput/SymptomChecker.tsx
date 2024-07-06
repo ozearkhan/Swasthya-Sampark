@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSocket } from '../../hooks/useSocket';
 import { Button, TextInput, Radio } from 'flowbite-react';
-import {clientIdState} from "../../atoms/symptomAtoms.ts";
+import {clientIdState, collectedSymptomsState} from "../../atoms/symptomAtoms.ts";
 import {useRecoilState} from "recoil";
 
 function SymptomChecker({ onComplete }) {
@@ -13,8 +13,9 @@ function SymptomChecker({ onComplete }) {
     const [output, setOutput] = useState([]);
     const [showReset, setShowReset] = useState(false);
     const { socket, submitSymptom, selectSymptoms, resetProcess } = useSocket();
-    const [collectedSymptoms, setCollectedSymptoms] = useState([]);
+    const [collectedSymptoms, setCollectedSymptoms] = useRecoilState(collectedSymptomsState);
     const [clientId, setClientId] = useRecoilState(clientIdState);
+    const symptoms=new Array() ;
 
     useEffect(() => {
         socket.on('registered',handleRegistered)
@@ -31,10 +32,6 @@ function SymptomChecker({ onComplete }) {
         };
     }, [socket]);
 
-    const handleRegistered = ({clientId})=>{
-        setClientId(clientId);
-        console.log('Client registered with ID:', clientId);
-    };
 
     const handleSymptomProcessed = (result) => {
         setCollectedSymptoms(result.collectedSymptoms);
@@ -44,6 +41,12 @@ function SymptomChecker({ onComplete }) {
             `Collected symptoms: ${result.collectedSymptoms.join(', ')}`,
             `Iteration: ${result.currentIteration}`
         ]);
+
+        setCollectedSymptoms(prevSymptoms =>{
+            const newSymptom = result.addedSymptom.name;
+            return prevSymptoms.includes(newSymptom) ? prevSymptoms : [...prevSymptoms, newSymptom];
+
+        })
 
         if (result.expandedSymptoms.type === 'multiple_choice' || result.expandedSymptoms.type === 'yes_no') {
             setQuestion(result.expandedSymptoms.question);
@@ -103,6 +106,10 @@ function SymptomChecker({ onComplete }) {
         setQuestion('');
         setOutput([]);
         setShowReset(false);
+    };
+    const handleRegistered = ({clientId})=>{
+        setClientId(clientId);
+        console.log('Client registered with ID:', clientId);
     };
 
     return (

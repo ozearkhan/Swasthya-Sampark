@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSocket } from '../../hooks/useSocket';
 import axios from 'axios';
-import {useRecoilValue} from "recoil";
-import {clientIdState} from "../../atoms/symptomAtoms.ts";
+import {useRecoilState, useRecoilValue} from "recoil";
+import {clientIdState, collectedSymptomsState} from "../../atoms/symptomAtoms.ts";
 import {useNavigate} from "react-router-dom";
 
 function Results({ onPrev }) {
@@ -12,6 +12,7 @@ function Results({ onPrev }) {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
     const clientId = useRecoilValue(clientIdState);
+    const collectedSymptoms = useRecoilValue(collectedSymptomsState);
     const navigate = useNavigate();
 
     const handleNewCheck = ()=>{
@@ -21,8 +22,8 @@ function Results({ onPrev }) {
     useEffect(() => {
 
             const fetchPredictions = async () => {
-                if(!clientId) {
-                    setError("Client ID missing");
+                if(collectedSymptoms.length === 0) {
+                    setError("No symptoms Collected");
                     return;
                 }
 
@@ -31,9 +32,15 @@ function Results({ onPrev }) {
                 try {
                     const symptomResponse = await axios.get(`http://localhost:8080/api/symptoms/client/${clientId}`);
                     const symptoms = symptomResponse.data;
-                    const formattedSymptoms = {symptoms: symptoms.map(s=>s.name)};
+                    const formattedSymptoms = {symptoms: collectedSymptoms};
+                    console.log("Symptoms to predict:", formattedSymptoms);
+
+                    // const formattedSymptoms = {symptoms: symptoms.map(s=>s.name)};
+                    console.log("client ID"+clientId);
+                    console.log(formattedSymptoms);
 
                     const response = await axios.post('http://127.0.0.1:8000/predict', formattedSymptoms);
+                    const sortedPredictions = response.data.sort((a, b) => b.Chances - a.Chances);
                     console.log(response);
                     setPredictions(response.data);
                 } catch (error) {
@@ -79,7 +86,7 @@ function Results({ onPrev }) {
                             </div>
                             <span className="text-sm font-medium text-gray-500">{prediction.Chances.toFixed(1)}%</span>
                         </div>
-                        <p className="text-md text-gray-600 mb-2"><span className="font-semibold">Specialist:</span> {prediction.Specialist}</p>
+                        <p className="text-md text-gray-600 mb-2"><span className="font-semibold text-black">Specialist:</span> {prediction.Specialist}</p>
                         <p className="text-sm text-gray-500">{prediction.Description}</p>
                     </div>
                 ))}
@@ -96,7 +103,7 @@ function Results({ onPrev }) {
                         className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-6 py-3 text-center transition duration-300 ease-in-out">
                     Previous
                 </button>
-                <button onClick={resetProcess}
+                <button onClick={handleNewCheck}
                         className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-6 py-3 text-center transition duration-300 ease-in-out">
                     Start New Check
                 </button>

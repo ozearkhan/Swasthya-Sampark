@@ -5,8 +5,7 @@ import {
     Routes,
 } from "react-router-dom"
 import './App.css'
-import Section1 from "./components/Section1.tsx";
-import {NavBar} from "./components/NavBar.tsx";
+
 
 import LandingPage from "./pages/LandingPage.tsx";
 import SurveyPage from "./pages/SurveyPage.tsx";
