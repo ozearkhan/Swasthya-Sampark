@@ -8,8 +8,6 @@ function LandingPage() {
         <>
             <NavBar/>
             <Section1/>
-
-
         </>
     )
 }

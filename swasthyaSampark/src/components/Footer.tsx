@@ -30,7 +30,7 @@ function Footer() {
                 </div>
                 <hr className="my-6 border-gray-300 sm:mx-auto lg:my-8" />
                 <span className="block text-sm text-gray-700 sm:text-center">
-          © {new Date().getFullYear()} <a href="/" className="hover:underline text-black">Symptom Checker™</a>. All Rights Reserved.
+          © {new Date().getFullYear()} <a href="/" className="hover:underline text-black">Swasthya Sampark™</a>. All Rights Reserved.
         </span>
             </div>
         </footer>

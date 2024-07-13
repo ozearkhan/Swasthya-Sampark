@@ -39,7 +39,7 @@ const Section1 = () => {
         <Section>
             <HeroSection />
             <HeroSectionBottomDiv />
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center my-10">
                 <h2 className="text-lg max-w-6xl text-center text-gray-700 font-semibold">
                     Swasthya Sampark utilizes advanced AI technology to offer you a thorough health assessment. Once the assessment is complete, you’ll receive a personalized health report with potential diagnoses.
                 </h2>
