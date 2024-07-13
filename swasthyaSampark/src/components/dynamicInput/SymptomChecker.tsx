@@ -44,7 +44,8 @@ function SymptomChecker({ onComplete }) {
 
         setCollectedSymptoms(prevSymptoms =>{
             const newSymptom = result.addedSymptom.name;
-            return prevSymptoms.includes(newSymptom) ? prevSymptoms : [...prevSymptoms, newSymptom];
+            const toLowerCase = newSymptom.toLowerCase();
+            return prevSymptoms.includes(toLowerCase) ? prevSymptoms : [...prevSymptoms, toLowerCase];
 
         })
 
