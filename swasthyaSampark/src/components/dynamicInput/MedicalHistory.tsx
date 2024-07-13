@@ -1,7 +1,7 @@
 // components/MedicalHistory.jsx
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import { medicalHistoryState } from '../atoms/symptomAtoms';
+import { medicalHistoryState } from '../../atoms/symptomAtoms';
 import { Button, Checkbox } from 'flowbite-react';
 
 function MedicalHistory({ onNext, onPrev }) {
@@ -38,12 +38,18 @@ function MedicalHistory({ onNext, onPrev }) {
                 ))}
             </div>
             <div className="flex justify-between">
-                <Button color="light" onClick={onPrev}>
+                <button onClick={onPrev}
+                        className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+
+                >
                     Back
-                </Button>
-                <Button color="blue" onClick={onNext}>
+                </button>
+                <button onClick={onNext}
+                        className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+
+                >
                     Next
-                </Button>
+                </button>
             </div>
         </div>
     );

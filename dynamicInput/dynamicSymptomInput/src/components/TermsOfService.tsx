@@ -1,39 +1,31 @@
-// src/components/TermsOfService.jsx
+// components/TermsOfService.jsx
 import React, { useState } from 'react';
+import { Button, Checkbox } from 'flowbite-react';
 
 function TermsOfService({ onNext, onPrev }) {
     const [accepted, setAccepted] = useState(false);
 
     return (
-        <div className="space-y-4">
-            <h2 className="text-xl font-bold">Terms of Service</h2>
-            <p>Please read and accept our terms of service before continuing.</p>
-            <div className="terms-content h-40 overflow-y-auto border p-2">
+        <div className="space-y-6">
+            <h2 className="text-2xl font-bold text-gray-900">Terms of Service</h2>
+            <p className="text-gray-700">Please read and accept our terms of service before continuing.</p>
+            <div className="h-40 overflow-y-auto border p-4 rounded-lg bg-gray-50">
                 {/* Terms of service content goes here */}
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
             </div>
-            <label className="flex items-center space-x-2">
-                <input
-                    type="checkbox"
-                    checked={accepted}
-                    onChange={(e) => setAccepted(e.target.checked)}
-                    className="form-checkbox"
-                />
-                <span>I accept the terms of service</span>
-            </label>
+            <div className="flex items-center space-x-2">
+                <Checkbox id="accept" checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />
+                <label htmlFor="accept" className="text-sm text-gray-700">
+                    I accept the terms of service
+                </label>
+            </div>
             <div className="flex justify-between">
-                <button
-                    onClick={onPrev}
-                    className="bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                >
+                <Button color="light" onClick={onPrev}>
                     Back
-                </button>
-                <button
-                    onClick={onNext}
-                    disabled={!accepted}
-                    className={`${accepted ? 'bg-blue-500 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
-                >
+                </Button>
+                <Button color="blue" onClick={onNext} disabled={!accepted}>
                     Continue
-                </button>
+                </Button>
             </div>
         </div>
     );

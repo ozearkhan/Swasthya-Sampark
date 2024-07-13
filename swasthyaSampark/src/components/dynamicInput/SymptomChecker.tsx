@@ -1,7 +1,9 @@
 // components/SymptomChecker.jsx
 import React, { useState, useEffect } from 'react';
-import { useSocket } from '../hooks/useSocket';
+import { useSocket } from '../../hooks/useSocket';
 import { Button, TextInput, Radio } from 'flowbite-react';
+import {clientIdState, collectedSymptomsState} from "../../atoms/symptomAtoms.ts";
+import {useRecoilState} from "recoil";
 
 function SymptomChecker({ onComplete }) {
     const [symptom, setSymptom] = useState('');
@@ -11,26 +13,41 @@ function SymptomChecker({ onComplete }) {
     const [output, setOutput] = useState([]);
     const [showReset, setShowReset] = useState(false);
     const { socket, submitSymptom, selectSymptoms, resetProcess } = useSocket();
+    const [collectedSymptoms, setCollectedSymptoms] = useRecoilState(collectedSymptomsState);
+    const [clientId, setClientId] = useRecoilState(clientIdState);
+    const symptoms=new Array() ;
 
     useEffect(() => {
+        socket.on('registered',handleRegistered)
         socket.on('symptomProcessed', handleSymptomProcessed);
         socket.on('processComplete', handleProcessComplete);
         socket.on('error', handleError);
 
+
         return () => {
+            socket.off('registered',handleRegistered)
             socket.off('symptomProcessed', handleSymptomProcessed);
             socket.off('processComplete', handleProcessComplete);
             socket.off('error', handleError);
         };
     }, [socket]);
 
+
     const handleSymptomProcessed = (result) => {
+        setCollectedSymptoms(result.collectedSymptoms);
         setIsProcessing(false);
         setOutput(prev => [...prev,
             `Added symptom: ${result.addedSymptom.name}`,
             `Collected symptoms: ${result.collectedSymptoms.join(', ')}`,
             `Iteration: ${result.currentIteration}`
         ]);
+
+        setCollectedSymptoms(prevSymptoms =>{
+            const newSymptom = result.addedSymptom.name;
+            const toLowerCase = newSymptom.toLowerCase();
+            return prevSymptoms.includes(toLowerCase) ? prevSymptoms : [...prevSymptoms, toLowerCase];
+
+        })
 
         if (result.expandedSymptoms.type === 'multiple_choice' || result.expandedSymptoms.type === 'yes_no') {
             setQuestion(result.expandedSymptoms.question);
@@ -48,7 +65,9 @@ function SymptomChecker({ onComplete }) {
     const handleProcessComplete = (result) => {
         setOutput(prev => [...prev, `Process complete. Further symptoms likely: ${result.furtherSymptomsLikely}`]);
         setShowReset(true);
-        onComplete(result);
+        const formattedSymptoms = { symptoms: collectedSymptoms };
+        onComplete(formattedSymptoms);
+        // onComplete(result);
     };
 
     const handleError = (error) => {
@@ -89,6 +108,10 @@ function SymptomChecker({ onComplete }) {
         setOutput([]);
         setShowReset(false);
     };
+    const handleRegistered = ({clientId})=>{
+        setClientId(clientId);
+        console.log('Client registered with ID:', clientId);
+    };
 
     return (
         <div className="space-y-6">
@@ -103,9 +126,12 @@ function SymptomChecker({ onComplete }) {
                         onChange={(e) => setSymptom(e.target.value)}
                         disabled={isProcessing}
                     />
-                    <Button color="blue" onClick={handleSubmitSymptom} disabled={isProcessing}>
+                    <button onClick={handleSubmitSymptom} disable
+                            className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+
+                            d={isProcessing}>
                         Submit
-                    </Button>
+                    </button>
                 </div>
             )}
             {question && (
@@ -123,9 +149,12 @@ function SymptomChecker({ onComplete }) {
                             </label>
                         </div>
                     ))}
-                    <Button color="blue" onClick={handleSubmitAnswers}>
+                    <button onClick={handleSubmitAnswers}
+                            className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+
+                    >
                         Next
-                    </Button>
+                    </button>
                 </div>
             )}
             <div className="mt-4 space-y-2">
@@ -134,9 +163,12 @@ function SymptomChecker({ onComplete }) {
                 ))}
             </div>
             {showReset && (
-                <Button color="red" onClick={handleResetProcess}>
+                <button onClick={handleResetProcess}
+                        className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+
+                >
                     Start Over
-                </Button>
+                </button>
             )}
         </div>
     );

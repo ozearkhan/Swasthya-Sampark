@@ -1,12 +1,14 @@
-/** {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    box-sizing: border-box;*/
-/*    color: #F6F4F2;*/
-/*}*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #F6F4F2;
+}
 body {
     font-family: 'Poppins', sans-serif;
     font-weight: 400; /* Default font weight */
+    color: #F6F4F2;
+
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { RecoilRoot } from 'recoil';
-import ErrorBoundary from './components/ErrorBoundary';
-import Introduction from './components/Introduction';
-import TermsOfService from './components/TermsOfService';
-import PatientInformation from './components/PatientInformation';
-import MedicalHistory from './components/MedicalHistory';
-import SymptomChecker from './components/SymptomChecker';
-import Results from './components/Results';
-import StatusBar from './components/StatusBar';
+import ErrorBoundary from '../components/dynamicInput/ErrorBoundary';
+import Introduction from '../components/dynamicInput/Introduction';
+import TermsOfService from '../components/dynamicInput/TermsOfService';
+import PatientInformation from '../components/dynamicInput/PatientInformation';
+import MedicalHistory from '../components/dynamicInput/MedicalHistory';
+import SymptomChecker from '../components/dynamicInput/SymptomChecker';
+import Results from '../components/dynamicInput/Results';
+import StatusBar from '../components/dynamicInput/StatusBar';
 
 const steps = [
     { component: Introduction, label: 'Introduction' },
@@ -18,7 +18,7 @@ const steps = [
     { component: Results, label: 'Results' },
 ];
 
-function App() {
+function SurveyPage() {
     const [currentStep, setCurrentStep] = useState(0);
     const [results, setResults] = useState(null);
 
@@ -35,8 +35,8 @@ function App() {
     return (
         <RecoilRoot>
             <ErrorBoundary>
-                <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-xl shadow-2xl">
+                <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                    <div className="max-w-4xl w-full space-y-8 bg-white p-10 rounded-xl shadow-2xl">
                         <StatusBar currentStep={currentStep} totalSteps={steps.length} />
                         <CurrentComponent
                             onNext={nextStep}
@@ -51,4 +51,4 @@ function App() {
     );
 }
 
-export default App;
+export default SurveyPage;
