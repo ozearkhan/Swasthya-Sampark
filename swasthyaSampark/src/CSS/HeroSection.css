@@ -84,7 +84,7 @@
 
 @media screen and (max-width: 2560px) and (min-width: 1441px) {
     .container {
-        margin: 40px 150px;
+        margin: 80px 150px;
     }
 
     .heroSectionContent {
@@ -110,7 +110,7 @@
 
 @media screen and (max-width: 1440px) and (min-width: 1081px) {
     .container {
-        margin: 40px 100px;
+        margin: 80px 100px;
     }
 
     .heroSectionContent {

@@ -1,6 +1,7 @@
 /* NavBar.css */
 
 /* Style for navbar when scrolled */
+
 .navbar-sticky.scrolled {
     background-color: #fff !important;
     transition: background-color 200ms linear;

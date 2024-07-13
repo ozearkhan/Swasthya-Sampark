@@ -33,14 +33,14 @@ export function NavBar() {
             }`}
             id="navbar-sticky"
         >
-            <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-1">
+            <div className="max-w-screen-2xl w-[95%] flex flex-wrap items-center justify-between mx-auto p-1">
                 <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Logo />
                 </a>
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <button
                         type="button"
-                        className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-lg px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+                        className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
                         onClick={handleStartSurvey}
 
                     >
