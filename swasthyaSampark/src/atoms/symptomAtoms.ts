@@ -20,14 +20,4 @@ export const collectedSymptomsState = atom({
     default: [],
 });
 
-export const currentStepState = atom({
-    key: 'currentStepState',
-    default: 0,
-});
-
-export const resultsState = atom({
-    key: 'resultsState',
-    default: null,
-});
-
 

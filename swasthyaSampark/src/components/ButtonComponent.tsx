@@ -1,4 +1,3 @@
-import React from 'react';
 import '../CSS/ButtonComponent.css';
 
 const ButtonComponent = ({ children, transparent = false ,onClick}) => {

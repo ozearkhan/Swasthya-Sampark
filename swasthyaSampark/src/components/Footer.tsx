@@ -1,5 +1,4 @@
 // components/Footer.jsx
-import React from 'react';
 import Logo from './Logo';
 
 function Footer() {
