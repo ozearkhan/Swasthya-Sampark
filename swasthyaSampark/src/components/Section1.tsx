@@ -6,6 +6,9 @@ import { HeroSectionBottomDiv } from "./HeroSectionBottomDiv.tsx";
 import '../CSS/HeroSection.css';
 import Footer from "./Footer.tsx";
 import MarqueeComponent from "./MarqueeComponent.tsx";
+import Card from "./Card.tsx";
+import WhoWeHelp from "./WhoWeHelp.tsx";
+import OurSolution from "./OurSolution.tsx";
 
 const Section = styled.div`
     display: flex;
@@ -41,6 +44,8 @@ const Section1 = () => {
             <HeroSection />
             <HeroSectionBottomDiv />
             <MarqueeComponent/>
+            <WhoWeHelp/>
+            <OurSolution/>
             <Footer/>
         </Section>
     );

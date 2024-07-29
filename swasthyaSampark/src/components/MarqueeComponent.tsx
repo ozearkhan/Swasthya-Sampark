@@ -7,7 +7,7 @@ import BiotronicsLogo from "./marqueeBrandLogos/BiotronicsLogo.tsx";
 
 function MarqueeComponent() {
     return (
-        <div className="bg-white flex justify-center py-14 my-24">
+        <div className="bg-white flex justify-center py-14 my-24 max-w-full">
             <div className="flex flex-col justify-center content-center max-w-7xl items-center space-y-10">
                 <Marquee autoFill={true} gradient={true} gradientColor="white" pauseOnHover={true} speed={100}>
                     <Practo />
