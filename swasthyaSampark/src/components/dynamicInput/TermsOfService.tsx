@@ -1,44 +1,59 @@
-// components/TermsOfService.jsx
 import React, { useState } from 'react';
-import { Button, Checkbox } from 'flowbite-react';
+import { CheckCircle, ArrowLeft, ArrowRight } from 'lucide-react';
 
-function TermsOfService({ onNext, onPrev }) {
+const TermsOfService = ({ onNext, onPrev }) => {
     const [accepted, setAccepted] = useState(false);
 
     return (
-        <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-gray-900">Terms of Service</h2>
-            <p className="text-gray-700">Please read and accept our terms of service before continuing.</p>
-            <div className="h-40 text-black overflow-y-auto border p-4 rounded-lg bg-gray-50">
-                {/* Terms of service content goes here */}
-
-                Checkup isn’t a diagnosis.<br/> It’s only for your information and not a qualified medical opinion.<br/>
-                Checkup isn’t for emergencies.<br/> Call your local emergency number right away when there’s a health
-                emergency.<br/>
-                Your data is safe.<br/> The information you give won’t be shared or used to identify you.<br/>
-            </div>
-            <div className="flex items-center space-x-2">
-                <Checkbox id="accept" checked={accepted} onChange={(e) => setAccepted(e.target.checked)} />
-                <label htmlFor="accept" className="text-sm text-gray-700">
-                    I accept the terms of service
-                </label>
+        <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Terms of Service</h2>
+            <div className="bg-white shadow overflow-hidden sm:rounded-lg mb-6">
+                <div className="px-4 py-5 sm:p-6">
+                    <h3 className="text-lg leading-6 font-medium text-gray-900 mb-4">
+                        Please review and accept our terms before continuing
+                    </h3>
+                    <div className="text-sm text-black space-y-4 mb-6">
+                        <p><strong>Not a Diagnosis:</strong> HealthAssist provides information for educational purposes only and is not a qualified medical opinion.</p>
+                        <p><strong>Emergency Services:</strong> For any health emergency, immediately contact your local emergency services.</p>
+                        <p><strong>Data Privacy:</strong> Your information is confidential and will not be used for identification purposes.</p>
+                        <p><strong>Medical Advice:</strong> Always consult with a healthcare professional for personalized medical advice.</p>
+                    </div>
+                    <div className="flex items-center">
+                        <input
+                            id="accept-terms"
+                            name="accept-terms"
+                            type="checkbox"
+                            className="h-4 w-4 text-emerald-600 focus:ring-emerald-500 border-gray-300 rounded"
+                            checked={accepted}
+                            onChange={(e) => setAccepted(e.target.checked)}
+                        />
+                        <label htmlFor="accept-terms" className="ml-2 block text-sm text-gray-900">
+                            I have read and accept the terms of service
+                        </label>
+                    </div>
+                </div>
             </div>
             <div className="flex justify-between">
-                <button onClick={onPrev}
-                                            className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
-
+                <button
+                    onClick={onPrev}
+                    className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                 >
+                    <ArrowLeft className="mr-2 -ml-1 h-5 w-5" aria-hidden="true" />
                     Back
                 </button>
-                <button onClick={onNext} disabled={!accepted}
-                                            className="text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-lg text-base px-3 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
-
+                <button
+                    onClick={onNext}
+                    disabled={!accepted}
+                    className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white ${
+                        accepted ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-gray-300 cursor-not-allowed'
+                    } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500`}
                 >
                     Continue
+                    <ArrowRight className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
                 </button>
             </div>
         </div>
     );
-}
+};
 
 export default TermsOfService;
