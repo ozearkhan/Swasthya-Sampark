@@ -6,18 +6,20 @@ import { defer } from "react-router-dom";
 async function roleChecking() {
     try {
         let token = localStorage.getItem("token");
-        let data = await axios.post(`${BACKEND_URL}/api/auth/verify`, {
+        let dataResponse = await axios.post(`${BACKEND_URL}/api/auth/verify`, {
             token,
         });
-        console.log("roleChecking data:", data.data);
-        let doctorData = await axios.post(
+        let doctorDataResponse = await axios.post(
             `${BACKEND_URL}/api/consultation/getdoctor`,
             {
                 token,
             }
         );
-        console.log("doctorData:", doctorData.data);
-        return { role: data.data.role, doctorList: doctorData.data.doctors };
+
+        console.log("roleChecking data:", dataResponse.data);
+        console.log("doctorData:", doctorDataResponse.data);
+
+        return { role: dataResponse.data.role, doctorList: doctorDataResponse.data.doctors };
     } catch (error) {
         console.error("Error in roleChecking:", error);
         throw error;
@@ -27,3 +29,4 @@ async function roleChecking() {
 export default function deferRoleCheckingAndDoctors() {
     return defer({ role: roleChecking() });
 }
+
