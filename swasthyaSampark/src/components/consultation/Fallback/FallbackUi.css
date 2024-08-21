@@ -1,0 +1,12 @@
+.main-loader-fallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+}
+.main-loader-fallback2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18vh;
+}

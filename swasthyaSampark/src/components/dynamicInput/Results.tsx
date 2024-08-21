@@ -20,7 +20,7 @@ function Results({ onPrev }) {
     }
 
     const handleConsultationClick = () => {
-        window.location.href = 'http://localhost:5173';
+        navigate('/consultation');
     }
 
     useEffect(() => {

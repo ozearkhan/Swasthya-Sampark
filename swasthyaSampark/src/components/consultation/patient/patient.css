@@ -1,0 +1,137 @@
+.patient-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-container {
+  flex-grow: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.patient-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.patient-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.patient-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.patient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.patient-card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.patient-card-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.patient-card-description {
+  font-size: 1rem;
+  color: #666;
+}
+
+.login-container {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.login-image-container {
+  flex: 1;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.login-form {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.login-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.google-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.google-button-logo {
+  max-width: 230px;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .patient-title {
+    font-size: 2rem;
+  }
+
+  .patient-card {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-image-container {
+    display: none;
+  }
+
+  .login-form {
+    padding: 30px;
+  }
+}

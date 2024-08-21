@@ -1,0 +1,76 @@
+/* CSS for DoctorCard - Save this in doctorCard.css */
+.doctor-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 240px;
+    margin: 16px;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.doctor-card__image-container {
+    height: 200px;
+    overflow: hidden;
+}
+
+.doctor-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-card__image {
+    transform: scale(1.05);
+}
+
+.doctor-card__content {
+    padding: 16px;
+}
+
+.doctor-card__name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 12px 0;
+}
+
+.doctor-card__button {
+    width: 100%;
+    padding: 10px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.doctor-card__button:hover {
+    background-color: #45a049;
+}
+
+.doctor-card__button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.5);
+}
+
+@media (max-width: 768px) {
+    .doctor-card {
+        width: calc(50% - 32px);
+    }
+}
+
+@media (max-width: 480px) {
+    .doctor-card {
+        width: calc(100% - 32px);
+    }
+}
