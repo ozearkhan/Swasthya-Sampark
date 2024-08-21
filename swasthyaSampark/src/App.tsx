@@ -15,16 +15,17 @@ import AiDoc from "./components/consultation/patient/AiDoc.jsx";
 import PageNotFound from "./components/consultation/PageNotFound/PageNotFound.jsx";
 import RequestConsultation from "./components/consultation/patient/RequestConsulation.jsx";
 import UploadReports from "./components/consultation/patient/UploadReports.jsx";
-
+import deferRoleChecking from "./components/consultation/deferRoleChecking";
+import deferRoleCheckingAndDoctors from "./components/consultation/deferRoleCheckingAndDoctors";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Analytics } from "@vercel/analytics/react";
 
 // Define loader functions for routes that need them
-const chatBotLoader = async () => {
-    // You can fetch data here if needed
-    // For now, we'll just return a static role
-    return { role: "patient" };
-};
+// const chatBotLoader = async () => {
+//     // You can fetch data here if needed
+//     // For now, we'll just return a static role
+//     return { role: "patient" };
+// };
 
 const router = createBrowserRouter([
     { path: "/", element: <LandingPage /> },
@@ -35,15 +36,26 @@ const router = createBrowserRouter([
     {
         path: "/consultation/chat_bot",
         element: <ChatBot />,
-        loader: chatBotLoader
+        loader: deferRoleChecking,
     },
     { path: "/consultation/logout", element: <Logout /> },
     { path: "/consultation/doctor/schedule", element: <Schedule /> },
     { path: "/consultation/doctor/schedule/:id", element: <Room /> },
-    { path: "/consultation/doctor_data_visualization", element: <PatientDataVisual /> },
-    { path: "/consultation/patient_request_consultation", element: <RequestConsultation /> },
+    {
+        path: "/consultation/doctor_data_visualization",
+        element: <PatientDataVisual />,
+    },
+    {
+        path: "/consultation/patient_request_consultation",
+        element: <RequestConsultation />,
+        loader: deferRoleCheckingAndDoctors,
+    },
     { path: "/consultation/ai_doctor", element: <AiDoc /> },
-    { path: "/consultation/upload_reports", element: <UploadReports /> },
+    {
+        path: "/consultation/upload_reports",
+        element: <UploadReports />,
+        loader: deferRoleChecking,
+    },
     { path: "*", element: <PageNotFound /> },
 ]);
 

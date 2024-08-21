@@ -11,7 +11,7 @@ import Copyright from '../Copyright/Copyright';
 import './UploadReports.css';
 
 function UploadReports() {
-    const { role = 'noRole', doctorList = [] } = useLoaderData();
+    const { role = 'noRole' } = useLoaderData();
     const navigate = useNavigate();
     const [isPatient, setIsPatient] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -19,11 +19,6 @@ function UploadReports() {
     const [showFlashy, setShowFlashy] = useState(false);
     const [image, setImage] = useState(null);
     const [resp, setResp] = useState('');
-
-    // Debugging: Log the initial data
-    console.log("useLoaderData result:", { role, doctorList });
-    console.log("isPatient state:", isPatient);
-    console.log("isLoading state:", isLoading);
 
     useEffect(() => {
         if (role === 'doctor') {
@@ -33,7 +28,6 @@ function UploadReports() {
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
-        console.log("Selected file:", file);
         const reader = new FileReader();
         reader.onload = (e) => setImage(e.target.result);
         reader.readAsDataURL(file);
@@ -42,13 +36,10 @@ function UploadReports() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         setIsLoading(true);
-        console.log("Submitting the form...");
         try {
             const formData = new FormData();
             const fileInput = document.querySelector('input[type="file"]');
             formData.append('uploaded_files', fileInput.files[0]);
-
-            console.log("Sending file to backend...");
             const serverRes = await axios.post(
                 `${process.env.REACT_APP_BACKEND_URL}/api/image_to_text/textract`,
                 formData,
@@ -56,22 +47,19 @@ function UploadReports() {
                     headers: { 'Content-Type': 'multipart/form-data' },
                 }
             );
-            console.log("Received response from backend:", serverRes.data);
             setResp(marked(serverRes.data.summaryData));
         } catch (err) {
-            console.error("Error during file upload:", err);
+            console.error('Error during file upload:', err);
         } finally {
             setIsLoading(false);
         }
     };
 
     if (isLoading) {
-        console.log("Loading spinner displayed...");
         return <FallBackUi />;
     }
 
     if (role === 'noRole' && !isPatient) {
-        console.log("User needs to log in as a patient.");
         return (
             <div className="login-container">
                 <Navbar isPatient={!isPatient} />
@@ -80,13 +68,11 @@ function UploadReports() {
                     <GoogleLogin
                         onSuccess={async (credentialResponse) => {
                             setIsLoading(true);
-                            console.log("Google login successful:", credentialResponse);
                             try {
                                 const { data } = await axios.post(
                                     `${process.env.REACT_APP_BACKEND_URL}/api/auth/generateTokenP`,
                                     { token: credentialResponse.credential }
                                 );
-                                console.log("Received data from generateTokenP:", data);
                                 if (data.token === 'tokenNotGranted') {
                                     setIsEmailDuplicate(true);
                                     return;
@@ -111,7 +97,6 @@ function UploadReports() {
         );
     }
 
-    console.log("Rendering upload reports form...");
     return (
         <div className="upload-container">
             <Navbar isPatient={true} isLogout={true} />

@@ -10,7 +10,7 @@ async function roleChecking() {
       token,
     });
     console.log("roleChecking data:", data.data);
-    return data.data.role;
+    return { role: data.data.role };
   } catch (error) {
     console.error("Error in roleChecking:", error);
     throw error;

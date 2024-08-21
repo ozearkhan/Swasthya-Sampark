@@ -10,7 +10,6 @@ async function roleChecking() {
             token,
         });
         console.log("roleChecking data:", data.data);
-
         let doctorData = await axios.post(
             `${BACKEND_URL}/api/consultation/getdoctor`,
             {
@@ -18,7 +17,6 @@ async function roleChecking() {
             }
         );
         console.log("doctorData:", doctorData.data);
-
         return { role: data.data.role, doctorList: doctorData.data.doctors };
     } catch (error) {
         console.error("Error in roleChecking:", error);
