@@ -1,148 +1,62 @@
-import Navbar from "../Navbar/NavBar.jsx";
-import PatientPhoto from "/thumbnails/patient.png";
-import { useLoaderData, Await } from "react-router-dom";
-import { GoogleLogin } from "@react-oauth/google";
-import button_logo from "/button_logo/google_gif3.gif";
-import { useNavigate } from "react-router-dom";
-import { useState, Suspense } from "react";
-import "./patient.css";
-import BACKEND_URL from "../services/api";
+import React, { Suspense, useState } from "react";
+import { useLoaderData, Await, useNavigate } from "react-router-dom";
 import axios from "axios";
-import FallBackUi from "../Fallback/FallbackUi";
-import FallBackUi2 from "../Fallback/FallbackUi2";
-import SuccessMessage from "../FlashyMessage/SuccessMessage";
-import DuplicateEmail from "../FlashyMessage/DuplicateEmail";
-import { ThreeDots } from "react-loader-spinner";
+import Navbar from "../Navbar/NavBar.jsx";
 import DoctorCard from "./DoctorCard";
-import Copyright from "../Copyright/Copyright";
+import BACKEND_URL from "../services/api";
 
 function RequestConsultation() {
-    const loaderData = useLoaderData();
-    const { role = 'noRole', doctorList = [] } = loaderData || {};
+    const { role: rolePromise } = useLoaderData();
     const navigate = useNavigate();
-    const [isPatient, setIsPatient] = useState(false);
-    const [isDoctor, setIsDoctor] = useState(false);
-    const [isLogout, setIsLogout] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
-    const [showFlashy, setShowFlashy] = useState(false);
-    const [sendingMail, setSendingMail] = useState(false);
-
-    // Debugging: Log the initial data
-    console.log("useLoaderData result:", { role, doctorList });
-    console.log("isPatient state:", isPatient);
-    console.log("isDoctor state:", isDoctor);
-    console.log("isLogout state:", isLogout);
-
-    // Handle fallback UI if loader data is not available
-    if (!loaderData || !role || !doctorList) {
-        return <FallBackUi />;
-    }
+    const [availableDoctors, setAvailableDoctors] = useState([]);
 
     const requestDoctorLogin = async (id) => {
         try {
-            setSendingMail(true);
-            setIsLoading(true);
             let token = localStorage.getItem("token");
-
             console.log("Requesting doctor login for ID:", id);
-            await axios.post(`${BACKEND_URL}/api/consultation/request/${id}`, {
-                token,
-            });
-            window.location.reload();
+            await axios.post(`${BACKEND_URL}/api/consultation/request/${id}`, { token });
+            // Instead of reloading, remove the doctor from the list
+            setAvailableDoctors(prev => prev.filter(doctor => doctor.uuid !== id));
         } catch (err) {
             console.error("Error in requestDoctorLogin:", err);
-        } finally {
-            setIsLoading(false);
-            setSendingMail(false);
         }
     };
 
     return (
-        <>
-            <Suspense
-                fallback={
-                    <div className="main-loader-fallback">
-                        <ThreeDots
-                            visible={true}
-                            height="120"
-                            width="120"
-                            color="#4fa94d"
-                            ariaLabel="three-dots-loading"
-                            wrapperStyle={{}}
-                        />
-                    </div>
-                }
-            >
-                <Await resolve={role}>
-                    {(resolvedRole) => {
-                        // Debugging: Log the resolved role
-                        console.log("Resolved role:", resolvedRole);
+        <Suspense fallback={<div className="flex justify-center items-center h-screen">
+            <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
+        </div>}>
+            <Await resolve={rolePromise}>
+                {(resolvedData) => {
+                    console.log("Resolved data:", resolvedData);
+                    const { role, doctorList } = resolvedData;
 
-                        if (!resolvedRole) return <FallBackUi />;
+                    if (role === "doctor") {
+                        navigate("/consultation/doctor");
+                        return null;
+                    }
 
-                        if (resolvedRole === "doctor") {
-                            navigate("/consultation/doctor");
-                        }
+                    if (role === "noRole") {
+                        navigate("/");
+                        return null;
+                    }
 
-                        if (isLoading && sendingMail) {
-                            console.log("Sending mail in progress...");
-                            return (
-                                <>
-                                    <h1 className="sendMail">Sending Mail to Doctor ✉️</h1>
-                                    <FallBackUi2 />
-                                </>
-                            );
-                        }
+                    if (availableDoctors.length === 0 && doctorList) {
+                        setAvailableDoctors(doctorList);
+                    }
 
-                        if (isLoading) {
-                            console.log("Loading data...");
-                            return <FallBackUi />;
-                        }
-
-                        if (resolvedRole === "noRole" && isEmailDuplicate) {
-                            console.log("Duplicate email found for user.");
-                            return (
-                                <>
-                                    <Navbar isPatient={!isPatient} isDoctor={!isDoctor} />
-                                    <DuplicateEmail
-                                        message={"A Doctor Account with This Email Already Exists"}
-                                    />
-                                    <h1 className="signHeading">Sign in as Patient</h1>
-                                    <div className="mainLogin">
-                                        {/* ... */}
-                                    </div>
-                                    <Copyright />
-                                </>
-                            );
-                        }
-
-                        if (resolvedRole === "noRole" && !isPatient && !isDoctor) {
-                            console.log("User is not logged in as a patient or doctor.");
-                            return (
-                                <>
-                                    {/* ... */}
-                                </>
-                            );
-                        }
-
-                        console.log("Rendering doctor list...");
-                        return (
-                            <>
-                                <Navbar isPatient={true} isLogout={true} />
-                                {showFlashy && (
-                                    <SuccessMessage
-                                        message={"You're Now Logged in as a Patient"}
-                                    />
-                                )}
-                                <h1 style={{ margin: 0, fontWeight: "bold", padding: "30px" }}>
+                    return (
+                        <div className="min-h-screen bg-gray-100">
+                            <Navbar isPatient={true} isLogout={true} />
+                            <div className="container mx-auto px-4 py-8">
+                                <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
                                     Request Consultation
                                 </h1>
-                                {doctorList.length > 0 ? (
-                                    <div className="doctorList">
-                                        {doctorList.map((doctor, index) => (
+                                {availableDoctors.length > 0 ? (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                        {availableDoctors.map((doctor, index) => (
                                             <DoctorCard
-                                                key={index}
+                                                key={doctor.uuid}
                                                 name={`Doctor ${index + 1}`}
                                                 picture={doctor.picture}
                                                 uuid={doctor.uuid}
@@ -151,17 +65,19 @@ function RequestConsultation() {
                                         ))}
                                     </div>
                                 ) : (
-                                    <div style={{ textAlign: "center", marginTop: "30px" }}>
+                                    <div className="text-center text-xl text-gray-600">
                                         No doctors available for consultation.
                                     </div>
                                 )}
-                                <Copyright />
-                            </>
-                        );
-                    }}
-                </Await>
-            </Suspense>
-        </>
+                            </div>
+                            <footer className="mt-12 text-center text-gray-500">
+                                © 2024 Your Company. All rights reserved.
+                            </footer>
+                        </div>
+                    );
+                }}
+            </Await>
+        </Suspense>
     );
 }
 

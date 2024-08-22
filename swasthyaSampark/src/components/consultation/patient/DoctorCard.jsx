@@ -18,4 +18,3 @@ const DoctorCard = ({ name, picture, uuid, logicMagic }) => {
 };
 
 export default DoctorCard;
-

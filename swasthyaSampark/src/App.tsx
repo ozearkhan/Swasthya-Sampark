@@ -33,6 +33,7 @@ const router = createBrowserRouter([
     { path: "/consultation", element: <ConsultationPage /> },
     { path: "/consultation/doctor", element: <Doctor /> },
     { path: "/consultation/patient", element: <Patient /> },
+
     {
         path: "/consultation/chat_bot",
         element: <ChatBot />,
