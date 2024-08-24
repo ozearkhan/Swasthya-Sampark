@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterative Symptom Checker</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <style>
+        #expandedSymptoms button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Iterative Symptom Checker</h1>
+<div id="inputArea">
+    <input id="symptomInput" type="text" placeholder="Enter a symptom">
+    <button onclick="submitSymptom()">Submit</button>
+</div>
+<div id="questionArea" style="display: none;">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button onclick="submitAnswers()">Next</button>
+</div>
+<div id="output"></div>
+<button id="resetButton" onclick="resetProcess()" style="display: none;">Start Over</button>
+
+<script>
+    const socket = io();
+    let isProcessing = false;
+    let currentOptions = [];
+
+    function submitSymptom() {
+        if (isProcessing) return;
+        const symptom = document.getElementById('symptomInput').value;
+        if (symptom.trim() === '') return;
+        isProcessing = true;
+        socket.emit('submitSymptom', symptom);
+        document.getElementById('symptomInput').value = '';
+    }
+
+    function submitAnswers() {
+        const selectedSymptoms = [];
+        const checkboxes = document.querySelectorAll('#options input[type="checkbox"]:checked');
+        checkboxes.forEach(checkbox => selectedSymptoms.push(checkbox.value));
+
+        const radioButtons = document.querySelectorAll('#options input[type="radio"]:checked');
+        radioButtons.forEach(radio => selectedSymptoms.push(radio.value));
+
+        if (selectedSymptoms.length > 0) {
+            socket.emit('selectSymptoms', selectedSymptoms);
+        }
+    }
+
+    function resetProcess() {
+        socket.emit('resetProcess');
+        isProcessing = false;
+        currentOptions = [];
+        document.getElementById('inputArea').style.display = 'block';
+        document.getElementById('questionArea').style.display = 'none';
+        document.getElementById('output').innerHTML = '';
+        document.getElementById('resetButton').style.display = 'none';
+        document.getElementById('symptomInput').value = '';
+    }
+
+    socket.on('symptomProcessed', (result) => {
+        isProcessing = false;
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML += `<p>Added symptom: ${result.addedSymptom.name}</p>`;
+        outputDiv.innerHTML += `<p>Collected symptoms: ${result.collectedSymptoms.join(', ')}</p>`;
+        outputDiv.innerHTML += `<p>Iteration: ${result.currentIteration}</p>`;
+
+        const inputArea = document.getElementById('inputArea');
+        const questionArea = document.getElementById('questionArea');
+        const question = document.getElementById('question');
+        const options = document.getElementById('options');
+
+        if (result.expandedSymptoms.type === 'multiple_choice' || result.expandedSymptoms.type === 'yes_no') {
+            inputArea.style.display = 'none';
+            questionArea.style.display = 'block';
+            question.textContent = result.expandedSymptoms.question;
+            options.innerHTML = '';
+            currentOptions = result.expandedSymptoms.options || ['Yes', 'No', "Don't know"];
+            const inputType = result.expandedSymptoms.type === 'multiple_choice' ? 'checkbox' : 'radio';
+            currentOptions.forEach(option => {
+                options.innerHTML += `
+                        <div>
+                            <input type="${inputType}" id="${option}" name="symptom" value="${option}">
+                            <label for="${option}">${option}</label>
+                        </div>
+                    `;
+            });
+        } else {
+            inputArea.style.display = 'block';
+            questionArea.style.display = 'none';
+        }
+
+        if (!result.shouldContinue) {
+            inputArea.style.display = 'none';
+            questionArea.style.display = 'none';
+            document.getElementById('resetButton').style.display = 'block';
+        }
+    });
+
+    socket.on('processComplete', (result) => {
+        const outputDiv = document.getElementById('output');
+        outputDiv.innerHTML += `<p>Process complete. Further symptoms likely: ${result.furtherSymptomsLikely}</p>`;
+        document.getElementById('resetButton').style.display = 'block';
+    });
+
+    socket.on('processReset', () => {
+        document.getElementById('inputArea').style.display = 'block';
+        document.getElementById('questionArea').style.display = 'none';
+        document.getElementById('output').innerHTML = '';
+        document.getElementById('resetButton').style.display = 'none';
+    });
+
+    socket.on('error', (error) => {
+        isProcessing = false;
+        document.getElementById('output').innerHTML += `<p>Error: ${error}</p>`;
+    });
+</script>
+</body>
+</html>
