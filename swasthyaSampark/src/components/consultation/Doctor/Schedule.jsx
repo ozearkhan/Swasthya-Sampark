@@ -15,7 +15,7 @@ function Schedule() {
     }, [navigate, roomId]);
 
     return (
-        <>
+        <div className="doctor-wrapper">
             <Navbar isDoctor={true} isLogout={true} />
             <div className="consultation-room">
                 <h1 className="consultation-room__title">Schedule Consultation</h1>
@@ -37,7 +37,7 @@ function Schedule() {
                 </div>
             </div>
             <Copyright />
-        </>
+        </div>
     );
 }
 

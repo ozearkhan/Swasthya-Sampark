@@ -1,7 +1,15 @@
+.doctor-wrapper{
+  display : flex;
+  flex-direction : column;
+  min-height : 100vh;
+}
 .doctor-portal {
+
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  flex-grow: 1;
+
 }
 
 .doctor-portal__title {
@@ -55,6 +63,7 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 40px 20px;
+  flex-grow: 1;
 }
 
 .consultation-room__title {

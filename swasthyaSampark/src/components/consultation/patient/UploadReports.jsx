@@ -162,7 +162,7 @@ function ReportSummary() {
                     </div>
                 )}
             </div>
-            <Copyright className="mt-auto" />
+            <Copyright className="mt-auto min-h-screen" />
         </div>
     );
 }

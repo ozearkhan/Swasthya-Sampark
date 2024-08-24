@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "../Navbar/NavBar.jsx";
 import DoctorCard from "./DoctorCard";
 import BACKEND_URL from "../services/api";
+import Copyright from "../Copyright/Copyright.jsx";
 
 function RequestConsultation() {
     const { role: rolePromise } = useLoaderData();
@@ -46,9 +47,9 @@ function RequestConsultation() {
                     }
 
                     return (
-                        <div className="min-h-screen bg-gray-100">
+                        <div className="flex flex-col min-h-screen">
                             <Navbar isPatient={true} isLogout={true} />
-                            <div className="container mx-auto px-4 py-8">
+                            <div className="flex-grow container mx-auto px-4 py-8">
                                 <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
                                     Request Consultation
                                 </h1>
@@ -70,9 +71,7 @@ function RequestConsultation() {
                                     </div>
                                 )}
                             </div>
-                            <footer className="mt-12 text-center text-gray-500">
-                                © 2024 Your Company. All rights reserved.
-                            </footer>
+                            <Copyright />
                         </div>
                     );
                 }}

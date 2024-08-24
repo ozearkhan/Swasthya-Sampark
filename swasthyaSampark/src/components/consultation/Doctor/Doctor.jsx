@@ -48,7 +48,7 @@ function Doctor() {
     if (isLoading) return <FallBackUi />;
 
     return (
-        <>
+        <div className="doctor-wrapper">
             <Navbar isDoctor={isAuthenticated} isLogout={isAuthenticated} />
             {showFlashy && <SuccessMessage message="You're now logged in as a Doctor" />}
             {isEmailDuplicate && (
@@ -91,8 +91,10 @@ function Doctor() {
                     </div>
                 )}
             </div>
+
             <Copyright />
-        </>
+
+        </div>
     );
 }
 

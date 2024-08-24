@@ -43,14 +43,14 @@ function Room() {
     }, [id, navigate]);
 
     return (
-        <>
+        <div className="doctor-wrapper">
             <Navbar isPatient={true} isDoctor={true} isLogout={true} />
             <div className="consultation-room">
                 <h1 className="consultation-room__title">Consultation Room</h1>
                 <div ref={containerRef} style={{ width: '100%', height: '600px' }} />
             </div>
             <Copyright />
-        </>
+        </div>
     );
 }
 
