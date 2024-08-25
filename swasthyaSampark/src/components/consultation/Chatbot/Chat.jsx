@@ -26,27 +26,42 @@ const ChatBot = () => {
 
   useEffect(scrollToBottom, [messages]);
 
-  const handlePrompt = async () => {
-    if (!value.trim()) return;
+    const handlePrompt = async () => {
+        if (!value.trim()) return;
 
-    try {
-      setLoading(true);
-      setMessages(prev => [...prev, { type: 'user', content: value }]);
-      setValue("");
+        try {
+            setLoading(true);
+            setMessages(prev => [...prev, { type: 'user', content: value }]);
+            setValue("");
 
-      let response = await axios.post(`${BACKEND_URL}/api/chat/bot1`, {
-        prompt: value,
-      });
+            const predefinedPrompt = `
+Please provide information about the following health concern in this format:
 
-      const botResponse = marked(response.data.response);
-      setMessages(prev => [...prev, { type: 'bot', content: botResponse }]);
-    } catch (err) {
-      console.log(err);
-      setMessages(prev => [...prev, { type: 'bot', content: "Network Error 😢" }]);
-    } finally {
-      setLoading(false);
-    }
-  };
+**Definition:**
+**Causes:**
+**Symptoms:**
+**Treatment:**
+**When to Seek Medical Attention:**
+**Prevention:**
+
+Also, note that the user will be seeing a doctor later, so there's no need to include disclaimers about AI not providing medical advice. Here's the user's question:
+
+${value}
+`;
+
+            let response = await axios.post(`${BACKEND_URL}/api/chat/bot1`, {
+                prompt: predefinedPrompt,
+            });
+
+            const botResponse = marked(response.data.response);
+            setMessages(prev => [...prev, { type: 'bot', content: botResponse }]);
+        } catch (err) {
+            console.log(err);
+            setMessages(prev => [...prev, { type: 'bot', content: "Network Error 😢" }]);
+        } finally {
+            setLoading(false);
+        }
+    };
 
   return (
       <div className="w-full max-w-4xl h-[70vh] flex flex-col border border-gray-300 rounded-lg overflow-hidden shadow-lg bg-white">

@@ -7228,3 +7228,104 @@
 {"level":"info","message":"New client registered with ID: 5392fd78-6438-4205-9cf2-090afa39e1ab","timestamp":"2024-08-24T06:07:46.258Z"}
 {"level":"info","message":"New client registered with ID: 5392fd78-6438-4205-9cf2-090afa39e1ab","timestamp":"2024-08-24T06:07:46.258Z"}
 {"level":"info","message":"Sent 'registered' event with clientId: 5392fd78-6438-4205-9cf2-090afa39e1ab","timestamp":"2024-08-24T06:07:46.258Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2024-08-25T08:18:20.227Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-25T08:18:22.708Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-25T08:18:22.708Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:18:28.549Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:18:28.558Z"}
+{"level":"info","message":"New client registered with ID: 24dba7fa-73cb-4aba-83a1-e87ceffb2b18","timestamp":"2024-08-25T08:18:28.805Z"}
+{"level":"info","message":"New client registered with ID: 24dba7fa-73cb-4aba-83a1-e87ceffb2b18","timestamp":"2024-08-25T08:18:28.805Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 24dba7fa-73cb-4aba-83a1-e87ceffb2b18","timestamp":"2024-08-25T08:18:28.806Z"}
+{"level":"info","message":"New client registered with ID: 58dde95c-ba2c-4ffb-889b-a3895f60335a","timestamp":"2024-08-25T08:18:28.807Z"}
+{"level":"info","message":"New client registered with ID: 58dde95c-ba2c-4ffb-889b-a3895f60335a","timestamp":"2024-08-25T08:18:28.808Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 58dde95c-ba2c-4ffb-889b-a3895f60335a","timestamp":"2024-08-25T08:18:28.808Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:18:36.023Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:18:36.024Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:18:36.244Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:18:36.249Z"}
+{"level":"info","message":"New client registered with ID: 614402ee-538a-403a-ad08-cc9270fb5e4b","timestamp":"2024-08-25T08:18:36.494Z"}
+{"level":"info","message":"New client registered with ID: 614402ee-538a-403a-ad08-cc9270fb5e4b","timestamp":"2024-08-25T08:18:36.494Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 614402ee-538a-403a-ad08-cc9270fb5e4b","timestamp":"2024-08-25T08:18:36.495Z"}
+{"level":"info","message":"New client registered with ID: d020182a-3f67-49a6-a805-93aa64fae876","timestamp":"2024-08-25T08:18:36.496Z"}
+{"level":"info","message":"New client registered with ID: d020182a-3f67-49a6-a805-93aa64fae876","timestamp":"2024-08-25T08:18:36.496Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: d020182a-3f67-49a6-a805-93aa64fae876","timestamp":"2024-08-25T08:18:36.497Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:20:41.240Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:20:41.241Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:20:41.586Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:20:41.588Z"}
+{"level":"info","message":"New client registered with ID: a51a4f86-0c6d-4509-a9d7-ca8c084aaa99","timestamp":"2024-08-25T08:20:41.841Z"}
+{"level":"info","message":"New client registered with ID: a51a4f86-0c6d-4509-a9d7-ca8c084aaa99","timestamp":"2024-08-25T08:20:41.841Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: a51a4f86-0c6d-4509-a9d7-ca8c084aaa99","timestamp":"2024-08-25T08:20:41.842Z"}
+{"level":"info","message":"New client registered with ID: e44c7307-521c-4a7f-923c-4f96c5d9b411","timestamp":"2024-08-25T08:20:41.843Z"}
+{"level":"info","message":"New client registered with ID: e44c7307-521c-4a7f-923c-4f96c5d9b411","timestamp":"2024-08-25T08:20:41.843Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: e44c7307-521c-4a7f-923c-4f96c5d9b411","timestamp":"2024-08-25T08:20:41.844Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:24:32.166Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:24:32.167Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:24:32.512Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:24:32.515Z"}
+{"level":"info","message":"New client registered with ID: c0716479-f2ba-44e2-8e45-1a5330c0cfb1","timestamp":"2024-08-25T08:24:32.768Z"}
+{"level":"info","message":"New client registered with ID: c0716479-f2ba-44e2-8e45-1a5330c0cfb1","timestamp":"2024-08-25T08:24:32.768Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: c0716479-f2ba-44e2-8e45-1a5330c0cfb1","timestamp":"2024-08-25T08:24:32.769Z"}
+{"level":"info","message":"New client registered with ID: bf166e78-754d-47ef-a9e7-46753f0cb531","timestamp":"2024-08-25T08:24:32.770Z"}
+{"level":"info","message":"New client registered with ID: bf166e78-754d-47ef-a9e7-46753f0cb531","timestamp":"2024-08-25T08:24:32.771Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: bf166e78-754d-47ef-a9e7-46753f0cb531","timestamp":"2024-08-25T08:24:32.771Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:25:15.534Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:25:15.535Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:25:15.683Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:25:15.687Z"}
+{"level":"info","message":"New client registered with ID: 23a9ecb8-d040-4c59-8756-66529dbd5240","timestamp":"2024-08-25T08:25:15.933Z"}
+{"level":"info","message":"New client registered with ID: 23a9ecb8-d040-4c59-8756-66529dbd5240","timestamp":"2024-08-25T08:25:15.933Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 23a9ecb8-d040-4c59-8756-66529dbd5240","timestamp":"2024-08-25T08:25:15.934Z"}
+{"level":"info","message":"New client registered with ID: 937de356-7d02-4877-a41f-39a3279d31ae","timestamp":"2024-08-25T08:25:15.935Z"}
+{"level":"info","message":"New client registered with ID: 937de356-7d02-4877-a41f-39a3279d31ae","timestamp":"2024-08-25T08:25:15.935Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 937de356-7d02-4877-a41f-39a3279d31ae","timestamp":"2024-08-25T08:25:15.936Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:25:43.856Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:25:43.857Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:25:44.000Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:25:44.002Z"}
+{"level":"info","message":"New client registered with ID: 5a9eb807-f7d4-4c3e-9a41-a33a51c1cbc6","timestamp":"2024-08-25T08:25:44.245Z"}
+{"level":"info","message":"New client registered with ID: 5a9eb807-f7d4-4c3e-9a41-a33a51c1cbc6","timestamp":"2024-08-25T08:25:44.246Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 5a9eb807-f7d4-4c3e-9a41-a33a51c1cbc6","timestamp":"2024-08-25T08:25:44.246Z"}
+{"level":"info","message":"New client registered with ID: 77df777c-fc6e-4344-adda-97e95400aa33","timestamp":"2024-08-25T08:25:44.249Z"}
+{"level":"info","message":"New client registered with ID: 77df777c-fc6e-4344-adda-97e95400aa33","timestamp":"2024-08-25T08:25:44.249Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 77df777c-fc6e-4344-adda-97e95400aa33","timestamp":"2024-08-25T08:25:44.250Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:31:22.477Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:31:22.478Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:31:22.828Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:31:22.831Z"}
+{"level":"info","message":"New client registered with ID: 0d2b04a3-de97-40a9-93ea-b8a5d4e9211d","timestamp":"2024-08-25T08:31:23.114Z"}
+{"level":"info","message":"New client registered with ID: 0d2b04a3-de97-40a9-93ea-b8a5d4e9211d","timestamp":"2024-08-25T08:31:23.114Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 0d2b04a3-de97-40a9-93ea-b8a5d4e9211d","timestamp":"2024-08-25T08:31:23.115Z"}
+{"level":"info","message":"New client registered with ID: 3f6baa65-12a8-4bff-8054-03e1f9d23c8c","timestamp":"2024-08-25T08:31:23.118Z"}
+{"level":"info","message":"New client registered with ID: 3f6baa65-12a8-4bff-8054-03e1f9d23c8c","timestamp":"2024-08-25T08:31:23.118Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 3f6baa65-12a8-4bff-8054-03e1f9d23c8c","timestamp":"2024-08-25T08:31:23.118Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:33:58.424Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:33:58.425Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:33:58.768Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:33:58.769Z"}
+{"level":"info","message":"New client registered with ID: e53676f0-8c57-440e-af32-0bd4e1891817","timestamp":"2024-08-25T08:33:59.023Z"}
+{"level":"info","message":"New client registered with ID: e53676f0-8c57-440e-af32-0bd4e1891817","timestamp":"2024-08-25T08:33:59.024Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: e53676f0-8c57-440e-af32-0bd4e1891817","timestamp":"2024-08-25T08:33:59.024Z"}
+{"level":"info","message":"New client registered with ID: 32b9e935-4c70-46c4-90eb-72a62b1eb65f","timestamp":"2024-08-25T08:33:59.028Z"}
+{"level":"info","message":"New client registered with ID: 32b9e935-4c70-46c4-90eb-72a62b1eb65f","timestamp":"2024-08-25T08:33:59.028Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 32b9e935-4c70-46c4-90eb-72a62b1eb65f","timestamp":"2024-08-25T08:33:59.028Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:38:57.616Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:38:57.617Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:38:57.977Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:38:57.979Z"}
+{"level":"info","message":"New client registered with ID: c79a5fd5-45dc-4a1c-9f82-3b237b8c33e2","timestamp":"2024-08-25T08:38:58.235Z"}
+{"level":"info","message":"New client registered with ID: c79a5fd5-45dc-4a1c-9f82-3b237b8c33e2","timestamp":"2024-08-25T08:38:58.235Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: c79a5fd5-45dc-4a1c-9f82-3b237b8c33e2","timestamp":"2024-08-25T08:38:58.236Z"}
+{"level":"info","message":"New client registered with ID: b1c74b80-d14e-4fce-81ec-96d6a1397bee","timestamp":"2024-08-25T08:38:58.237Z"}
+{"level":"info","message":"New client registered with ID: b1c74b80-d14e-4fce-81ec-96d6a1397bee","timestamp":"2024-08-25T08:38:58.237Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: b1c74b80-d14e-4fce-81ec-96d6a1397bee","timestamp":"2024-08-25T08:38:58.238Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:41:05.543Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-25T08:41:05.544Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:41:05.932Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-25T08:41:05.934Z"}
+{"level":"info","message":"New client registered with ID: ca776fb0-7abd-4edb-aa81-d6d13e0f1450","timestamp":"2024-08-25T08:41:06.190Z"}
+{"level":"info","message":"New client registered with ID: ca776fb0-7abd-4edb-aa81-d6d13e0f1450","timestamp":"2024-08-25T08:41:06.190Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: ca776fb0-7abd-4edb-aa81-d6d13e0f1450","timestamp":"2024-08-25T08:41:06.190Z"}
+{"level":"info","message":"New client registered with ID: 1d4a6b4c-6399-4929-82b6-16df50b9ecca","timestamp":"2024-08-25T08:41:06.194Z"}
+{"level":"info","message":"New client registered with ID: 1d4a6b4c-6399-4929-82b6-16df50b9ecca","timestamp":"2024-08-25T08:41:06.194Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 1d4a6b4c-6399-4929-82b6-16df50b9ecca","timestamp":"2024-08-25T08:41:06.195Z"}
