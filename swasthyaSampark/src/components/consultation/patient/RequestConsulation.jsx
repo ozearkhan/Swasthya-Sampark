@@ -15,11 +15,19 @@ function RequestConsultation() {
         try {
             let token = localStorage.getItem("token");
             console.log("Requesting doctor login for ID:", id);
-            await axios.post(`${BACKEND_URL}/api/consultation/request/${id}`, { token });
-            // Instead of reloading, remove the doctor from the list
-            setAvailableDoctors(prev => prev.filter(doctor => doctor.uuid !== id));
+            const response = await axios.post(`${BACKEND_URL}/api/consultation/request/${id}`, { token });
+
+            if (response.data.message === "All Mails Sent") {
+                setAvailableDoctors(prev => prev.filter(doctor => doctor.uuid !== id));
+                // Show success message to the user
+                alert("Consultation request sent successfully!");
+            } else {
+                console.error("Unexpected response:", response.data);
+                alert("There was an issue sending the consultation request. Please try again.");
+            }
         } catch (err) {
-            console.error("Error in requestDoctorLogin:", err);
+            console.error("Error in requestDoctorLogin:", err.response?.data || err.message);
+            alert("An error occurred while sending the consultation request. Please try again later.");
         }
     };
 
@@ -58,7 +66,7 @@ function RequestConsultation() {
                                         {availableDoctors.map((doctor, index) => (
                                             <DoctorCard
                                                 key={doctor.uuid}
-                                                name={`Doctor ${index + 1}`}
+                                                name={doctor.name || `Doctor ${doctor.email}`}
                                                 picture={doctor.picture}
                                                 uuid={doctor.uuid}
                                                 logicMagic={() => requestDoctorLogin(doctor.uuid)}

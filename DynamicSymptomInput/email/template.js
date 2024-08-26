@@ -40,7 +40,7 @@ let template = (pa) => {
       <li>Once the meeting link is created, send the link to the email address provided in this email.</li>
     </ol>
     <p>Thank you,</p>
-    <p>Connect-Health</p>
+    <p>Swasthya Sampark</p>
   </body>
   </html>
   `;

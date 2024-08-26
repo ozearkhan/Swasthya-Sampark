@@ -38,7 +38,7 @@ let template2 = `<!DOCTYPE html>
         <p>Thank you for choosing our service. We wish you a swift recovery.</p>
         <br>
         <p>Sincerely,</p>
-        <p>Connect-Heath</p>
+        <p>Swasthya Sampark</p>
     </div>
 </body>
 </html>

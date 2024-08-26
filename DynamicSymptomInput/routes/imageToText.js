@@ -8,7 +8,6 @@ const router = express.Router();
 const multer = require("multer");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-const AWS = require("aws-sdk");
 const path = require("path");
 
 // AWS.config.update({

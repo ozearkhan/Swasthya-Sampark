@@ -1,36 +1,26 @@
 // components/Footer.jsx
-import Logo from '../../Logo.tsx';
+import HealthLogo from "../../../../public/logo/HealthLogo.jsx";
 
 function Footer() {
     return (
-        <footer className="m-4 ">
-            <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 ">
-                <div className="sm:flex sm:items-center sm:justify-between">
-                    <a href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse ">
-                        <Logo/>
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
+        <footer className="bg-gray-100 border-t border-gray-200">
+            <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-center space-x-6">
+                    <div className="flex-shrink-0">
+                        <HealthLogo className="h-8 w-auto" />
+                    </div>
 
-            </span>
-                    </a>
-                    <ul className="flex flex-wrap items-center mb-6 text-sm font-medium sm:mb-0">
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6 text-gray-700">About</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6 text-black">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline me-4 md:me-6 text-gray-700">Terms of Service</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:underline text-black">Contact</a>
-                        </li>
-                    </ul>
+                    <div className="text-sm text-gray-500">
+                        © {new Date().getFullYear()} Swasthya Sampark™. All Rights Reserved.
+                    </div>
+
+                    <nav className="flex space-x-4">
+                        <a href="#" className="text-sm text-gray-500 hover:text-gray-900">About</a>
+                        <a href="#" className="text-sm text-gray-500 hover:text-gray-900">Privacy</a>
+                        <a href="#" className="text-sm text-gray-500 hover:text-gray-900">Terms</a>
+                        <a href="#" className="text-sm text-gray-500 hover:text-gray-900">Contact</a>
+                    </nav>
                 </div>
-                <hr className="my-6 border-gray-300 sm:mx-auto lg:my-8" />
-                <span className="block text-sm text-gray-700 sm:text-center">
-          © {new Date().getFullYear()} <a href="/" className="hover:underline text-black">Swasthya Sampark™</a>. All Rights Reserved.
-        </span>
             </div>
         </footer>
     );
