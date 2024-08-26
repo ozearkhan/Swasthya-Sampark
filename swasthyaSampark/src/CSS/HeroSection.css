@@ -50,7 +50,7 @@
     line-height: 1.2;
 }
 
-.h1 {
+.heroSectionContent .h1 {
     color: #302C2C;
     font-family: 'Poppins', sans-serif;
     font-size: 72px;
@@ -60,7 +60,7 @@
     letter-spacing: -2.16px;
 }
 
-.h3 {
+.heroSectionContent .h3 {
     color: rgba(48, 44, 44, 0.65);
     font-family: 'Poppins', sans-serif;
     font-size: 20px;

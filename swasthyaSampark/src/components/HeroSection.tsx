@@ -9,12 +9,11 @@ export function HeroSection() {
         navigate('/survey');
     }
 
-
     return (
         <div className="container">
             <div className="heroSectionContent">
                 <div className="heroSectionTitle">
-                    <h1>
+                    <h1 className="h1">
                         <span className="leftSectionTitle">
                             <span className="leftSectionFirstLine">
                                 Explore Swasthya
@@ -35,12 +34,10 @@ export function HeroSection() {
                 </div>
                 <div className="heroSectionRightPart">
                     <div>
-                        <h3>
-                            <p className="h3">
-                                Swasthya Sampark uses AI to provide health assessments,
-                                personalized reports, lab test recommendations,
-                                and treatment suggestions.
-                            </p>
+                        <h3 className="h3">
+                            Swasthya Sampark uses AI to provide health assessments,
+                            personalized reports, lab test recommendations,
+                            and treatment suggestions.
                         </h3>
                     </div>
                     <div className="buttonContainer">
