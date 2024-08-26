@@ -7,31 +7,24 @@
 .heroSectionContent {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-end; /* Aligns the bottom of the sections */
     gap: 10px;
-    transition: gap 0.3s ease;
 }
 
 .heroSectionTitle {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    max-width: 90%; /* Set a max width to ensure the text wraps in two lines */
     padding-top: 5%;
-    max-width: 70%; /* Adjust this to give more space for the text */
 }
 
 .leftSectionTitle {
-    position: relative;
-    display: inline-flex;
-    max-width: 100%; /* Adjust this to give more space for the text */
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
-    row-gap: 0.1rem;
-    overflow: hidden;
-    color: #302C2C;
+    vertical-align: middle; /* Aligning text and RotatingText to the middle */
 }
+
 
 
 .leftSectionFirstLine {
@@ -73,6 +66,7 @@
 
 .heroSectionRightPart {
     max-width: 30%;
+    align-self: flex-end; /* Align the right section with the bottom of the left section */
 }
 
 .buttonContainer {

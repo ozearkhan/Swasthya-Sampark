@@ -16,19 +16,11 @@ export function HeroSection() {
                     <h1 className="h1">
                         <span className="leftSectionTitle">
                             <span className="leftSectionFirstLine">
-                                Explore Swasthya
+                                Swasthya Sampark's
                             </span>
                             <span className="leftSectionFirstLine">
-                                Sampark's trusted,
+                                trusted, online <RotatingText />
                             </span>
-                            <div className="leftSectionSecondLine">
-                                <span className="leftSectionFirstLine">
-                                    online
-                                </span>
-                                <div>
-                                    <RotatingText />
-                                </div>
-                            </div>
                         </span>
                     </h1>
                 </div>

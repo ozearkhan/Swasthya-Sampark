@@ -1,36 +1,22 @@
-/* Original Styles */
-*,
-*:before,
-*:after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-/*body {*/
-/*    background-color: #e8ecf2;*/
-/*    height: 100vh;*/
-/*    display: grid;*/
-/*    place-items: center;*/
-/*}*/
-
 .rotatingTextContainer {
     display: inline-block;
     border-radius: 15px;
     color: white;
     background-color: #122431;
     font-family: "Poppins", sans-serif;
-    font-size: clamp(14px, 3vw, 50px); /* Responsive font size */
+    font-size: clamp(16px, 3vw, 50px); /* Adjusted upper limit for font size */
     font-weight: 500;
-    text-align: center; /* Center text */
-    transition: background-color 1s, width 0.3s ease; /* Adjusted transition durations */
-    overflow: hidden; /* Prevent text overflow */
+    text-align: center;
+    vertical-align: middle; /* Aligning the rotating text to the middle line */
+    transition: background-color 1s, width 0.3s ease;
+    overflow: hidden;
 }
 
 .rotatingTextContent {
     display: inline-block;
     padding: 15px 20px;
-    white-space: nowrap; /* Prevent wrapping of text */
+    white-space: nowrap;
+    text-overflow: ellipsis; /* Handles overflow with ellipsis */
 }
 
 .rotatingTextContent p {
@@ -41,20 +27,20 @@
 @media screen and (max-width: 1024px) {
     .rotatingTextContent {
         padding: 15px;
-        font-size: clamp(12px, 2.5vw, 20px);
+        font-size: clamp(12px, 2vw, 30px); /* Adjusted upper limit */
     }
 }
 
 @media screen and (max-width: 768px) {
     .rotatingTextContent {
         padding: 10px;
-        font-size: clamp(10px, 2vw, 18px);
+        font-size: clamp(10px, 1.75vw, 24px); /* Adjusted upper limit */
     }
 }
 
 @media screen and (max-width: 480px) {
     .rotatingTextContent {
         padding: 8px;
-        font-size: clamp(8px, 1.5vw, 16px);
+        font-size: clamp(8px, 1.5vw, 18px); /* Adjusted upper limit */
     }
 }
