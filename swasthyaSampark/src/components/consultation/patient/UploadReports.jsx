@@ -1,31 +1,44 @@
 import React, { useState, useEffect } from 'react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
-import { GoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
 import { marked } from 'marked';
 import axios from 'axios';
 import Navbar from '../Navbar/NavBar.jsx';
 import FallBackUi from '../Fallback/FallbackUi';
 import SuccessMessage from '../FlashyMessage/SuccessMessage';
-import DuplicateEmail from '../FlashyMessage/DuplicateEmail';
 import Copyright from '../Copyright/Copyright';
 import BACKEND_URL from "../services/api.js";
+import PatientLogin from './PatientLogin';
 
 function ReportSummary() {
-    const { role = 'noRole' } = useLoaderData();
     const navigate = useNavigate();
-    const [isPatient, setIsPatient] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [showFlashy, setShowFlashy] = useState(false);
     const [image, setImage] = useState(null);
     const [resp, setResp] = useState('');
     const [showDisclaimer, setShowDisclaimer] = useState(true);
 
     useEffect(() => {
-        if (role === 'doctor') {
-            navigate('/consultation/doctor');
-        }
-    }, [role, navigate]);
+        const verifyToken = async () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const response = await axios.post(`${BACKEND_URL}/api/auth/verify`, { token });
+                    if (response.data.role === 'patient') {
+                        setIsAuthenticated(true);
+                    } else {
+                        navigate('/consultation');
+                    }
+                } catch (error) {
+                    console.error('Token verification failed:', error);
+                    localStorage.removeItem('token');
+                }
+            }
+            setIsLoading(false);
+        };
+
+        verifyToken();
+    }, [navigate]);
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];
@@ -67,43 +80,17 @@ function ReportSummary() {
         return <FallBackUi />;
     }
 
-    if (role === 'noRole' && !isPatient) {
+    if (!isAuthenticated) {
         return (
-            <div className="min-h-screen flex flex-col items-center bg-gray-100">
-                <Navbar isPatient={!isPatient} />
-                <div className="w-full max-w-md mt-20 p-8 bg-white rounded-lg shadow-md">
-                    <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Sign in as Patient</h1>
-                    <GoogleLogin
-                        onSuccess={async (credentialResponse) => {
-                            setIsLoading(true);
-                            try {
-                                const { data } = await axios.post(
-                                    `${BACKEND_URL}/api/auth/generateTokenP`,
-                                    { token: credentialResponse.credential }
-                                );
-                                if (data.token === 'tokenNotGranted') {
-                                    setIsEmailDuplicate(true);
-                                    return;
-                                }
-                                localStorage.setItem('token', data.token);
-                                setIsPatient(true);
-                                setShowFlashy(true);
-                            } catch (error) {
-                                console.error('Login failed', error);
-                            } finally {
-                                setIsLoading(false);
-                            }
-                        }}
-                        onError={() => console.log('Google Login Failed')}
-                        theme="outline"
-                        size="large"
-                        shape="rectangular"
-                    />
-                    {isEmailDuplicate && (
-                        <DuplicateEmail message="A Doctor Account with This Email Already Exists" />
-                    )}
+            <div className="min-h-screen flex flex-col bg-gray-100">
+                <Navbar />
+                <div className="flex-grow flex items-center justify-center">
+                    <PatientLogin onLoginSuccess={() => {
+                        setIsAuthenticated(true);
+                        setShowFlashy(true);
+                    }} />
                 </div>
-                <Copyright className="mt-auto" />
+                <Copyright />
             </div>
         );
     }
@@ -162,7 +149,7 @@ function ReportSummary() {
                     </div>
                 )}
             </div>
-            <Copyright className="mt-auto min-h-screen" />
+            <Copyright />
         </div>
     );
 }

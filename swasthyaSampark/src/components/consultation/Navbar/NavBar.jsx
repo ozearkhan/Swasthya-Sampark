@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Logo from "../../Logo.tsx";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import BACKEND_URL from '../services/api';
 import '../../../CSS/ButtonComponent.css';
 import './navbar.css'
 
-export function NavBar({ isPatient, isDoctor, isLogout }) {
+export function NavBar() {
     const [scrolled, setScrolled] = useState(false);
+    const [userRole, setUserRole] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -14,6 +17,24 @@ export function NavBar({ isPatient, isDoctor, isLogout }) {
             setScrolled(offset > 50);
         };
         window.addEventListener('scroll', handleScroll);
+
+        const verifyToken = async () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const response = await axios.post(`${BACKEND_URL}/api/auth/verify`, { token });
+                    setUserRole(response.data.role);
+                } catch (error) {
+                    console.error('Token verification failed:', error);
+                    setUserRole(null);
+                }
+            } else {
+                setUserRole(null);
+            }
+        };
+
+        verifyToken();
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
@@ -21,6 +42,7 @@ export function NavBar({ isPatient, isDoctor, isLogout }) {
 
     const handleLogout = () => {
         localStorage.removeItem('token');
+        setUserRole(null);
         navigate('/');
     };
 
@@ -47,39 +69,50 @@ export function NavBar({ isPatient, isDoctor, isLogout }) {
                     </Link>
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto space-x-4">
                         <ul className="flex flex-col md:flex-row items-center space-x-4 font-medium">
-                            {isPatient && (
+                            {userRole === "patient" && (
                                 <li>
                                     <NavButton to="/consultation/patient">Patient</NavButton>
                                 </li>
                             )}
-                            {isDoctor && (
+                            {userRole === "doctor" && (
                                 <li>
                                     <NavButton to="/consultation/doctor">Doctor</NavButton>
                                 </li>
                             )}
-                            <li>
-                                <NavButton to="/consultation/chat_bot">AI Assistant</NavButton>
-                            </li>
-                            {isLogout && (
-                                <li>
-                                    <button
-                                        onClick={handleLogout}
-                                        className="buttonComponentTransparent"
-                                    >
-                                        Logout
-                                    </button>
-                                </li>
+                            {userRole && (
+                                <>
+                                    <li>
+                                        <NavButton to="/consultation/chat_bot">AI Assistant</NavButton>
+                                    </li>
+                                    <li>
+                                        <button
+                                            onClick={handleLogout}
+                                            className="buttonComponentTransparent"
+                                        >
+                                            Logout
+                                        </button>
+                                    </li>
+                                </>
+                            )}
+                            {!userRole && (
+                                <>
+                                    <li>
+                                        <NavButton to="/consultation/patient">Patient</NavButton>
+                                    </li>
+                                    <li>
+                                        <NavButton to="/consultation/doctor">Doctor</NavButton>
+                                    </li>
+                                    <li>
+                                        <NavButton to="/consultation/chat_bot">AI Assistant</NavButton>
+                                    </li>
+                                </>
                             )}
                         </ul>
                     </div>
                 </div>
-
             </nav>
-            <div className="pt-32">
-
-            </div>
+            <div className="pt-32"></div>
         </>
-
     );
 }
 

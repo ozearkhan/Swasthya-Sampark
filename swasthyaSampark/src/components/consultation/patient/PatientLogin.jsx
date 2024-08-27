@@ -4,13 +4,13 @@ import axios from 'axios';
 import BACKEND_URL from "../services/api.js";
 import DuplicateEmail from '../FlashyMessage/DuplicateEmail';
 
-const DoctorLogin = ({ onLoginSuccess }) => {
+const PatientLogin = ({ onLoginSuccess }) => {
     const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
 
     const handleGoogleLogin = async (credentialResponse) => {
         try {
             const { data } = await axios.post(
-                `${BACKEND_URL}/api/auth/generateTokenD`,
+                `${BACKEND_URL}/api/auth/generateTokenP`,
                 { token: credentialResponse.credential }
             );
             if (data.token === 'tokenNotGranted') {
@@ -26,8 +26,8 @@ const DoctorLogin = ({ onLoginSuccess }) => {
 
     return (
         <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Doctor Sign In</h2>
-            <p className="text-gray-600 text-center mb-6">Access your doctor portal and manage patient information.</p>
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Patient Sign In</h2>
+            <p className="text-gray-600 text-center mb-6">Access your patient portal and manage your health information.</p>
             <div className="flex justify-center mb-6">
                 <GoogleLogin
                     onSuccess={handleGoogleLogin}
@@ -38,10 +38,10 @@ const DoctorLogin = ({ onLoginSuccess }) => {
                 />
             </div>
             {isEmailDuplicate && (
-                <DuplicateEmail message="A Patient Account with This Email Already Exists" />
+                <DuplicateEmail message="A Doctor Account with This Email Already Exists" />
             )}
         </div>
     );
 };
 
-export default DoctorLogin;
+export default PatientLogin;

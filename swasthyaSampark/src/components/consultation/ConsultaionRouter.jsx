@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
 import Patient from "./patient/Patient.jsx";
 import ChatBot from "./Chatbot/Chat.jsx";
-import roleChecking from "./roleChecking.js";
 import Doctor from "./Doctor/Doctor.jsx";
 import Logout from "./Logout/Logout.jsx";
 import Schedule from "./Doctor/Schedule.jsx";
@@ -10,62 +9,51 @@ import Room from "./Doctor/Room.jsx";
 import PatientDataVisual from "./Doctor/PatientDataVisual.jsx";
 import AiDoc from "./patient/AiDoc.jsx";
 import PageNotFound from "./PageNotFound/PageNotFound.jsx";
-import deferRoleChecking from "./deferRoleChecking.js";
 import RequestConsultation from "./patient/RequestConsulation.jsx";
-import deferRoleCheckingAndDoctors from "./deferRoleCheckingAndDoctors.js";
 import UploadReports from "./patient/UploadReports.jsx";
+import RoleBasedRoute from "./RoleBasedRoute";
 
-const ConsultationRouter= () => {
+const ConsultationRouter = () => {
     const router = createBrowserRouter([
         {
             path: "doctor",
-            element: <Doctor />,
-            loader: deferRoleChecking,
+            element: <RoleBasedRoute component={Doctor} allowedRoles={["doctor"]} />,
         },
         {
             path: "patient",
-            element: <Patient />,
-            loader: deferRoleChecking,
+            element: <RoleBasedRoute component={Patient} allowedRoles={["patient"]} />,
         },
         {
             path: "chat_bot",
-            element: <ChatBot />,
-            loader: deferRoleChecking,
+            element: <RoleBasedRoute component={ChatBot} allowedRoles={["patient", "doctor"]} />,
         },
         {
             path: "logout",
-            element: <Logout />,
-            loader: roleChecking,
+            element: <RoleBasedRoute component={Logout} allowedRoles={["patient", "doctor"]} />,
         },
         {
             path: "doctor/schedule",
-            element: <Schedule />,
-            loader: roleChecking,
+            element: <RoleBasedRoute component={Schedule} allowedRoles={["doctor"]} />,
         },
         {
             path: "doctor/schedule/:id",
-            element: <Room />,
-            loader: roleChecking,
+            element: <RoleBasedRoute component={Room} allowedRoles={["doctor"]} />,
         },
         {
             path: "doctor_data_visualization",
-            element: <PatientDataVisual />,
-            loader: roleChecking,
+            element: <RoleBasedRoute component={PatientDataVisual} allowedRoles={["doctor"]} />,
         },
         {
             path: "patient_request_consultation",
-            element: <RequestConsultation />,
-            loader: deferRoleCheckingAndDoctors,
+            element: <RoleBasedRoute component={RequestConsultation} allowedRoles={["patient"]} />,
         },
         {
             path: "ai_doctor",
-            element: <AiDoc />,
-            loader: deferRoleChecking,
+            element: <RoleBasedRoute component={AiDoc} allowedRoles={["patient"]} />,
         },
         {
             path: "upload_reports",
-            element: <UploadReports />,
-            loader: deferRoleChecking,
+            element: <RoleBasedRoute component={UploadReports} allowedRoles={["patient"]} />,
         },
         {
             path: "*",
