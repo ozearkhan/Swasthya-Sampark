@@ -51,7 +51,7 @@ function Patient() {
             <div className="min-h-screen flex flex-col items-center bg-gray-100">
                 <Navbar />
                 <PatientLogin onLoginSuccess={handleLoginSuccess} />
-                <Copyright className="mt-auto" />
+                {/*<Copyright className="mt-auto" />*/}
             </div>
         );
     }

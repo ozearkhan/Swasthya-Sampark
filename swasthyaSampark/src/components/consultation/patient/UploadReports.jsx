@@ -90,7 +90,7 @@ function ReportSummary() {
                         setShowFlashy(true);
                     }} />
                 </div>
-                <Copyright />
+                {/*<Copyright />*/}
             </div>
         );
     }

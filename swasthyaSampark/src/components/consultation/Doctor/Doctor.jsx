@@ -1,47 +1,86 @@
-import React, { useState } from 'react';
-import { GoogleLogin } from '@react-oauth/google';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from '../Navbar/NavBar.jsx';
+import FallBackUi from '../Fallback/FallbackUi';
+import SuccessMessage from '../FlashyMessage/SuccessMessage';
+import Copyright from '../Copyright/Copyright';
 import BACKEND_URL from "../services/api.js";
-import DuplicateEmail from '../FlashyMessage/DuplicateEmail';
+import DoctorLogin from './DoctorLogin';
 
-const DoctorLogin = ({ onLoginSuccess }) => {
-    const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
+function Doctor() {
+    const navigate = useNavigate();
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [showFlashy, setShowFlashy] = useState(false);
 
-    const handleGoogleLogin = async (credentialResponse) => {
-        try {
-            const { data } = await axios.post(
-                `${BACKEND_URL}/api/auth/generateTokenD`,
-                { token: credentialResponse.credential }
-            );
-            if (data.token === 'tokenNotGranted') {
-                setIsEmailDuplicate(true);
-                return;
+    useEffect(() => {
+        const verifyToken = async () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const response = await axios.post(`${BACKEND_URL}/api/auth/verify`, { token });
+                    if (response.data.role === 'doctor') {
+                        setIsAuthenticated(true);
+                    } else {
+                        navigate('/consultation');
+                    }
+                } catch (error) {
+                    console.error('Token verification failed:', error);
+                    localStorage.removeItem('token');
+                }
             }
-            localStorage.setItem('token', data.token);
-            onLoginSuccess();
-        } catch (error) {
-            console.error('Login failed', error);
-        }
+            setIsLoading(false);
+        };
+
+        verifyToken();
+    }, [navigate]);
+
+    const handleLoginSuccess = () => {
+        setIsAuthenticated(true);
+        setShowFlashy(true);
     };
 
-    return (
-        <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Doctor Sign In</h2>
-            <p className="text-gray-600 text-center mb-6">Access your doctor portal and manage patient information.</p>
-            <div className="flex justify-center mb-6">
-                <GoogleLogin
-                    onSuccess={handleGoogleLogin}
-                    onError={() => console.log('Google Login Failed')}
-                    theme="outline"
-                    size="large"
-                    shape="rectangular"
-                />
+    if (isLoading) {
+        return <FallBackUi />;
+    }
+
+    if (!isAuthenticated) {
+        return (
+            <div className="min-h-screen flex flex-col items-center bg-gray-100">
+                <Navbar />
+                <DoctorLogin onLoginSuccess={handleLoginSuccess} />
+                {/*<Copyright className="mt-auto" />*/}
             </div>
-            {isEmailDuplicate && (
-                <DuplicateEmail message="A Patient Account with This Email Already Exists" />
-            )}
+        );
+    }
+
+    return (
+        <div className="doctor-wrapper">
+            <Navbar isDoctor={true} isLogout={true} />
+            {showFlashy && <SuccessMessage message="You're now logged in as a Doctor" />}
+            <div className="doctor-portal">
+                <h1 className="doctor-portal__title">Doctor Portal</h1>
+                <div className="doctor-portal__cards">
+                    <Link to="/consultation/doctor/schedule" className="doctor-portal__card">
+                        <div className="doctor-portal__card-icon">📅</div>
+                        <h2 className="doctor-portal__card-title">Schedule Consultation</h2>
+                        <p className="doctor-portal__card-description">
+                            Manage your consultation schedule
+                        </p>
+                    </Link>
+                    <Link to="/consultation/doctor_data_visualization" className="doctor-portal__card">
+                        <div className="doctor-portal__card-icon">📊</div>
+                        <h2 className="doctor-portal__card-title">Patient Data Visualization</h2>
+                        <p className="doctor-portal__card-description">
+                            View and analyze patient data
+                        </p>
+                    </Link>
+                </div>
+            </div>
+            <Copyright />
         </div>
     );
-};
+}
 
-export default DoctorLogin;
+export default Doctor;
