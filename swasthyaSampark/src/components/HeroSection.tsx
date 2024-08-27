@@ -27,9 +27,7 @@ export function HeroSection() {
                 <div className="heroSectionRightPart">
                     <div>
                         <h3 className="h3">
-                            Swasthya Sampark uses AI to provide health assessments,
-                            personalized reports, online consultation,
-                            and AI assistant.
+                            Swasthya Sampark utilizes AI for accurate health assessments, tailored reports, convenient online consultations, and a helpful AI assistant
                         </h3>
                     </div>
                     <div className="buttonContainer">
