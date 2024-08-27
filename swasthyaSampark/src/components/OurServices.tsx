@@ -15,7 +15,7 @@ import DoctorIcon from "../../public/icon/Doctor.tsx";
 const services = [
     {
         Icon: CardStackIcon,
-        name: "Symptom Checker",
+        name: "Symptom Triage",
         description: (
             <>
                 Leverage our AI-powered Symptom Checker for instant health insights. Describe symptoms and receive personalized guidance within minutes.
@@ -41,7 +41,7 @@ const services = [
     },
     {
         Icon: ChatBubbleIcon,
-        name: "AI Chatbot",
+        name: "HealthGPT",
         description: (
             <>
                 Engage with our AI Chatbot, your virtual health assistant. Powered by cutting-edge AI and ML, it offers:

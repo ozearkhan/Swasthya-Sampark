@@ -28,8 +28,8 @@
 
 /* Hover effects */
 .buttonComponent:hover {
-    background-color: transparent;
-    color: #175134;
+    background-color: #0e3d26;
+    color: white;
 }
 
 .buttonComponentTransparent:hover {

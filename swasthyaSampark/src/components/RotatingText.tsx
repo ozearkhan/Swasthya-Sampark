@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import '../CSS/RotatingText.css';
 
-const words = ['Symptom Checker', 'AI Chatbot', 'Doctor Portal', 'Patient Portal', 'Report Generation'];
+const words = ['Triage', 'Health Guidance', 'HealthGPT', 'Symptom Analysis', 'Report Summary'];
 const colors = ['#122431', '#175134', '#922F10', '#141518', '#B66E28'];
 
 const RotatingText = () => {

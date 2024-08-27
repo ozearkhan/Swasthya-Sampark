@@ -1,20 +1,20 @@
 import ButtonComponent from "./ButtonComponent.tsx";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const OurSolutionCard=({imgSrc,heading,body})=>{
+const OurSolutionCard = ({ imgSrc, heading, body }) => {
     const navigate = useNavigate();
-    const handleClick =()=>{
-        navigate('/survey')
-    }
+    const handleClick = () => {
+        navigate("/survey");
+    };
 
-
-    return <>
-
-
-        <div
-            className="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    return (
+        <div className="max-w-lg bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img className="rounded-t-lg" src={imgSrc} alt=""/>
+                <img
+                    className="rounded-t-lg object-cover h-[360px] w-full" // Adjusted image height
+                    src={imgSrc}
+                    alt=""
+                />
             </a>
             <div className="p-5">
                 <a href="#">
@@ -30,11 +30,9 @@ const OurSolutionCard=({imgSrc,heading,body})=>{
                         Learn More
                     </ButtonComponent>
                 </div>
-
             </div>
         </div>
+    );
+};
 
-
-    </>
-}
 export default OurSolutionCard;
