@@ -70,9 +70,9 @@ function Patient() {
                         </Link>
                         <Link to="/consultation/upload_reports" className="patient-card">
                             <div className="patient-card-icon">📁</div>
-                            <h2 className="patient-card-title">Upload Past Reports</h2>
+                            <h2 className="patient-card-title">Report Summary Generation</h2>
                             <p className="patient-card-description">
-                                Upload and manage your medical reports
+                                Upload and generate you medical report summary
                             </p>
                         </Link>
                         <Link to="/consultation/chat_bot" className="patient-card">

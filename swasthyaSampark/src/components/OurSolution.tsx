@@ -1,7 +1,7 @@
 import OurSolutionCard from "./OurSolutionCard.tsx";
 
 const OurSolution = ()=>{
-    return <div className="flex justify-center items-center flex-col py-36">
+    return <div className="flex justify-center items-center flex-col pt-32">
         <h3 className="h3">Our Solution</h3>
         <div>
             <h1 className="h1 tracking-wider py-4">
@@ -9,7 +9,7 @@ const OurSolution = ()=>{
             </h1>
         </div>
 
-        <div className="grid grid-cols-2 gap-10 py-10">
+        <div className="grid grid-cols-2 gap-4 py-10">
             <OurSolutionCard imgSrc={"/src/assets/checkSymptom.jpg"} heading={"Triage"}
                              body={"Integrates into websites, apps, portals, and call centers for symptom checks, self-triage," +
                                  " condition insights, patient education, and care navigation."}

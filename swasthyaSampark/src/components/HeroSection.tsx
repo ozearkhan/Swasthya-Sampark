@@ -28,8 +28,8 @@ export function HeroSection() {
                     <div>
                         <h3 className="h3">
                             Swasthya Sampark uses AI to provide health assessments,
-                            personalized reports, lab test recommendations,
-                            and treatment suggestions.
+                            personalized reports, online consultation,
+                            and AI assistant.
                         </h3>
                     </div>
                     <div className="buttonContainer">

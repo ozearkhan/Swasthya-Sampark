@@ -31,7 +31,7 @@
     color: #302C2C;
     font-size: 72px;
     font-weight: 500;
-    line-height: 1.1;
+    line-height: 0.8;
 }
 
 .leftSectionSecondLine {
@@ -78,7 +78,7 @@
 
 @media screen and (max-width: 2560px) and (min-width: 1441px) {
     .container {
-        margin: 100px 150px 80px 150px;
+        margin: 160px 150px 80px 150px;
     }
 
     .heroSectionContent {

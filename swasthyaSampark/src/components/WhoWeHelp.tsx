@@ -8,7 +8,7 @@ const WhoWeHelp = ()=>{
             </h1>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 max-w-7xl py-4 lg:grid-cols-2 ">
+        <div className="grid grid-cols-1 gap-4 max-w-7xl py-4 lg:grid-cols-2 ">
             <Card svg={
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000"  height="75px" width="75px">
                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
