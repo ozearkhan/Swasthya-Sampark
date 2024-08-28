@@ -2,11 +2,13 @@ import Card from "./Card.tsx";
 
 const WhoWeHelp = ()=>{
     return<div className="flex justify-center items-center flex-col">
-        <div>
+
             <h1 className="h1 py-10">
                 Who we help?
             </h1>
-        </div>
+
+
+
 
         <div className="grid grid-cols-1 gap-4 max-w-7xl py-4 lg:grid-cols-2 ">
             <Card svg={
