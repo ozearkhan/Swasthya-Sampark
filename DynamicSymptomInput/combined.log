@@ -10161,3 +10161,6 @@
 {"level":"info","message":"New client registered with ID: 56e39331-88fc-4c29-8312-8630f41e330e","timestamp":"2024-08-31T18:06:27.208Z"}
 {"level":"info","message":"Sent 'registered' event with clientId: 56e39331-88fc-4c29-8312-8630f41e330e","timestamp":"2024-08-31T18:06:27.209Z"}
 {"level":"info","message":"Client disconnected","timestamp":"2024-08-31T18:16:35.897Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2024-08-31T18:41:25.737Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:41:28.336Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:41:28.337Z"}
