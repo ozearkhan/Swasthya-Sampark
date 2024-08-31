@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useLoaderData, Await } from "react-router-dom";
 import { marked } from "marked";
 import axios from "axios";
-import BACKEND_URL from "../services/api";
+import BACKEND_URL from "../services/api.js";
 import { Suspense } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import Navbar from "../Navbar/NavBar.jsx";

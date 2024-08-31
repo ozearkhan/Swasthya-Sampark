@@ -62,8 +62,9 @@ export const resultsState = atom({
 // hooks/useSocket.js
 import { useEffect, useCallback } from 'react';
 import io from 'socket.io-client';
+import BACKEND_URL from "../consultation/services/api";
 
-const socket = io('http://localhost:3001', {
+const socket = io(BACKEND_URL, {
     transports: ['websocket'],
     reconnection: true,
     reconnectionAttempts: 5

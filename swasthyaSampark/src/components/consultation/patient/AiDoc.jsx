@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { marked } from "marked";
 import { useLoaderData, Await } from "react-router-dom";
-import BACKEND_URL from "../services/api";
+import BACKEND_URL from "../services/api.js";
 import { Suspense } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import Copyright from "../Copyright/Copyright";

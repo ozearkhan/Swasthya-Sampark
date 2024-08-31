@@ -1,5 +1,5 @@
 import axios from "axios";
-import BACKEND_URL from "./services/api";
+import BACKEND_URL from "./services/api.js";
 export default async function roleChecking() {
   let token = localStorage.getItem("token");
   let data = await axios.post(`${BACKEND_URL}/api/auth/verify`, {

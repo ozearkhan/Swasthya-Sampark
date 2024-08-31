@@ -1,6 +1,6 @@
 // deferRoleCheckingAndDoctors.js
 import axios from "axios";
-import BACKEND_URL from "./services/api";
+import BACKEND_URL from "./services/api.js";
 import { defer } from "react-router-dom";
 
 async function roleChecking() {

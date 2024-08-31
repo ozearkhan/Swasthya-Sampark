@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import BACKEND_URL from './services/api';
+import BACKEND_URL from './services/api.js';
 import FallBackUi from './Fallback/FallbackUi';
 
 const RoleBasedRoute = ({ component: Component, allowedRoles }) => {

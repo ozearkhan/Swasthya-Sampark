@@ -5,6 +5,7 @@ import { useRecoilValue } from "recoil";
 import { clientIdState, collectedSymptomsState } from "../../atoms/symptomAtoms.ts";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, RefreshCw, AlertCircle, Activity, Clipboard, Stethoscope } from 'lucide-react';
+import BACKEND_URL from "../consultation/services/api.ts";
 
 function Results({ onPrev }) {
     const { resetProcess } = useSocket();
@@ -37,7 +38,7 @@ function Results({ onPrev }) {
                     symptoms: collectedSymptoms.map(symptom => symptom.toLowerCase())
                 };
                 console.log(formattedSymptoms);
-                const response = await axios.post('http://127.0.0.1:8000/predict', formattedSymptoms);
+                const response = await axios.post(`${BACKEND_URL}/predict`, formattedSymptoms);
                 const sortedPredictions = response.data.sort((a, b) => b.Chances - a.Chances);
                 setPredictions(sortedPredictions);
             } catch (error) {

@@ -3,7 +3,7 @@ import { useLoaderData, Await, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Navbar/NavBar.jsx";
 import DoctorCard from "./DoctorCard";
-import BACKEND_URL from "../services/api";
+import BACKEND_URL from "../services/api.js";
 import Copyright from "../Copyright/Copyright.jsx";
 
 function RequestConsultation() {
