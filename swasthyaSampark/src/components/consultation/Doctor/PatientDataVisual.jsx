@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import FallBackUi from "../Fallback/FallbackUi";
 import "./doctor.css";
-import BACKEND_URL from "../services/api.js";
+import {BACKEND_URL} from "../services/api.ts";
 import { useEffect } from "react";
 import axios from "axios";
 import SuccessMessage from "../FlashyMessage/SuccessMessage";

@@ -10134,3 +10134,30 @@
 {"level":"info","message":"New client registered with ID: b9433b0e-1d11-40e3-9562-64e1c106d69a","timestamp":"2024-08-28T17:20:13.905Z"}
 {"level":"info","message":"New client registered with ID: b9433b0e-1d11-40e3-9562-64e1c106d69a","timestamp":"2024-08-28T17:20:13.905Z"}
 {"level":"info","message":"Sent 'registered' event with clientId: b9433b0e-1d11-40e3-9562-64e1c106d69a","timestamp":"2024-08-28T17:20:13.905Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2024-08-31T18:02:03.538Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:02:06.294Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:02:06.295Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-31T18:05:02.831Z"}
+{"level":"info","message":"New client registered with ID: 3d91fd3f-e81a-48f1-ba5b-3adfe6915694","timestamp":"2024-08-31T18:05:03.109Z"}
+{"level":"info","message":"New client registered with ID: 3d91fd3f-e81a-48f1-ba5b-3adfe6915694","timestamp":"2024-08-31T18:05:03.110Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 3d91fd3f-e81a-48f1-ba5b-3adfe6915694","timestamp":"2024-08-31T18:05:03.111Z"}
+{"level":"info","message":"Initial symptom added for client 3d91fd3f-e81a-48f1-ba5b-3adfe6915694: fever","timestamp":"2024-08-31T18:05:31.353Z"}
+{"level":"info","message":"Expanding symptom: fever","timestamp":"2024-08-31T18:05:31.354Z"}
+{"level":"info","message":"Symptom expanded successfully: fever","timestamp":"2024-08-31T18:05:34.113Z"}
+{"level":"info","message":"Symptom expanded successfully for client 3d91fd3f-e81a-48f1-ba5b-3adfe6915694: fever","timestamp":"2024-08-31T18:05:34.386Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-31T18:06:05.413Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-31T18:06:05.716Z"}
+{"level":"info","message":"New client registered with ID: 8a7e3119-8c5c-4c7a-8b24-ba1c621c191b","timestamp":"2024-08-31T18:06:05.977Z"}
+{"level":"info","message":"New client registered with ID: 8a7e3119-8c5c-4c7a-8b24-ba1c621c191b","timestamp":"2024-08-31T18:06:05.978Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 8a7e3119-8c5c-4c7a-8b24-ba1c621c191b","timestamp":"2024-08-31T18:06:05.979Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-31T18:06:12.242Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-31T18:06:12.440Z"}
+{"level":"info","message":"New client registered with ID: b673a603-3b22-4a46-9631-21b806a1d1a4","timestamp":"2024-08-31T18:06:12.700Z"}
+{"level":"info","message":"New client registered with ID: b673a603-3b22-4a46-9631-21b806a1d1a4","timestamp":"2024-08-31T18:06:12.700Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: b673a603-3b22-4a46-9631-21b806a1d1a4","timestamp":"2024-08-31T18:06:12.701Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-31T18:06:26.774Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-08-31T18:06:26.946Z"}
+{"level":"info","message":"New client registered with ID: 56e39331-88fc-4c29-8312-8630f41e330e","timestamp":"2024-08-31T18:06:27.208Z"}
+{"level":"info","message":"New client registered with ID: 56e39331-88fc-4c29-8312-8630f41e330e","timestamp":"2024-08-31T18:06:27.208Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 56e39331-88fc-4c29-8312-8630f41e330e","timestamp":"2024-08-31T18:06:27.209Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-08-31T18:16:35.897Z"}

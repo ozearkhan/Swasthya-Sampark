@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Logo from "../../Logo.tsx";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
-import BACKEND_URL from '../services/api.js';
+import {BACKEND_URL} from '../services/api.ts';
 import '../../../CSS/ButtonComponent.css';
 import './navbar.css'
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
-import BACKEND_URL from "../services/api.ts";
+import {BACKEND_URL} from "../services/api.ts";
 import DuplicateEmail from '../FlashyMessage/DuplicateEmail';
 import PatientLogo from "../../../../public/icon/PatientLogo.tsx";
 

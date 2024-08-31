@@ -5,7 +5,7 @@ import Navbar from '../Navbar/NavBar.jsx';
 import FallBackUi from '../Fallback/FallbackUi';
 import SuccessMessage from '../FlashyMessage/SuccessMessage';
 import Copyright from '../Copyright/Copyright';
-import BACKEND_URL from "../services/api.ts";
+import {BACKEND_URL} from "../services/api.ts";
 import DoctorLogin from './DoctorLogin';
 
 function Doctor() {

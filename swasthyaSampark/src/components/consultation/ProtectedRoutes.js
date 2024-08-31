@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import BACKEND_URL from './services/api.js';
+import {BACKEND_URL} from './services/api.ts';
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
     const [isLoading, setIsLoading] = useState(true);

@@ -6,7 +6,7 @@ export function NavBarSecondary() {
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <div className="flex items-center space-x-4">
                     <Logo />
-                    <span className="font-semibold text-xl">Health Navigation</span>
+                    <span className="font-semibold text-xl">Swasthya Sampark</span>
                 </div>
                 <div className="hidden md:flex space-x-6">
                     <a href="#" className="hover:text-green-200 transition-colors duration-200">About</a>

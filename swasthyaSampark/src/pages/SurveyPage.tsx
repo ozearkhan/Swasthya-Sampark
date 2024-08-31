@@ -69,7 +69,7 @@ function SurveyPage() {
                                 />
                             </div>
                             <footer className="bg-gray-800 text-white py-4 text-center text-xs">
-                                <p>&copy; 2024 Health Navigation. All rights reserved.</p>
+                                <p>&copy; 2024 Swasthya Sampark. All rights reserved.</p>
                                 <p className="mt-1">Disclaimer: This tool is for informational purposes only and does not constitute medical advice.</p>
                             </footer>
                         </div>
