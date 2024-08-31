@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Navbar from '../Navbar/NavBar.jsx';
+import Navbar from '../Navbar/NavBar.tsx';
 import Copyright from '../Copyright/Copyright';
 import './doctor.css';
 

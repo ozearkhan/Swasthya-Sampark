@@ -10164,3 +10164,6 @@
 {"level":"info","message":"Server running on port 3001","timestamp":"2024-08-31T18:41:25.737Z"}
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:41:28.336Z"}
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:41:28.337Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2024-08-31T18:45:45.858Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:45:48.943Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:45:48.944Z"}

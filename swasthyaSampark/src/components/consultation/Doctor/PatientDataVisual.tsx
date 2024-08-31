@@ -1,16 +1,16 @@
-import Navbar from "../Navbar/NavBar.jsx";
+import Navbar from "../Navbar/NavBar.tsx";
 import { useLoaderData } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import button_logo from "/button_logo/button_logo.png";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import FallBackUi from "../Fallback/FallbackUi";
+import FallBackUi from "../Fallback/FallbackUi.js";
 import "./doctor.css";
 import {BACKEND_URL} from "../services/api.ts";
 import { useEffect } from "react";
 import axios from "axios";
-import SuccessMessage from "../FlashyMessage/SuccessMessage";
-import DuplicateEmail from "../FlashyMessage/DuplicateEmail";
+import SuccessMessage from "../FlashyMessage/SuccessMessage.js";
+import DuplicateEmail from "../FlashyMessage/DuplicateEmail.js";
 import Thumbnail4 from "/thumbnails/doctor2.png";
 function PatientDataVisual() {
   const role = useLoaderData();

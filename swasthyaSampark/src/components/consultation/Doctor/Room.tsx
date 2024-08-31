@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
-import Navbar from '../Navbar/NavBar.jsx';
+import Navbar from '../Navbar/NavBar.tsx';
 import Copyright from '../Copyright/Copyright';
 import './doctor.css';
 

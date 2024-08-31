@@ -1,5 +1,5 @@
 import "./AiDoc.css";
-import Navbar from "../Navbar/NavBar.jsx";
+import Navbar from "../Navbar/NavBar.tsx";
 import { useState } from "react";
 import axios from "axios";
 import { marked } from "marked";

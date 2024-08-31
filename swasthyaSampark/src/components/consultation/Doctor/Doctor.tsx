@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Navbar from '../Navbar/NavBar.jsx';
-import FallBackUi from '../Fallback/FallbackUi';
-import SuccessMessage from '../FlashyMessage/SuccessMessage';
+import Navbar from '../Navbar/NavBar.tsx';
+import FallBackUi from '../Fallback/FallbackUi.js';
+import SuccessMessage from '../FlashyMessage/SuccessMessage.js';
 import Copyright from '../Copyright/Copyright';
 import {BACKEND_URL} from "../services/api.ts";
 import DoctorLogin from './DoctorLogin';

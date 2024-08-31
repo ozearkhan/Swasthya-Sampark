@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/consultation/Navbar/NavBar.jsx';
+import Navbar from '../components/consultation/Navbar/NavBar.tsx';
 import '../CSS/ConsultationPage.css'
 
 const ConsultationPage: React.FC = () => {

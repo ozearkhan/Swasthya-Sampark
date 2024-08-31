@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { marked } from 'marked';
 import axios from 'axios';
-import Navbar from '../Navbar/NavBar.jsx';
+import Navbar from '../Navbar/NavBar.tsx';
 import FallBackUi from '../Fallback/FallbackUi';
 import SuccessMessage from '../FlashyMessage/SuccessMessage';
 import Copyright from '../Copyright/Copyright';
 import {BACKEND_URL} from "../services/api.ts";
-import PatientLogin from './PatientLogin';
+import PatientLogin from './PatientLogin.js';
 
 function ReportSummary() {
     const navigate = useNavigate();

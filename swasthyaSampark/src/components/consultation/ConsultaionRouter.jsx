@@ -1,17 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
-import Patient from "./patient/Patient.jsx";
-import ChatBot from "./Chatbot/Chat.jsx";
-import Doctor from "./Doctor/Doctor.jsx";
-import Logout from "./Logout/Logout.jsx";
-import Schedule from "./Doctor/Schedule.jsx";
-import Room from "./Doctor/Room.jsx";
-import PatientDataVisual from "./Doctor/PatientDataVisual.jsx";
-import AiDoc from "./patient/AiDoc.jsx";
-import PageNotFound from "./PageNotFound/PageNotFound.jsx";
-import RequestConsultation from "./patient/RequestConsulation.jsx";
-import UploadReports from "./patient/UploadReports.jsx";
-import RoleBasedRoute from "./RoleBasedRoute";
+import Patient from "./patient/Patient.tsx";
+import ChatBot from "./Chatbot/Chat.tsx";
+import Doctor from "./Doctor/Doctor.tsx";
+import Logout from "./Logout/Logout.tsx";
+import Schedule from "./Doctor/Schedule.tsx";
+import Room from "./Doctor/Room.tsx";
+import PatientDataVisual from "./Doctor/PatientDataVisual.tsx";
+import AiDoc from "./patient/AiDoc.tsx";
+import PageNotFound from "./PageNotFound/PageNotFound.tsx";
+import RequestConsultation from "./patient/RequestConsulation.tsx";
+import UploadReports from "./patient/UploadReports.tsx";
+import RoleBasedRoute from "./RoleBasedRoute.js";
 
 const ConsultationRouter = () => {
     const router = createBrowserRouter([

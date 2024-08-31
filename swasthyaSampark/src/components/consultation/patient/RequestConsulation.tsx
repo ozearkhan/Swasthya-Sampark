@@ -1,10 +1,10 @@
 import React, { Suspense, useState } from "react";
 import { useLoaderData, Await, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "../Navbar/NavBar.jsx";
+import Navbar from "../Navbar/NavBar.tsx";
 import DoctorCard from "./DoctorCard";
 import {BACKEND_URL} from "../services/api.ts";
-import Copyright from "../Copyright/Copyright.jsx";
+import Copyright from "../Copyright/Copyright.tsx";
 
 function RequestConsultation() {
     const { role: rolePromise } = useLoaderData();

@@ -1,5 +1,5 @@
 import { useNavigate, useLoaderData } from "react-router-dom";
-import Navbar from "../Navbar/NavBar.jsx";
+import Navbar from "../Navbar/NavBar.tsx";
 import { useEffect } from "react";
 export default function Logout() {
   const navigate = useNavigate();

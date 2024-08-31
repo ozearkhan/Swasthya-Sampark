@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import {BACKEND_URL} from "../services/api.ts";
-import DuplicateEmail from '../FlashyMessage/DuplicateEmail';
+import DuplicateEmail from '../FlashyMessage/DuplicateEmail.js';
 import DoctorLogo from "../../../../public/icon/DoctorLogo.tsx";
 
 const DoctorLogin = ({ onLoginSuccess }) => {

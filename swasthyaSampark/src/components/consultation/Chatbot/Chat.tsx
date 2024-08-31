@@ -5,8 +5,8 @@ import axios from "axios";
 import {BACKEND_URL} from "../services/api.ts";
 import { Suspense } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import Navbar from "../Navbar/NavBar.jsx";
-import Copyright from "../Copyright/Copyright";
+import Navbar from "../Navbar/NavBar.tsx";
+import Copyright from "../Copyright/Copyright.js";
 
 const waitingMessages = [
   "Hang tight! I'm fetching the perfect response for you.",

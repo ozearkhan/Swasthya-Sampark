@@ -1,4 +1,3 @@
-import * as React from "react";
 const DoctorLogo = (props) => (
   <svg
     viewBox="0 0 200 200"
