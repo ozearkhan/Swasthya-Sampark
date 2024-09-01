@@ -1,4 +1,5 @@
 import OurSolutionCard from "./OurSolutionCard.tsx";
+import "../../public/WhoWeHelp/medicalHistory.jpg"
 
 const OurSolution = ()=>{
     return <div className="flex justify-center items-center flex-col pt-32">
@@ -10,12 +11,12 @@ const OurSolution = ()=>{
         </div>
 
         <div className="grid grid-cols-2 gap-4 py-10">
-            <OurSolutionCard imgSrc={"/src/assets/checkSymptom.jpg"} heading={"Triage"}
+            <OurSolutionCard imgSrc={"../../public/WhoWeHelp/checkSymptom.jpg"} heading={"Triage"}
                              body={"Integrates into websites, apps, portals, and call centers for symptom checks, self-triage," +
                                  " condition insights, patient education, and care navigation."}
             />
 
-            <OurSolutionCard imgSrc={"src/assets/medicalHistory.jpg"} heading={"Intake"}
+            <OurSolutionCard imgSrc={"../../public/WhoWeHelp/medicalHistory.jpg"} heading={"Intake"}
                              body={"Gather symptoms, risk factors, history, and demographics pre-visit to reduce admin tasks and increase physician-patient time."}
             />
         </div>
