@@ -1,18 +1,25 @@
-// components/ErrorBoundary.jsx
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Alert } from 'flowbite-react';
 
-class ErrorBoundary extends React.Component {
-    constructor(props) {
+interface ErrorBoundaryState {
+    hasError: boolean;
+}
+
+interface ErrorBoundaryProps {
+    children: ReactNode;
+}
+
+class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+    constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(error) {
+    static getDerivedStateFromError(): ErrorBoundaryState {
         return { hasError: true };
     }
 
-    componentDidCatch(error, errorInfo) {
+    componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void {
         console.error('Error caught by ErrorBoundary:', error, errorInfo);
     }
 
@@ -30,96 +37,3 @@ class ErrorBoundary extends React.Component {
 }
 
 export default ErrorBoundary;
-
-// atoms/symptomAtoms.js
-import { atom } from 'recoil';
-
-export const patientInfoState = atom({
-    key: 'patientInfoState',
-    default: { age: '', gender: '' },
-});
-
-export const medicalHistoryState = atom({
-    key: 'medicalHistoryState',
-    default: [],
-});
-
-export const selectedSymptomsState = atom({
-    key: 'selectedSymptomsState',
-    default: [],
-});
-
-export const currentStepState = atom({
-    key: 'currentStepState',
-    default: 0,
-});
-
-export const resultsState = atom({
-    key: 'resultsState',
-    default: null,
-});
-
-// hooks/useSocket.js
-import { useEffect, useCallback } from 'react';
-import io from 'socket.io-client';
-import {BACKEND_URL} from "../consultation/services/api";
-
-const socket = io(BACKEND_URL, {
-    transports: ['websocket'],
-    reconnection: true,
-    reconnectionAttempts: 5
-});
-
-export function useSocket() {
-    useEffect(() => {
-        socket.on('connect', () => {
-            console.log('Connected to server');
-        });
-
-        socket.on('connect_error', (error) => {
-            console.error('Connection error:', error);
-        });
-
-        return () => {
-            socket.off('connect');
-            socket.off('connect_error');
-        };
-    }, []);
-
-    const submitSymptom = useCallback((symptom) => {
-        return new Promise((resolve, reject) => {
-            socket.emit('submitSymptom', symptom, (response) => {
-                if (response.error) {
-                    reject(response.error);
-                } else {
-                    resolve(response);
-                }
-            });
-        });
-    }, []);
-
-    const selectSymptoms = useCallback((symptoms) => {
-        return new Promise((resolve, reject) => {
-            socket.emit('selectSymptoms', symptoms, (response) => {
-                if (response.error) {
-                    reject(response.error);
-                } else {
-                    resolve(response);
-                }
-            });
-        });
-    }, []);
-
-    const resetProcess = useCallback(() => {
-        return new Promise((resolve) => {
-            socket.emit('resetProcess', resolve);
-        });
-    }, []);
-
-    return {
-        socket,
-        submitSymptom,
-        selectSymptoms,
-        resetProcess
-    };
-}

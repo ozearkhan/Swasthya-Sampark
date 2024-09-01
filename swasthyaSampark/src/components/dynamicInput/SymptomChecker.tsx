@@ -2,19 +2,24 @@ import React, { useState, useEffect } from 'react';
 import { useSocket } from '../../hooks/useSocket';
 import { useRecoilState } from 'recoil';
 import { clientIdState, collectedSymptomsState } from '../../atoms/symptomAtoms';
-import { Search, Plus, ArrowLeft, ArrowRight, Loader, Bot } from 'lucide-react';
+import { Search, Plus, ArrowLeft, ArrowRight, Bot } from 'lucide-react';
 
-const SymptomChecker = ({ onNext, onPrev }) => {
+interface SymptomCheckerProps {
+    onNext: () => void;
+    onPrev: () => void;
+}
+
+const SymptomChecker: React.FC<SymptomCheckerProps> = ({ onNext, onPrev }) => {
     const [symptom, setSymptom] = useState('');
     const [isProcessing, setIsProcessing] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [currentOptions, setCurrentOptions] = useState([]);
+    const [currentOptions, setCurrentOptions] = useState<string[]>([]);
     const [question, setQuestion] = useState('');
-    const [output, setOutput] = useState([]);
+    const [output, setOutput] = useState<string[]>([]);
     const [showReset, setShowReset] = useState(false);
     const { socket, submitSymptom, selectSymptoms, resetProcess } = useSocket();
-    const [collectedSymptoms, setCollectedSymptoms] = useRecoilState(collectedSymptomsState);
-    const [clientId, setClientId] = useRecoilState(clientIdState);
+    const [, setCollectedSymptoms] = useRecoilState(collectedSymptomsState);
+    const [, setClientId] = useRecoilState(clientIdState);
 
     useEffect(() => {
         socket.on('registered', handleRegistered);
@@ -30,15 +35,15 @@ const SymptomChecker = ({ onNext, onPrev }) => {
         };
     }, [socket]);
 
-    const handleRegistered = ({ clientId }) => {
+    const handleRegistered = ({ clientId }: { clientId: string }) => {
         setClientId(clientId);
     };
 
-    const handleSymptomProcessed = (result) => {
+    const handleSymptomProcessed = (result: any) => {
         setIsProcessing(false);
         setIsLoading(false);
         setCollectedSymptoms(result.collectedSymptoms);
-        setOutput(prev => [...prev, `Added symptom: ${result.addedSymptom.name}`]);
+        setOutput((prev) => [...prev, `Added symptom: ${result.addedSymptom.name}`]);
 
         if (result.expandedSymptoms.type === 'multiple_choice' || result.expandedSymptoms.type === 'yes_no') {
             setQuestion(result.expandedSymptoms.question);
@@ -53,16 +58,16 @@ const SymptomChecker = ({ onNext, onPrev }) => {
         }
     };
 
-    const handleProcessComplete = (result) => {
+    const handleProcessComplete = (result: any) => {
         setIsLoading(false);
-        setOutput(prev => [...prev, `Process complete. Further symptoms likely: ${result.furtherSymptomsLikely}`]);
+        setOutput((prev) => [...prev, `Process complete. Further symptoms likely: ${result.furtherSymptomsLikely}`]);
         setShowReset(true);
     };
 
-    const handleError = (error) => {
+    const handleError = (error: any) => {
         setIsProcessing(false);
         setIsLoading(false);
-        setOutput(prev => [...prev, `Error: ${error}`]);
+        setOutput((prev) => [...prev, `Error: ${error}`]);
     };
 
     const handleSubmitSymptom = async () => {
@@ -79,9 +84,11 @@ const SymptomChecker = ({ onNext, onPrev }) => {
     };
 
     const handleSubmitAnswers = async () => {
-        const selectedSymptoms = currentOptions.filter((_, index) =>
-            document.getElementById(`option-${index}`).checked
-        );
+        const selectedSymptoms = currentOptions.filter((_, index) => {
+            const optionElement = document.getElementById(`option-${index}`) as HTMLInputElement;
+            return optionElement?.checked;
+        });
+
         if (selectedSymptoms.length > 0) {
             setIsLoading(true);
             try {
@@ -209,7 +216,10 @@ const SymptomChecker = ({ onNext, onPrev }) => {
                     Back
                 </button>
                 <button
-                    onClick={onNext}
+                    onClick={() => {
+                        onNext();
+                        // Optional: Add code to pass collected symptoms to the next page if necessary
+                    }}
                     className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500"
                 >
                     Next
@@ -221,3 +231,4 @@ const SymptomChecker = ({ onNext, onPrev }) => {
 };
 
 export default SymptomChecker;
+

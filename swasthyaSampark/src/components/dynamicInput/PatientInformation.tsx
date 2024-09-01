@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRecoilState } from 'recoil';
 import { patientInfoState } from '../../atoms/symptomAtoms';
 import { ArrowLeft, ArrowRight, Plus, Minus, User } from 'lucide-react';

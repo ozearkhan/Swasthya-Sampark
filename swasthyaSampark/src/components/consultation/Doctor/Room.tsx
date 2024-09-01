@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 import Navbar from '../Navbar/NavBar.tsx';
@@ -6,12 +6,26 @@ import Copyright from '../Copyright/Copyright';
 import './doctor.css';
 
 function Room() {
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
     const navigate = useNavigate();
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const initializeRoom = async () => {
+            if (!id) {
+                console.error('Room ID is not provided');
+                return;
+            }
+
+            // Request media device permissions
+            try {
+                await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            } catch (err) {
+                console.error('Error accessing media devices.', err);
+                alert('Please allow access to your camera and microphone.');
+                return;
+            }
+
             const appID = 1653169076;
             const serverSecret = 'ba466bb173ccdb251b277891fafcc1d2';
             const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
@@ -24,7 +38,7 @@ function Room() {
 
             const zc = ZegoUIKitPrebuilt.create(kitToken);
             zc.joinRoom({
-                container: containerRef.current,
+                container: containerRef.current!,
                 sharedLinks: [
                     {
                         name: 'Copy Link',

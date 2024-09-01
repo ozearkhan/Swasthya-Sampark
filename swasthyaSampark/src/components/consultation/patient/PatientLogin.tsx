@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import {BACKEND_URL} from "../services/api.ts";
@@ -30,7 +30,7 @@ const PatientLogin = ({ onLoginSuccess }) => {
             <div className="flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg overflow-hidden max-w-4xl">
                 <div className="p-8 lg:w-1/2 flex flex-col justify-center">
                     <div className="text-center">
-                        <PatientLogo className="mx-auto w-1 h-1" />
+                        <PatientLogo />
                     </div>
                     <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Patient Sign In</h2>
                     <p className="text-gray-600 text-center mb-6">Access your patient portal and manage your health information.</p>

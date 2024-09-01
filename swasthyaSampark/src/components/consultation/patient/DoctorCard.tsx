@@ -1,7 +1,12 @@
-import React from 'react';
 import './doctorCard.css';
 
-const DoctorCard = ({ name, picture, uuid, logicMagic }) => {
+interface DoctorCardProps {
+    name: string;
+    picture: string;
+    logicMagic: () => void;
+}
+
+const DoctorCard = ({ name, picture, logicMagic }: DoctorCardProps) => {
     return (
         <div className="doctor-card">
             <div className="doctor-card__image-container">

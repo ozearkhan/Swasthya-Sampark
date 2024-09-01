@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { BentoGrid, BentoCard } from './BentoGrid';
 // import ButtonComponent from './ButtonComponent';
 import {
@@ -7,7 +6,6 @@ import {
     PersonIcon,
     CardStackIcon,
     FileTextIcon,
-    ImageIcon,
     CalendarIcon,
 } from '@radix-ui/react-icons';
 import DoctorIcon from "../../public/icon/Doctor.tsx";

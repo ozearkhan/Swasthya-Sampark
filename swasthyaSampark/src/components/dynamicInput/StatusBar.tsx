@@ -1,5 +1,4 @@
 // components/StatusBar.jsx
-import React from "react";
 import { Progress } from 'flowbite-react';
 
 function StatusBar({ currentStep, totalSteps }) {

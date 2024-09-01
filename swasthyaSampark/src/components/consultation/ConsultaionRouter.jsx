@@ -7,7 +7,6 @@ import Logout from "./Logout/Logout.tsx";
 import Schedule from "./Doctor/Schedule.tsx";
 import Room from "./Doctor/Room.tsx";
 import PatientDataVisual from "./Doctor/PatientDataVisual.tsx";
-import AiDoc from "./patient/AiDoc.tsx";
 import PageNotFound from "./PageNotFound/PageNotFound.tsx";
 import RequestConsultation from "./patient/RequestConsulation.tsx";
 import UploadReports from "./patient/UploadReports.tsx";
@@ -47,10 +46,7 @@ const ConsultationRouter = () => {
             path: "patient_request_consultation",
             element: <RoleBasedRoute component={RequestConsultation} allowedRoles={["patient"]} />,
         },
-        {
-            path: "ai_doctor",
-            element: <RoleBasedRoute component={AiDoc} allowedRoles={["patient"]} />,
-        },
+
         {
             path: "upload_reports",
             element: <RoleBasedRoute component={UploadReports} allowedRoles={["patient"]} />,

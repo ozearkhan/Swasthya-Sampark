@@ -1,8 +1,8 @@
 import { atom } from 'recoil';
 
-export const clientIdState = atom({
+export const clientIdState = atom<string>({
     key: 'clientIdState',
-    default: () => clientIdState,
+    default: '',  // Assuming the client ID is a string, you can initialize it as an empty string
 });
 
 export const patientInfoState = atom({
@@ -10,14 +10,12 @@ export const patientInfoState = atom({
     default: { age: '', gender: '' },
 });
 
-export const medicalHistoryState = atom({
+export const medicalHistoryState = atom<string[]>({
     key: 'medicalHistoryState',
     default: [],
 });
 
-export const collectedSymptomsState = atom({
+export const collectedSymptomsState = atom<string[]>({
     key: 'collectedSymptomsState',
     default: [],
 });
-
-

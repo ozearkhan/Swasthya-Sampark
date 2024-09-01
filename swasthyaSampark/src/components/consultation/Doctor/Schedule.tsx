@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../Navbar/NavBar.tsx';
 import Copyright from '../Copyright/Copyright';
@@ -16,7 +16,7 @@ function Schedule() {
 
     return (
         <div className="doctor-wrapper">
-            <Navbar isDoctor={true} isLogout={true} />
+            <Navbar isDoctor={true} isLogout={true} isPatient={false}/>
             <div className="consultation-room">
                 <h1 className="consultation-room__title">Schedule Consultation</h1>
                 <div className="consultation-room__form">

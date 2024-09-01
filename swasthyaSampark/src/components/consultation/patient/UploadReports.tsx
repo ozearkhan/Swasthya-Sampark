@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { marked } from 'marked';
 import axios from 'axios';
@@ -6,7 +6,7 @@ import Navbar from '../Navbar/NavBar.tsx';
 import FallBackUi from '../Fallback/FallbackUi';
 import SuccessMessage from '../FlashyMessage/SuccessMessage';
 import Copyright from '../Copyright/Copyright';
-import {BACKEND_URL} from "../services/api.ts";
+import { BACKEND_URL } from '../services/api.ts';
 import PatientLogin from './PatientLogin.js';
 
 function ReportSummary() {
@@ -14,7 +14,7 @@ function ReportSummary() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
     const [showFlashy, setShowFlashy] = useState(false);
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState<string | null>(null);
     const [resp, setResp] = useState('');
     const [showDisclaimer, setShowDisclaimer] = useState(true);
 
@@ -41,10 +41,15 @@ function ReportSummary() {
     }, [navigate]);
 
     const handleImageChange = (event) => {
-        const file = event.target.files[0];
+        const file = event.target.files?.[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = (e) => setImage(e.target.result);
+            reader.onload = (e) => {
+                const target = e.target as FileReader;
+                if (target) {
+                    setImage(target.result as string);
+                }
+            };
             reader.readAsDataURL(file);
         }
     };
@@ -54,8 +59,8 @@ function ReportSummary() {
         setIsLoading(true);
         try {
             const formData = new FormData();
-            const fileInput = document.querySelector('input[type="file"]');
-            if (fileInput.files[0]) {
+            const fileInput = document.querySelector<HTMLInputElement>('input[type="file"]');
+            if (fileInput && fileInput.files && fileInput.files[0]) {
                 formData.append('uploaded_files', fileInput.files[0]);
                 const serverRes = await axios.post(
                     `${BACKEND_URL}/api/image-to-text/textract`,
@@ -64,7 +69,8 @@ function ReportSummary() {
                         headers: { 'Content-Type': 'multipart/form-data' },
                     }
                 );
-                setResp(marked(serverRes.data.summaryData));
+                const summaryData = await marked(serverRes.data.summaryData as string);
+                setResp(summaryData);
             } else {
                 throw new Error('No file selected');
             }
@@ -75,6 +81,7 @@ function ReportSummary() {
             setIsLoading(false);
         }
     };
+
 
     if (isLoading) {
         return <FallBackUi />;
@@ -97,7 +104,7 @@ function ReportSummary() {
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-100">
-            <Navbar isPatient={true} isLogout={true} />
+            <Navbar isPatient={true} isLogout={true} isDoctor={false} />
             {showDisclaimer && (
                 <div className="bg-yellow-100 border-b border-yellow-200 px-4 py-3">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">

@@ -11,7 +11,6 @@ import Logout from "./components/consultation/Logout/Logout.tsx";
 import Schedule from "./components/consultation/Doctor/Schedule.tsx";
 import Room from "./components/consultation/Doctor/Room.tsx";
 import PatientDataVisual from "./components/consultation/Doctor/PatientDataVisual.tsx";
-import AiDoc from "./components/consultation/patient/AiDoc.tsx";
 import PageNotFound from "./components/consultation/PageNotFound/PageNotFound.tsx";
 import RequestConsultation from "./components/consultation/patient/RequestConsulation.tsx";
 import UploadReports from "./components/consultation/patient/UploadReports.tsx";
@@ -51,7 +50,6 @@ const router = createBrowserRouter([
         element: <RequestConsultation />,
         loader: deferRoleCheckingAndDoctors,
     },
-    { path: "/consultation/ai_doctor", element: <AiDoc /> },
     {
         path: "/consultation/upload_reports",
         element: <UploadReports />,

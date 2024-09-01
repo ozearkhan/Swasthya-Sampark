@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import { ChevronRight } from 'lucide-react';
 import ErrorBoundary from '../components/dynamicInput/ErrorBoundary';
@@ -33,9 +33,7 @@ function SurveyPage() {
     const CurrentComponent = steps[currentStep].component;
 
     return (
-
         <RecoilRoot>
-
             <ErrorBoundary>
                 <div className="relative min-h-screen w-full">
                     <div className="absolute inset-0 bg-transparent z-0"></div>
@@ -61,11 +59,13 @@ function SurveyPage() {
                                         ))}
                                     </ol>
                                 </nav>
+
+                                {/* Conditionally pass props based on the component */}
                                 <CurrentComponent
                                     onNext={nextStep}
                                     onPrev={prevStep}
-                                    onComplete={handleComplete}
-                                    results={results}
+                                    {...(currentStep === 4 && { onComplete: handleComplete })}
+                                    {...(currentStep === 5 && { results })}
                                 />
                             </div>
                             <footer className="bg-gray-800 text-white py-4 text-center text-xs">

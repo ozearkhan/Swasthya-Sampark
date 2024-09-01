@@ -1,4 +1,6 @@
+//roleChecking.ts
 import axios from "axios";
+
 import {BACKEND_URL} from "./services/api.ts";
 export default async function roleChecking() {
   let token = localStorage.getItem("token");

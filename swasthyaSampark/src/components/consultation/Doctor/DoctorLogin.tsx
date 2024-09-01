@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
 import {BACKEND_URL} from "../services/api.ts";
@@ -9,6 +9,7 @@ const DoctorLogin = ({ onLoginSuccess }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [isEmailDuplicate, setIsEmailDuplicate] = useState(false);
 
+    isLoading;
     const handleGoogleLogin = async (credentialResponse) => {
         setIsLoading(true);
         try {

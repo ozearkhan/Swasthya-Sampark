@@ -1,4 +1,6 @@
+
 import Navbar from "../Navbar/NavBar.tsx";
+
 import { useLoaderData } from "react-router-dom";
 import { GoogleLogin } from "@react-oauth/google";
 import button_logo from "/button_logo/button_logo.png";
@@ -26,13 +28,14 @@ function PatientDataVisual() {
       navigate("/patient");
     }
   }, []);
+
   if (isLoading === true) {
     return <FallBackUi />;
   }
   if (role === "noRole" && isLoading === false && isEmailDuplicate === true) {
     return (
       <>
-        <Navbar isPatient={!isPatient} isDoctor={!isDoctor} />
+        <Navbar isPatient={!isPatient} isDoctor={!isDoctor} isLogout={isLogout} />
         <DuplicateEmail
           message={"A Patient Account with This Email Already Exists"}
         />
@@ -61,6 +64,7 @@ function PatientDataVisual() {
                 }
                 localStorage.setItem("token", data.data.token);
                 setIsDoctor(true);
+                setIsPatient(false);
                 setIsLogout(true);
                 setIsLoading(false);
                 setShowFlashy(true);
@@ -86,7 +90,7 @@ function PatientDataVisual() {
   if (role === "noRole" && isPatient === false && isDoctor === false) {
     return (
       <>
-        <Navbar isPatient={!isPatient} isDoctor={!isDoctor} />
+        <Navbar isPatient={!isPatient} isDoctor={!isDoctor} isLogout={isLogout} />
         <h1 className="signHeading">Sign in as Doctor</h1>
         <div className="mainLogin">
           <img
@@ -136,7 +140,7 @@ function PatientDataVisual() {
   }
   return (
     <>
-      <Navbar isDoctor={true} isLogout={true} />
+      <Navbar isDoctor={true} isLogout={true} isPatient={false} />
       {showFlashy && (
         <SuccessMessage message={"You're Now Logged in as a Doctor"} />
       )}

@@ -55,8 +55,20 @@ const WhoWeHelp = ()=>{
 
             />
             <Card svg={
-                <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                     viewBox="0 0 512 512" xml:space="preserve" fill="#000000" stroke="#000000" height="75px" width="75px"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <svg
+                    version="1.1"
+                    id="_x32_"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink" // Use this instead of xmlns:xlink
+                    viewBox="0 0 32 32"
+                    xmlSpace="preserve" // Use camelCase for xml:space
+                    fill="#000000"
+                    stroke="#000000"
+                    height="32"
+                    width="32"
+                >
+
+                     viewBox="0 0 512 512" xml:space="preserve" fill="#000000" stroke="#000000" height="75px" width="75px"<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{}  </style>
                         <g> <path className="st0"

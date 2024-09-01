@@ -1,17 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { useSocket } from '../../hooks/useSocket';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRecoilValue } from "recoil";
 import { clientIdState, collectedSymptomsState } from "../../atoms/symptomAtoms.ts";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, RefreshCw, AlertCircle, Activity, Clipboard, Stethoscope } from 'lucide-react';
-import {ML_URL} from "../consultation/services/api.ts";
+import { ML_URL } from "../consultation/services/api.ts";
+
+interface Prediction {
+    Disease: string;
+    Chances: number;
+    Specialist: string;
+    Description: string;
+}
 
 function Results({ onPrev }) {
-    const { resetProcess } = useSocket();
-    const [predictions, setPredictions] = useState([]);
+    // Remove `resetProcess` if not used
+    const [predictions, setPredictions] = useState<Prediction[]>([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
     const clientId = useRecoilValue(clientIdState);
     const collectedSymptoms = useRecoilValue(collectedSymptomsState);
     const navigate = useNavigate();

@@ -1,16 +1,15 @@
-import React from 'react';
 import { useRecoilState } from 'recoil';
 import { medicalHistoryState } from '../../atoms/symptomAtoms';
 import { ArrowLeft, ArrowRight, CheckCircle } from 'lucide-react';
 
-const MedicalHistory = ({ onNext, onPrev }) => {
+const MedicalHistory = ({ onNext, onPrev }: { onNext: () => void; onPrev: () => void }) => {
     const [medicalHistory, setMedicalHistory] = useRecoilState(medicalHistoryState);
 
     const conditions = [
         'Diabetes', 'Hypertension', 'Asthma', 'Heart Disease', 'Cancer', 'Arthritis'
     ];
 
-    const handleToggle = (condition) => {
+    const handleToggle = (condition: string) => {
         setMedicalHistory(prev =>
             prev.includes(condition)
                 ? prev.filter(c => c !== condition)
@@ -51,17 +50,17 @@ const MedicalHistory = ({ onNext, onPrev }) => {
                                                 medicalHistory.includes(condition) ? 'translate-x-5' : 'translate-x-0'
                                             } pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200`}
                                         >
-                      <span
-                          className={`${
-                              medicalHistory.includes(condition)
-                                  ? 'opacity-100 ease-in duration-200'
-                                  : 'opacity-0 ease-out duration-100'
-                          } absolute inset-0 h-full w-full flex items-center justify-center transition-opacity`}
-                          aria-hidden="true"
-                      >
-                        <CheckCircle className="h-3 w-3 text-emerald-600" />
-                      </span>
-                    </span>
+                                            <span
+                                                className={`${
+                                                    medicalHistory.includes(condition)
+                                                        ? 'opacity-100 ease-in duration-200'
+                                                        : 'opacity-0 ease-out duration-100'
+                                                } absolute inset-0 h-full w-full flex items-center justify-center transition-opacity`}
+                                                aria-hidden="true"
+                                            >
+                                                <CheckCircle className="h-3 w-3 text-emerald-600" />
+                                            </span>
+                                        </span>
                                     </button>
                                 </div>
                             </div>

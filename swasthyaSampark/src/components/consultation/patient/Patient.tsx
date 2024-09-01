@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../Navbar/NavBar.tsx';
@@ -49,7 +49,7 @@ function Patient() {
     if (!isAuthenticated) {
         return (
             <div className="min-h-screen flex flex-col items-center bg-gray-100">
-                <Navbar />
+                <Navbar isDoctor={false} isLogout={false} isPatient={false}/>
                 <PatientLogin onLoginSuccess={handleLoginSuccess} />
                 {/*<Copyright className="mt-auto" />*/}
             </div>
@@ -58,7 +58,7 @@ function Patient() {
 
     return (
         <div className="patient-page">
-            <Navbar isPatient={true} isLogout={true} />
+            <Navbar isPatient={true} isLogout={true} isDoctor={false}/>
             {showFlashy && <SuccessMessage message="You're now logged in as a Patient" />}
             <div className="patient-container">
                 <h1 className="patient-title">Patient Portal</h1>

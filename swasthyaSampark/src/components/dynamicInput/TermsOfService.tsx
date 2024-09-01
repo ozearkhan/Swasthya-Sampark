@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { CheckCircle, ArrowLeft, ArrowRight } from 'lucide-react';
+import  { useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const TermsOfService = ({ onNext, onPrev }) => {
     const [accepted, setAccepted] = useState(false);
