@@ -1,5 +1,4 @@
 import OurSolutionCard from "./OurSolutionCard.tsx";
-import "/assets/"
 const OurSolution = ()=>{
     return <div className="flex justify-center items-center flex-col pt-32">
         <h3 className="h3">Our Solution</h3>
