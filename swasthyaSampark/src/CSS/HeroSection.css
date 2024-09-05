@@ -1,5 +1,5 @@
 .container {
-    margin: 20px 200px;
+    margin: 120px 200px;
     max-width: 1280px;
     transition: margin 0.3s ease, gap 0.3s ease;
 }
@@ -7,12 +7,12 @@
 .heroSectionContent {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Aligns the bottom of the sections */
+    align-items: flex-end;
     gap: 10px;
 }
 
 .heroSectionTitle {
-    max-width: 90%; /* Set a max width to ensure the text wraps in two lines */
+    max-width: 90%;
     padding-top: 5%;
 }
 
@@ -22,10 +22,8 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
-    vertical-align: middle; /* Aligning text and RotatingText to the middle */
+    vertical-align: middle;
 }
-
-
 
 .leftSectionFirstLine {
     color: #302C2C;
@@ -41,6 +39,11 @@
     align-items: center;
     gap: 0.5rem;
     line-height: 1.2;
+}
+
+.staticText {
+    color: #122431;
+    font-weight: 500;
 }
 
 .heroSectionContent .h1 {
@@ -66,7 +69,7 @@
 
 .heroSectionRightPart {
     max-width: 30%;
-    align-self: flex-end; /* Align the right section with the bottom of the left section */
+    align-self: flex-end;
 }
 
 .buttonContainer {
@@ -76,61 +79,9 @@
     padding-top: 40px;
 }
 
-@media screen and (max-width: 2560px) and (min-width: 1441px) {
-    .container {
-        margin: 160px 150px 80px 150px;
-    }
-
-    .heroSectionContent {
-        gap: 5vw;
-    }
-
-    .heroSectionTitle {
-        max-width: 60%;
-    }
-
-    .leftSectionTitle {
-        max-width: 100%;
-    }
-
-    .leftSectionFirstLine {
-        font-size: 64px;
-    }
-
-    .h1 {
-        font-size: 64px;
-    }
-}
-
-@media screen and (max-width: 1440px) and (min-width: 1081px) {
-    .container {
-        margin: 80px 100px;
-    }
-
-    .heroSectionContent {
-        gap: 4vw;
-    }
-
-    .heroSectionTitle {
-        max-width: 70%;
-    }
-
-    .leftSectionTitle {
-        max-width: 100%;
-    }
-
-    .leftSectionFirstLine {
-        font-size: 60px;
-    }
-
-    .h1 {
-        font-size: 60px;
-    }
-}
-
 @media screen and (max-width: 1080px) {
     .container {
-        margin: 40px 50px;
+        margin: 80px 50px;
     }
 
     .heroSectionContent {
@@ -145,7 +96,9 @@
         max-width: 100%;
     }
 
-    .leftSectionFirstLine {
+    .leftSectionFirstLine,
+    .leftSectionSecondLine,
+    .staticText {
         font-size: 50px;
     }
 
@@ -154,9 +107,9 @@
     }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
     .container {
-        margin: 40px 50px;
+        margin: 80px 30px;
     }
 
     .heroSectionContent {
@@ -171,17 +124,14 @@
     }
 
     .leftSectionTitle {
-        max-width: 100%;
         justify-content: center;
         gap: 0.5rem;
     }
 
-    .leftSectionFirstLine, .rotatingText {
+    .leftSectionFirstLine,
+    .leftSectionSecondLine,
+    .staticText {
         font-size: 36px;
-    }
-
-    .leftSectionSecondLine {
-        justify-content: center;
     }
 
     .heroSectionRightPart {
@@ -190,18 +140,18 @@
     }
 
     .buttonContainer {
-        flex-direction: row;
-        align-items: center;
         justify-content: center;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .container {
-        margin: 40px 20px;
+        margin: 80px 20px;
     }
 
-    .leftSectionFirstLine, .rotatingText {
+    .leftSectionFirstLine,
+    .leftSectionSecondLine,
+    .staticText {
         font-size: 24px;
     }
 
@@ -213,34 +163,21 @@
         font-size: 16px;
     }
 }
+
 @media screen and (max-width: 425px) {
     .heroSectionTitle {
-        align-items: center;
         text-align: center;
-        max-width: 100%;
     }
 
     .leftSectionTitle {
-        display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        max-width: 100%;
     }
 
-    .leftSectionFirstLine {
+    .leftSectionFirstLine,
+    .leftSectionSecondLine,
+    .staticText {
         font-size: 20px;
         text-align: center;
-    }
-
-    .leftSectionSecondLine {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .rotatingText {
-        font-size: 20px;
     }
 }

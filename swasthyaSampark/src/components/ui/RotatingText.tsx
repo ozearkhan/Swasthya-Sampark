@@ -50,7 +50,7 @@ const RotatingText = () => {
             className="rotatingTextContainer"
             style={{
                 backgroundColor: colors[colorIndex],
-                width: containerWidth ? `${containerWidth+240}px` : 'auto',
+                width: containerWidth ? `${Math.max(containerWidth + 240, 200)}px` : 'auto',
             }}
         >
             <div ref={textRef} className="rotatingTextContent">

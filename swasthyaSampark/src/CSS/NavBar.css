@@ -1,46 +1,61 @@
 /* NavBar.css */
 
-/* Style for navbar when scrolled */
-
-.navbar-sticky.scrolled {
-    background-color: #fff !important;
+.navbar-sticky {
     transition: background-color 200ms linear;
 }
 
-/* Style for nav links when scrolled */
-.navbar-sticky.scrolled .nav-link {
-    color: #444; /* Darker gray for default */
+.navbar-sticky.scrolled {
+    background-color: #fff !important;
 }
 
-/* Additional styles for the links */
 .nav-link {
-    font-weight: 400; /* Equivalent to font-semibold in Tailwind */
-    color: #444; /* Darker gray for default */
+    font-weight: 400;
+    color: #444;
     transition: color 200ms linear;
 }
 
-/* Underline effect */
 .nav-link::after {
     content: '';
     display: block;
     margin: 0 auto;
     height: 2px;
-    width: 50%; /* Width less than half of the text width */
+    width: 50%;
     background-color: currentColor;
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-    color: #000; /* More black on hover */
+    color: #000;
 }
 
 .nav-link:hover::after {
     transform: scaleX(1);
 }
+
 .scrolled {
     background-color: white;
 }
+
 #navbar-sticky.scrolled {
     background-color: white;
+}
+
+@media (max-width: 768px) {
+    #navbar-sticky {
+        background-color: white;
+    }
+
+    #navbar-sticky .nav-link {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    #navbar-sticky .nav-link:last-child {
+        border-bottom: none;
+    }
+
+    #navbar-sticky button {
+        margin-top: 1rem;
+    }
 }

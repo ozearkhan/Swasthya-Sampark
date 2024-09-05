@@ -1,6 +1,4 @@
-
 import { BentoGrid, BentoCard } from '../ui/BentoGrid.tsx';
-// import ButtonComponent from './ButtonComponent';
 import {
     ChatBubbleIcon,
     PersonIcon,
@@ -21,13 +19,12 @@ const services = [
                     <li>24/7 access to self-service symptom assessments</li>
                     <li>AI-driven care navigation for accurate results</li>
                     <li>Eliminates long wait times with instant recommendations</li>
-                    {/*<li>Easy-to-use, patient-centric, and highly informative</li>*/}
                 </ul>
             </>
         ),
         href: "/survey",
         cta: "Learn more",
-        className: "lg:col-span-1 lg:row-span-2",
+        className: "md:col-span-1 md:row-span-2",
     },
     {
         Icon: DoctorIcon,
@@ -35,7 +32,7 @@ const services = [
         description: "Manage schedules and perform consultations efficiently.",
         href: "/consultation/doctor",
         cta: "Learn more",
-        className: "lg:col-span-1 lg:row-span-1",
+        className: "md:col-span-1 md:row-span-1",
     },
     {
         Icon: ChatBubbleIcon,
@@ -47,13 +44,12 @@ const services = [
                     <li>Instant answers to preliminary health inquiries</li>
                     <li>Comprehensive information on causes, symptoms, and treatments</li>
                     <li>Over-the-counter medication guidance and precautions</li>
-                    {/*<li>Recommendations on when to seek medical care</li>*/}
                 </ul>
             </>
         ),
         href: "/consultation/chat_bot",
         cta: "Learn more",
-        className: "lg:col-span-1 lg:row-span-2",
+        className: "md:col-span-1 md:row-span-2",
     },
     {
         Icon: FileTextIcon,
@@ -70,7 +66,7 @@ const services = [
         ),
         href: "/consultation/upload_reports",
         cta: "Learn more",
-        className: "lg:col-span-1 lg:row-span-2",
+        className: "md:col-span-1 md:row-span-2",
     },
     {
         Icon: PersonIcon,
@@ -78,7 +74,7 @@ const services = [
         description: "Access health records and manage appointments easily.",
         href: "/consultation/patient",
         cta: "Learn more",
-        className: "lg:col-span-1 lg:row-span-1",
+        className: "md:col-span-1 md:row-span-1",
     },
     {
         Icon: CalendarIcon,
@@ -86,25 +82,23 @@ const services = [
         description: "Streamline patient-doctor consultation process.",
         href: "/consultation",
         cta: "Learn more",
-        className: "lg:col-span-1 lg:row-span-1",
+        className: "md:col-span-1 md:row-span-1",
     },
 ];
-
-
-
 const OurServices = () => {
     return (
-        <div className="flex justify-center items-center flex-col pt-32">
+        <div className="flex justify-center items-center flex-col pt-24 px-4">
             <h3 className="h3">Our Services</h3>
-            <h1 className="h1 tracking-wider py-4">
+            <h1 className="h1 tracking-wider py-4 text-center text-5xl sm:text-5xl md:text-5xl lg:text-6xl">
                 Smart Health Solutions
             </h1>
-            <div className="max-w-[calc(100%-2rem)] md:max-w-5xl w-full py-10">
-                <BentoGrid className="lg:grid-cols-3 lg:grid-rows-3 gap-4">
+            <div className=" max-w-[calc(100%-2rem)] md:max-w-5xl py-10">
+                <BentoGrid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:auto-rows-[12rem] gap-4">
                     {services.map((service) => (
                         <BentoCard
                             key={service.name}
                             {...service}
+                            className={`${service.className} col-span-1`}
                         />
                     ))}
                 </BentoGrid>
@@ -112,5 +106,6 @@ const OurServices = () => {
         </div>
     );
 };
+
 
 export default OurServices;
