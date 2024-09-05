@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Logo from "../../Logo.tsx";
+import Logo from "../../../../public/logo/Logo.tsx";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { BACKEND_URL } from '../services/api.ts';

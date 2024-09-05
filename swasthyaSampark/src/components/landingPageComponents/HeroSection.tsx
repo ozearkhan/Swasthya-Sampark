@@ -1,8 +1,8 @@
-import RotatingText from "./RotatingText.tsx";
-import '../CSS/HeroSection.css';
-import ButtonComponent from "./ButtonComponent.tsx";
+import RotatingText from "../ui/RotatingText.tsx";
+import '../../CSS/HeroSection.css';
+import ButtonComponent from "../ui/ButtonComponent.tsx";
 import {useNavigate} from "react-router-dom";
-import BlurFade from "./magicui/blur-fade.tsx";
+import BlurFade from "../magicui/blur-fade.tsx";
 
 export function HeroSection() {
     const navigate = useNavigate();

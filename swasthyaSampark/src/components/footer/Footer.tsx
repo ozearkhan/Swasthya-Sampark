@@ -1,12 +1,12 @@
 // components/Footer.jsx
-import Logo from './Logo';
+import Logo from '../../../public/logo/Logo.tsx';
 
 function Footer() {
     return (
         <footer className="m-4">
             <div className="w-full max-w-screen-xl mx-auto p-4 md:pt-36">
                 <div className="sm:flex sm:items-center sm:justify-between">
-                    <a href="/" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                    <a href="/swasthyaSampark/public" className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                         <Logo/>
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
 
@@ -29,7 +29,7 @@ function Footer() {
                 </div>
                 <hr className="my-6 border-gray-300 sm:mx-auto lg:my-8" />
                 <span className="block text-sm text-gray-700 sm:text-center">
-          © {new Date().getFullYear()} <a href="/" className="hover:underline text-black">Swasthya Sampark™</a>. All Rights Reserved.
+          © {new Date().getFullYear()} <a href="/swasthyaSampark/public" className="hover:underline text-black">Swasthya Sampark™</a>. All Rights Reserved.
         </span>
             </div>
         </footer>

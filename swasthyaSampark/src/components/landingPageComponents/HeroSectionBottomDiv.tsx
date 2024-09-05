@@ -1,5 +1,5 @@
-import VectorDesign from "./VectorDesign.tsx";
-import BlurFade from "./magicui/blur-fade.tsx";
+import VectorDesign from "../../../public/bg/VectorDesign.tsx";
+import BlurFade from "../magicui/blur-fade.tsx";
 // import Ripple from "./magicui/ripple.tsx";
 
 export function HeroSectionBottomDiv() {

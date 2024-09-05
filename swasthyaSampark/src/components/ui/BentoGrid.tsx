@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 // import { ArrowRightIcon } from "@radix-ui/react-icons";
-import { Button } from './ui/button.tsx';
+import { Button } from './button.tsx';
 interface BentoGridProps {
     children: ReactNode;
     className?: string;

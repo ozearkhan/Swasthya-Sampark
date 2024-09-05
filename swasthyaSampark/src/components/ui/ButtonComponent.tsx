@@ -1,4 +1,4 @@
-import '../CSS/ButtonComponent.css';
+import '../../CSS/ButtonComponent.css';
 
 const ButtonComponent = ({ children, transparent = false, onClick }) => {
     const buttonClass = transparent ? 'buttonComponentTransparent' : 'buttonComponent';

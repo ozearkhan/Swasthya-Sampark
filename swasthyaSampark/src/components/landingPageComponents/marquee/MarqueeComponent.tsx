@@ -1,9 +1,9 @@
 import Marquee from "react-fast-marquee";
-import Practo from './marqueeBrandLogos/PractoLogo.tsx'
-import StarHealthLogo from "./marqueeBrandLogos/StarHealthLogo.tsx";
-import TataMGLogo from "./marqueeBrandLogos/TataMGLogo.tsx";
-import BicaardLogo from "./marqueeBrandLogos/BicaardLogo.tsx";
-import BiotronicsLogo from "./marqueeBrandLogos/BiotronicsLogo.tsx";
+import Practo from './PractoLogo.tsx'
+import StarHealthLogo from "./StarHealthLogo.tsx";
+import TataMGLogo from "./TataMGLogo.tsx";
+import BicaardLogo from "./BicaardLogo.tsx";
+import BiotronicsLogo from "./BiotronicsLogo.tsx";
 
 function MarqueeComponent() {
     return (

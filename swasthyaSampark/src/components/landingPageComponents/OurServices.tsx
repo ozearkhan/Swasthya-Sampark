@@ -1,5 +1,5 @@
 
-import { BentoGrid, BentoCard } from './BentoGrid';
+import { BentoGrid, BentoCard } from '../ui/BentoGrid.tsx';
 // import ButtonComponent from './ButtonComponent';
 import {
     ChatBubbleIcon,
@@ -8,7 +8,7 @@ import {
     FileTextIcon,
     CalendarIcon,
 } from '@radix-ui/react-icons';
-import DoctorIcon from "../../public/icon/Doctor.tsx";
+import DoctorIcon from "../../../public/icon/Doctor.tsx";
 
 const services = [
     {

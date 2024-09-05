@@ -1,4 +1,4 @@
-import Card from "./Card.tsx";
+import Card from "../ui/Card.tsx";
 
 const WhoWeHelp = ()=>{
     return<div className="flex justify-center items-center flex-col">
@@ -35,7 +35,7 @@ const WhoWeHelp = ()=>{
 
             }
                   heading={"Insurers"}
-                  body={"Enhance operations, reduce overutilization of services, improve member experience, cut costs, and engage rural populations."}
+                  body={"Enhance operations, reduce over utilization of services, improve member experience, cut costs, and engage rural populations."}
 
             />
             <Card svg={
@@ -60,15 +60,14 @@ const WhoWeHelp = ()=>{
                     id="_x32_"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink" // Use this instead of xmlns:xlink
-                    viewBox="0 0 32 32"
+                    viewBox="0 0 512 512" // Original viewBox size
                     xmlSpace="preserve" // Use camelCase for xml:space
                     fill="#000000"
                     stroke="#000000"
-                    height="32"
-                    width="32"
+                    height="75px"
+                    width="75px"
                 >
-
-                     viewBox="0 0 512 512" xml:space="preserve" fill="#000000" stroke="#000000" height="75px" width="75px"<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                     <g id="SVGRepo_iconCarrier"> <style type="text/css">  .st0{}  </style>
                         <g> <path className="st0"
