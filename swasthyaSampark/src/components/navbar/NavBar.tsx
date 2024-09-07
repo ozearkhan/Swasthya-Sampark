@@ -40,13 +40,13 @@ export function NavBar() {
             id="navbar-sticky"
         >
             <div className="max-w-screen-2xl w-[95%] flex flex-wrap items-center justify-between mx-auto p-1">
-                <a href="/swasthyaSampark/public" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
                     <Logo />
                 </a>
-                <div className="flex md:order-2">
+                <div className="flex lg:order-2">
                     <button
                         type="button"
-                        className="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        className="lg:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                         onClick={toggleMenu}
                         aria-controls="navbar-sticky"
                         aria-expanded={isMenuOpen}
@@ -70,19 +70,19 @@ export function NavBar() {
                     </button>
                     <button
                         type="button"
-                        className="hidden md:inline-block text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-xl text-base px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
+                        className="hidden lg:inline-block text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-xl text-base px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"
                         onClick={handleStartSurvey}
                     >
                         Get Started
                     </button>
                 </div>
                 <div
-                    className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
+                    className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 pr-24 ${
                         isMenuOpen ? 'block' : 'hidden'
                     }`}
                     id="navbar-sticky"
                 >
-                    <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 bg-transparent">
+                    <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 bg-transparent">
                         <li>
                             <a
                                 href="#"
@@ -96,7 +96,7 @@ export function NavBar() {
                         </li>
                         <li>
                             <a
-                                href="#"
+                                href="/services"
                                 className={`nav-link block py-2 px-3 rounded ${
                                     scrolled ? 'text-gray-900 hover:text-black' : 'text-gray-500 hover:text-black'
                                 } font-poppins`}
@@ -116,7 +116,7 @@ export function NavBar() {
                                 For business
                             </a>
                         </li>
-                        <li className="md:hidden">
+                        <li className="lg:hidden">
                             <button
                                 type="button"
                                 className="w-full text-white bg-[#175134] hover:bg-[#0f3a24] font-medium rounded-xl text-base px-6 py-2 text-center dark:bg-[#175134] dark:hover:bg-[#0f3a24] dark:focus:ring-[#143c2d]"

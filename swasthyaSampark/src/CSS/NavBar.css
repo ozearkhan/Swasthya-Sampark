@@ -41,7 +41,7 @@
     background-color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     #navbar-sticky {
         background-color: white;
     }

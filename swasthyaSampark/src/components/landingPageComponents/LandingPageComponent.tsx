@@ -10,7 +10,7 @@ import WhoWeHelp from "./WhoWeHelp.tsx";
 import OurSolution from "./OurSolution.tsx";
 import OurServices from "./OurServices.tsx";
 
-const Section = styled.div`
+const Container = styled.div`
     display: flex;
     background-color: #F6F4F2;
     height: 100%;
@@ -38,9 +38,9 @@ const Section = styled.div`
     }
 `;
 
-const Section1 = () => {
+const LandingPageComponent = () => {
     return (
-        <Section>
+        <Container>
             <HeroSection />
             <HeroSectionBottomDiv />
             <MarqueeComponent/>
@@ -48,8 +48,8 @@ const Section1 = () => {
             <OurSolution/>
             <OurServices/>
             <Footer/>
-        </Section>
+        </Container>
     );
 };
 
-export default Section1;
+export default LandingPageComponent;

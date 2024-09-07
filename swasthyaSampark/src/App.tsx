@@ -18,6 +18,7 @@ import deferRoleChecking from "./components/consultation/deferRoleChecking";
 import deferRoleCheckingAndDoctors from "./components/consultation/deferRoleCheckingAndDoctors";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Analytics } from "@vercel/analytics/react";
+import ServicesPage from "./pages/ServicesPage.tsx";
 
 // Define loader functions for routes that need them
 // const chatBotLoader = async () => {
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
         element: <UploadReports />,
         loader: deferRoleChecking,
     },
+    { path: "/services", element: <ServicesPage/>},
     { path: "*", element: <PageNotFound /> },
 ]);
 

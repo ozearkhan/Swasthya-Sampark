@@ -1,5 +1,5 @@
 
-import Section1 from "../components/landingPageComponents/Section1.tsx";
+import LandingPageComponent from "../components/landingPageComponents/LandingPageComponent.tsx";
 import {NavBar} from "../components/navbar/NavBar.tsx";
 
 function LandingPage() {
@@ -7,7 +7,7 @@ function LandingPage() {
     return (
         <>
             <NavBar/>
-            <Section1/>
+            <LandingPageComponent/>
         </>
     )
 }

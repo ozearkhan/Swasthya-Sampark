@@ -7,11 +7,11 @@ const WhoWeHelp = ()=>{
         </h1>
 
 
-        <div className="grid grid-cols-1 pt-10 gap-6 max-w-7xl lg:grid-cols-2">
+        <div className="grid grid-cols-1 pt-10 gap-4 max-w-7xl lg:grid-cols-2">
             <Card svg={
                 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#000000" height="75px" width="75px">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                         <defs>
                             {/*<style>.cls-1{fill:#487961;}.cls-2{fill:#302C2C;}</style>*/}
@@ -39,8 +39,8 @@ const WhoWeHelp = ()=>{
                 <svg fill="#487961" viewBox="0 0 50 50" version="1.2" baseProfile="tiny"
                      xmlns="http://www.w3.org/2000/svg"
                      overflow="inherit" height="75px" width="75px">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                         <path
                             d="M12.333 22h2.667v16h4v-14h4v14h4v-14h4v14h4v-16h2.666c.736 0 1.334-.736 1.334-1.399 0-.401-.221-.853-.555-1.071l.002-.052-.021-.037.134-.033-12.56-6.469v-1.892c2 1.059 3.951-.765 7 .332v-4.179c-3.051-1.096-5 .727-7-.332v-.268c0-.331-.631-.6-1-.6s-1 .269-1 .6v6.339l-12.559 6.456.271.021.288.011v.002c-1 .218-.776.77-.776 1.171-.001.664.373 1.4 1.109 1.4zm1.667 17l-3 3h28l-3-3zm22-16v15h.885l.391.553 2.666 2.499.943.948h8.115v-19h-13zm6 12h-3v-3h3v3zm0-6h-3v-3h3v3zm4 6h-2v-3h2v3zm0-6h-2v-3h2v3zm-32.886 9h.886v-15h-13v19h8.114l.942-.848 2.667-2.6.391-.552zm-7.114-3h-2v-3h2v3zm0-6h-2v-3h2v3zm5 6h-3v-3h3v3zm0-6h-3v-3h3v3z"></path>
@@ -65,8 +65,8 @@ const WhoWeHelp = ()=>{
                     height="75px"
                     width="75px"
                 >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                         <style type="text/css"> .st0{}  </style>
                         <g>
@@ -90,13 +90,13 @@ const WhoWeHelp = ()=>{
             />
             <Card svg={
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" height="75px" width="75px">
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                    <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
                     <g id="SVGRepo_iconCarrier">
                         <path opacity="0.5"
                               d="M2 9.3175C2 13.0468 6.01943 16.991 8.96173 19.3786C10.2937 20.4595 10.9597 21 12 21C13.0403 21 13.7063 20.4596 15.0383 19.3787C17.9806 16.991 22 13.0468 22 9.31747C22 3.08748 16.4998 0.761498 12 5.57412C7.50016 0.761498 2 3.08748 2 9.3175Z"
                               fill="#487961"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
+                        <path file-rule="evenodd" clipRule="evenodd"
                               d="M16.5 6.25C16.9142 6.25 17.25 6.58579 17.25 7L17.25 8.25002H18.5C18.9142 8.25002 19.25 8.5858 19.25 9.00002C19.25 9.41423 18.9142 9.75002 18.5 9.75002H17.25V11C17.25 11.4142 16.9142 11.75 16.5 11.75C16.0858 11.75 15.75 11.4142 15.75 11L15.75 9.75002L14.5 9.75002C14.0858 9.75002 13.75 9.41423 13.75 9.00002C13.75 8.5858 14.0858 8.25002 14.5 8.25002H15.75L15.75 7C15.75 6.58579 16.0858 6.25 16.5 6.25Z"
                               fill="#487961"></path>
                     </g>

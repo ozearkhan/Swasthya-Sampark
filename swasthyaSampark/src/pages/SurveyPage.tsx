@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
 import { ChevronRight } from 'lucide-react';
-import ErrorBoundary from '../components/dynamicInput/ErrorBoundary';
-import Introduction from '../components/dynamicInput/Introduction';
-import TermsOfService from '../components/dynamicInput/TermsOfService';
-import PatientInformation from '../components/dynamicInput/PatientInformation';
-import MedicalHistory from '../components/dynamicInput/MedicalHistory';
-import SymptomChecker from '../components/dynamicInput/SymptomChecker';
-import Results from '../components/dynamicInput/Results';
+import ErrorBoundary from '../components/surveyPageComponent/ErrorBoundary';
+import Introduction from '../components/surveyPageComponent/Introduction';
+import TermsOfService from '../components/surveyPageComponent/TermsOfService';
+import PatientInformation from '../components/surveyPageComponent/PatientInformation';
+import MedicalHistory from '../components/surveyPageComponent/MedicalHistory';
+import SymptomChecker from '../components/surveyPageComponent/SymptomChecker';
+import Results from '../components/surveyPageComponent/Results';
 
 const steps = [
     { component: Introduction, label: 'Introduction' },
