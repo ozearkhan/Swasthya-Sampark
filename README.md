@@ -1,5 +1,53 @@
+<br/>
+<div align="center">
 
-# Swasthya-Sampark
+  <img src="swasthyaSampark/dist/assets/readme%20swasthay%20sampark%20logo.svg" alt="logo" width="auto" height="auto" />
+  <h1>Swasthya Sampark</h1>
+
+  <p>
+    A Paradigm Shift in Healthcare
+  </p>
+
+
+<!-- Badges -->
+<p>
+  <a href="https://github.com/ozearkhan/Swasthya-Sampark/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/ozearkhan/Swasthya-Sampark" alt="contributors" />
+  </a>
+  <a href="">
+    <img src="https://img.shields.io/github/last-commit/ozearkhan/Swasthya-Sampark" alt="last update" />
+  </a>
+  <a href="https://github.com/ozearkhan/Swasthya-Sampark/network/members">
+    <img src="https://img.shields.io/github/forks/ozearkhan/Swasthya-Sampark" alt="forks" />
+  </a>
+  <a href="https://github.com/ozearkhan/Swasthya-Sampark/stargazers">
+    <img src="https://img.shields.io/github/stars/ozearkhan/Swasthya-Sampark" alt="stars" />
+  </a>
+  <a href="https://github.com/ozearkhan/Swasthya-Sampark/issues/">
+    <img src="https://img.shields.io/github/issues/ozearkhan/Swasthya-Sampark" alt="open issues" />
+  </a>
+  <a href="https://github.com/ozearkhan/Swasthya-Sampark/blob/master/LICENSE.txt">
+    <img src="https://img.shields.io/github/license/ozearkhan/Swasthya-Sampark" alt="license" />
+  </a>
+</p>
+
+<h4>
+    <a href="https://drive.google.com/file/d/1v0I85PBp8XpNoFWS9Z-NxnL2xfkxgz2L/view?usp=sharing">View Demo</a>
+  <span> · </span>
+    <a href="https://github.com/ozearkhan/Swasthya-Sampark">Documentation</a>
+  <span> · </span>
+    <a href="https://github.com/ozearkhan/Swasthya-Sampark/issues/">Report Bug</a>
+  <span> · </span>
+    <a href="https://github.com/ozearkhan/Swasthya-Sampark/issues/">Request Feature</a>
+  </h4>
+</div>
+
+<br />
+
+<br/>
+<div align="center"> 
+  <img src="/swasthyaSampark/dist/assets/homepage%20ss.png" alt="screenshot" />
+</div>
 
 ## Introduction
 
