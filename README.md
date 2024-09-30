@@ -1,7 +1,7 @@
 <br/>
 <div align="center">
 
-  <img src="swasthyaSampark/dist/assets/readme%20swasthay%20sampark%20logo.svg" alt="logo" width="auto" height="auto" />
+  <img src="swasthyaSampark/public/assets/swasthya%20sampark%20readme.svg" alt="logo" width="auto" height="auto" />
   <h1>Swasthya Sampark</h1>
 
   <p>
