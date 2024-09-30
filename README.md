@@ -20,7 +20,7 @@ Swasthya-Sampark is a healthcare platform designed to connect patients with doct
     - Key Features: Instant health answers, information on health conditions, medication guidance.
 
 4. **Report Summary Generation**
-    - Converts medical reports from images to text using ML algorithms.
+    - Converts medical reports from images to text using ML algorithms and OCR technology.
     - Key Features: AI-driven report transformation, quick and precise conversion.
 
 5. **Patient Portal**
