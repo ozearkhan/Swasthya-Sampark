@@ -46,7 +46,7 @@
 
 <br/>
 <div align="center"> 
-  <img src="/swasthyaSampark/dist/assets/homepage%20ss.png" alt="screenshot" />
+  <img src="/swasthyaSampark/public/assets/homepage%20ss.svg" alt="screenshot" />
 </div>
 
 ## Introduction
