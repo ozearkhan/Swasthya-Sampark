@@ -100,22 +100,30 @@ The platform aims to simplify healthcare accessibility by providing AI-powered c
 - Node.js (>= 14.x)
 - npm or yarn
 - MongoDB
+- Python 3.8+
+- `pip` for installing Python dependencies
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ozearkhan/Swasthya-Sampark.git
+   git clone -b localhost https://github.com/ozearkhan/Swasthya-Sampark.git
    ```
 2. Navigate to the backend directory and install dependencies:
    ```bash
-   cd backend
+   cd ./backend
    npm install
    ```
 3. Navigate to the frontend directory and install dependencies:
    ```bash
-   cd ../swasthyaSampark
+   cd ./swasthyaSampark
    npm install
+   ```
+4. Install Python dependencies for the `./6ml/6ml` server:
+   ```bash
+   cd ./6ml/6ml
+   pip install -r requirements.txt
+
    ```
 
 ### Environment Configuration
@@ -165,13 +173,18 @@ PASS=<your_email_password>
 
 1. Start the backend server:
    ```bash
-   cd backend
+   cd ./backend
    npm start
    ```
 2. Start the frontend application:
    ```bash
-   cd ../swasthyaSampark
-   npm start
+   cd ./swasthyaSampark
+   npm run dev
+   ```
+3. Start the ML server
+   ```bash
+   cd ./6ml/6ml
+   python server.py
    ```
 
 ## Contributing

@@ -10168,3 +10168,81 @@
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:45:48.943Z"}
 {"level":"info","message":"Connected to MongoDB","timestamp":"2024-08-31T18:45:48.944Z"}
 {"level":"info","message":"Server running on port 3001","timestamp":"2024-08-31T21:29:28.763Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2024-11-13T13:44:01.321Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-13T13:44:05.128Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-13T13:44:05.128Z"}
+{"level":"info","message":"Server running on port 3001","timestamp":"2024-11-13T13:56:23.629Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-13T13:56:26.351Z"}
+{"level":"info","message":"Connected to MongoDB","timestamp":"2024-11-13T13:56:26.351Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T13:56:56.068Z"}
+{"level":"info","message":"New client registered with ID: ddc2082e-dfaa-4b70-873d-d53f47dfe9fb","timestamp":"2024-11-13T13:56:56.332Z"}
+{"level":"info","message":"New client registered with ID: ddc2082e-dfaa-4b70-873d-d53f47dfe9fb","timestamp":"2024-11-13T13:56:56.333Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: ddc2082e-dfaa-4b70-873d-d53f47dfe9fb","timestamp":"2024-11-13T13:56:56.333Z"}
+{"level":"info","message":"Initial symptom added for client ddc2082e-dfaa-4b70-873d-d53f47dfe9fb: fever","timestamp":"2024-11-13T13:58:45.147Z"}
+{"level":"info","message":"Expanding symptom: fever","timestamp":"2024-11-13T13:58:45.148Z"}
+{"level":"info","message":"Symptom expanded successfully: fever","timestamp":"2024-11-13T13:58:47.723Z"}
+{"level":"info","message":"Symptom expanded successfully for client ddc2082e-dfaa-4b70-873d-d53f47dfe9fb: fever","timestamp":"2024-11-13T13:58:47.981Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T13:59:14.331Z"}
+{"level":"info","message":"New client registered with ID: 38e70010-6cdf-406d-a18c-73c75c4505e3","timestamp":"2024-11-13T13:59:14.640Z"}
+{"level":"info","message":"New client registered with ID: 38e70010-6cdf-406d-a18c-73c75c4505e3","timestamp":"2024-11-13T13:59:14.640Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 38e70010-6cdf-406d-a18c-73c75c4505e3","timestamp":"2024-11-13T13:59:14.641Z"}
+{"level":"info","message":"Initial symptom added for client 38e70010-6cdf-406d-a18c-73c75c4505e3: fever","timestamp":"2024-11-13T13:59:37.979Z"}
+{"level":"info","message":"Expanding symptom: fever","timestamp":"2024-11-13T13:59:37.980Z"}
+{"level":"info","message":"Symptom expanded successfully: fever","timestamp":"2024-11-13T13:59:40.229Z"}
+{"level":"info","message":"Symptom expanded successfully for client 38e70010-6cdf-406d-a18c-73c75c4505e3: fever","timestamp":"2024-11-13T13:59:40.481Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T13:59:58.163Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T13:59:58.164Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T13:59:58.785Z"}
+{"level":"info","message":"New client registered with ID: b4f87335-6858-4e5d-ac8b-496c6407bc98","timestamp":"2024-11-13T13:59:59.053Z"}
+{"level":"info","message":"New client registered with ID: b4f87335-6858-4e5d-ac8b-496c6407bc98","timestamp":"2024-11-13T13:59:59.053Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: b4f87335-6858-4e5d-ac8b-496c6407bc98","timestamp":"2024-11-13T13:59:59.054Z"}
+{"level":"info","message":"Initial symptom added for client b4f87335-6858-4e5d-ac8b-496c6407bc98: fever","timestamp":"2024-11-13T14:00:19.529Z"}
+{"level":"info","message":"Expanding symptom: fever","timestamp":"2024-11-13T14:00:19.530Z"}
+{"level":"info","message":"Symptom expanded successfully: fever","timestamp":"2024-11-13T14:00:21.851Z"}
+{"level":"info","message":"Symptom expanded successfully for client b4f87335-6858-4e5d-ac8b-496c6407bc98: fever","timestamp":"2024-11-13T14:00:22.103Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T14:00:44.334Z"}
+{"level":"info","message":"New client registered with ID: 45f26be7-6c50-428f-a8ac-129bee09077b","timestamp":"2024-11-13T14:00:44.606Z"}
+{"level":"info","message":"New client registered with ID: 45f26be7-6c50-428f-a8ac-129bee09077b","timestamp":"2024-11-13T14:00:44.607Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 45f26be7-6c50-428f-a8ac-129bee09077b","timestamp":"2024-11-13T14:00:44.607Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T14:00:47.134Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T14:02:27.348Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T14:02:27.786Z"}
+{"level":"info","message":"New client registered with ID: aef52469-e8c6-4057-abf1-d8eb9ecff29b","timestamp":"2024-11-13T14:02:28.043Z"}
+{"level":"info","message":"New client registered with ID: aef52469-e8c6-4057-abf1-d8eb9ecff29b","timestamp":"2024-11-13T14:02:28.043Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: aef52469-e8c6-4057-abf1-d8eb9ecff29b","timestamp":"2024-11-13T14:02:28.044Z"}
+{"level":"info","message":"Initial symptom added for client aef52469-e8c6-4057-abf1-d8eb9ecff29b: headache","timestamp":"2024-11-13T14:02:44.158Z"}
+{"level":"info","message":"Expanding symptom: headache","timestamp":"2024-11-13T14:02:44.158Z"}
+{"level":"info","message":"Symptom expanded successfully: headache","timestamp":"2024-11-13T14:02:46.378Z"}
+{"level":"info","message":"Symptom expanded successfully for client aef52469-e8c6-4057-abf1-d8eb9ecff29b: headache","timestamp":"2024-11-13T14:02:46.631Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T14:02:58.238Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T14:02:58.815Z"}
+{"level":"info","message":"New client registered with ID: de48ccd5-ed5f-4b92-99cb-bcf64e545ffe","timestamp":"2024-11-13T14:02:59.071Z"}
+{"level":"info","message":"New client registered with ID: de48ccd5-ed5f-4b92-99cb-bcf64e545ffe","timestamp":"2024-11-13T14:02:59.072Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: de48ccd5-ed5f-4b92-99cb-bcf64e545ffe","timestamp":"2024-11-13T14:02:59.072Z"}
+{"level":"info","message":"Initial symptom added for client de48ccd5-ed5f-4b92-99cb-bcf64e545ffe: headache","timestamp":"2024-11-13T14:03:25.210Z"}
+{"level":"info","message":"Expanding symptom: headache","timestamp":"2024-11-13T14:03:25.210Z"}
+{"level":"info","message":"Symptom expanded successfully: headache","timestamp":"2024-11-13T14:03:27.450Z"}
+{"level":"info","message":"Symptom expanded successfully for client de48ccd5-ed5f-4b92-99cb-bcf64e545ffe: headache","timestamp":"2024-11-13T14:03:27.704Z"}
+{"level":"info","message":"Selected symptoms for client de48ccd5-ed5f-4b92-99cb-bcf64e545ffe: Seizures","timestamp":"2024-11-13T14:03:31.668Z"}
+{"level":"info","message":"Initial symptom added for client de48ccd5-ed5f-4b92-99cb-bcf64e545ffe: Seizures","timestamp":"2024-11-13T14:03:31.918Z"}
+{"level":"info","message":"Expanding symptom: Seizures","timestamp":"2024-11-13T14:03:31.919Z"}
+{"level":"info","message":"Symptom expanded successfully: Seizures","timestamp":"2024-11-13T14:03:34.434Z"}
+{"level":"info","message":"Symptom expanded successfully for client de48ccd5-ed5f-4b92-99cb-bcf64e545ffe: Seizures","timestamp":"2024-11-13T14:03:34.685Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T14:08:32.433Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T14:08:33.072Z"}
+{"level":"info","message":"New client registered with ID: 17bcf78b-4894-47d3-96f0-7d3137d66a1e","timestamp":"2024-11-13T14:08:33.344Z"}
+{"level":"info","message":"New client registered with ID: 17bcf78b-4894-47d3-96f0-7d3137d66a1e","timestamp":"2024-11-13T14:08:33.345Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 17bcf78b-4894-47d3-96f0-7d3137d66a1e","timestamp":"2024-11-13T14:08:33.345Z"}
+{"level":"info","message":"Initial symptom added for client 17bcf78b-4894-47d3-96f0-7d3137d66a1e: fever","timestamp":"2024-11-13T14:12:02.755Z"}
+{"level":"info","message":"Expanding symptom: fever","timestamp":"2024-11-13T14:12:02.755Z"}
+{"level":"info","message":"Symptom expanded successfully: fever","timestamp":"2024-11-13T14:12:05.216Z"}
+{"level":"info","message":"Symptom expanded successfully for client 17bcf78b-4894-47d3-96f0-7d3137d66a1e: fever","timestamp":"2024-11-13T14:12:05.466Z"}
+{"level":"info","message":"Client disconnected","timestamp":"2024-11-13T14:12:38.053Z"}
+{"level":"info","message":"New client connected","timestamp":"2024-11-13T14:12:38.818Z"}
+{"level":"info","message":"New client registered with ID: 2390fcac-2f86-4ad0-a8ba-78aecd9823c4","timestamp":"2024-11-13T14:12:39.086Z"}
+{"level":"info","message":"New client registered with ID: 2390fcac-2f86-4ad0-a8ba-78aecd9823c4","timestamp":"2024-11-13T14:12:39.090Z"}
+{"level":"info","message":"Sent 'registered' event with clientId: 2390fcac-2f86-4ad0-a8ba-78aecd9823c4","timestamp":"2024-11-13T14:12:39.091Z"}
+{"level":"info","message":"Initial symptom added for client 2390fcac-2f86-4ad0-a8ba-78aecd9823c4: fever","timestamp":"2024-11-13T14:12:57.029Z"}
+{"level":"info","message":"Expanding symptom: fever","timestamp":"2024-11-13T14:12:57.029Z"}
+{"level":"info","message":"Symptom expanded successfully: fever","timestamp":"2024-11-13T14:12:59.272Z"}
+{"level":"info","message":"Symptom expanded successfully for client 2390fcac-2f86-4ad0-a8ba-78aecd9823c4: fever","timestamp":"2024-11-13T14:12:59.525Z"}

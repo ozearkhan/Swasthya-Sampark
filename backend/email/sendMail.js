@@ -29,4 +29,3 @@ const sendEmail = async (messageContent, doctorMail) => {
 };
 
 module.exports = sendEmail;
-//sdasdasdas
