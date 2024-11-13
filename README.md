@@ -46,7 +46,7 @@
 
 <br/>
 <div align="center"> 
-  
+
   <img src="/swasthyaSampark/public/assets/homepage%20ss.svg" alt="screenshot" />
 </div>
 
@@ -57,28 +57,28 @@ Swasthya-Sampark is a healthcare platform designed to connect patients with doct
 ## Modules
 
 1. **Smart Health Solutions (Symptom Triage)**
-    - AI-powered symptom checker for real-time health insights.
-    - Key Features: 24/7 symptom assessments, AI-driven care navigation, instant recommendations.
+   - AI-powered symptom checker for real-time health insights.
+   - Key Features: 24/7 symptom assessments, AI-driven care navigation, instant recommendations.
 
 2. **Doctor Portal**
-    - Manage appointments, view patient records, and perform consultations.
-    - Key Features: Schedule management, access to patient records.
+   - Manage appointments, view patient records, and perform consultations.
+   - Key Features: Schedule management, access to patient records.
 
 3. **HealthGPT (AI Chatbot)**
-    - Interactive AI chatbot for health queries, symptoms, and treatments.
-    - Key Features: Instant health answers, information on health conditions, medication guidance.
+   - Interactive AI chatbot for health queries, symptoms, and treatments.
+   - Key Features: Instant health answers, information on health conditions, medication guidance.
 
 4. **Report Summary Generation**
-    - Converts medical reports from images to text using ML algorithms and OCR technology.
-    - Key Features: AI-driven report transformation, quick and precise conversion.
+   - Converts medical reports from images to text using ML algorithms and OCR technology.
+   - Key Features: AI-driven report transformation, quick and precise conversion.
 
 5. **Patient Portal**
-    - Access health records, track medical history, and manage appointments.
-    - Key Features: Health record access, appointment scheduling.
+   - Access health records, track medical history, and manage appointments.
+   - Key Features: Health record access, appointment scheduling.
 
 6. **Consultation Management**
-    - Streamlines patient-doctor consultation processes.
-    - Key Features: Manage consultation flow, real-time interaction through chat or video calls.
+   - Streamlines patient-doctor consultation processes.
+   - Key Features: Manage consultation flow, real-time interaction through chat or video calls.
 
 ## Purpose and Function
 
@@ -100,22 +100,30 @@ The platform aims to simplify healthcare accessibility by providing AI-powered c
 - Node.js (>= 14.x)
 - npm or yarn
 - MongoDB
+- Python 3.8+
+- `pip` for installing Python dependencies
 
 ### Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ozearkhan/Swasthya-Sampark.git
+   git clone -b localhost https://github.com/ozearkhan/Swasthya-Sampark.git
    ```
 2. Navigate to the backend directory and install dependencies:
    ```bash
-   cd backend
+   cd ./backend
    npm install
    ```
 3. Navigate to the frontend directory and install dependencies:
    ```bash
-   cd ../swasthyaSampark
+   cd ./swasthyaSampark
    npm install
+   ```
+4. Install Python dependencies for the `./6ml/6ml` server:
+   ```bash
+   cd ./6ml/6ml
+   pip install -r requirements.txt
+
    ```
 
 ### Environment Configuration
@@ -150,28 +158,33 @@ PASS=<your_email_password>
 ### Generating Required Keys and API URLs
 
 1. **MongoDB URI**:
-    - Create a MongoDB Atlas account and generate a connection string for your database.
+   - Create a MongoDB Atlas account and generate a connection string for your database.
 
 2. **JWT Secret**:
-    - Generate a secure secret string for JSON Web Token (JWT) authentication.
+   - Generate a secure secret string for JSON Web Token (JWT) authentication.
 
 3. **Gemini API Key**:
-    - Sign up for access to the Google Generative Language API and obtain your API key.
+   - Sign up for access to the Google Generative Language API and obtain your API key.
 
 4. **Email and Password**:
-    - Use a secure email service for transactional emails. If using Gmail, consider setting up an App Password if 2FA is enabled.
+   - Use a secure email service for transactional emails. If using Gmail, consider setting up an App Password if 2FA is enabled.
 
 ### Running the Application
 
 1. Start the backend server:
    ```bash
-   cd backend
+   cd ./backend
    npm start
    ```
 2. Start the frontend application:
    ```bash
-   cd ../swasthyaSampark
-   npm start
+   cd ./swasthyaSampark
+   npm run dev
+   ```
+3. Start the ML server
+   ```bash
+   cd ./6ml/6ml
+   python server.py
    ```
 
 ## Contributing
